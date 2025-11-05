@@ -5,7 +5,7 @@
 package ejercicio_2_9_1;
 
 /**
- *
+ * Clase Main para probar la clase Pen
  * @author daw1al13
  */
 public class MainClass {
@@ -15,9 +15,9 @@ public class MainClass {
      */
     public static void main(String[] args) {
        
-        
+        //Creando un objeto de la clase Pen
         Pen myPen = new Pen();
-        
+        //Probando los metodos con 20, 15 y 6 unidades de tinta
         myPen.write(20);
         myPen.write(15);
         myPen.write(6);
