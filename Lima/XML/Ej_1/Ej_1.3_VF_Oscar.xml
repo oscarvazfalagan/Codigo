@@ -1,0 +1,32 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<!-- Óscar Vaz Falagán -->
+
+
+<empresa>
+
+    <empleado>
+        <nome>Manuel</nome>
+        <apelidos></apelidos>
+        <idade></idade>
+        <departamento></departamento>
+        <posto></posto>
+    </empleado>
+
+    <empleado>
+        <nome></nome>
+        <apelidos></apelidos>
+        <idade></idade>
+        <departamento></departamento>
+        <posto></posto>
+    </empleado>
+
+    <empleado>
+        <nome></nome>
+        <apelidos></apelidos>
+        <idade></idade>
+        <departamento></departamento>
+        <posto></posto>
+    </empleado>
+
+</empresa>

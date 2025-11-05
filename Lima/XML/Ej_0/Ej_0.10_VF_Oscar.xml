@@ -1,0 +1,13 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<doc xmlns:edu="http://esquema.ejemplo/productos"
+xmlns:prod="http://esquema.ejemplo/educacion">
+<nombre>Lucia</nombre>
+<edu:nombre>Lucia</edu:nombre>
+<prod:nombre>Teclado</prod:nombre>
+<prod:precio moneda="EUR">12.50</prod:precio>
+</doc>
+
+<!-- Nombre sin prefijo es ambiguo ya que no pertenece a ningun namespace -->
+<!-- No ocurre nada pero simplement estarian mal asignados los elementos -->
+<!-- El namespace de edu sirve como identidicador de elementos relacionados con la educacion 
+mientras que el namespace de prod es para productos -->

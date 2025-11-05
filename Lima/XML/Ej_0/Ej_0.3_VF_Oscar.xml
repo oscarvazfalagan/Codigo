@@ -1,0 +1,25 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+
+
+<!-- <registro id=27>
+<nombre>Lucia</nombre>
+<curso>DAW<curso>
+</registro>
+<registro id="28" /> -->
+
+<!-- primero no declara el documento xml -->
+ <!-- no pone el atributo entre comillas -->
+ <!-- no cierra la etiqueta curso -->
+<!-- y crea cierra por segunda vez el registro con el / al final y con un atributo  -->
+
+<!-- deberia de ser asi -->
+ 
+<registros>
+    <registro id="27">
+        <nombre>Lucia</nombre>
+        <curso>DAW</curso>
+    </registro>
+    <registro id="28">
+    </registro>
+</registros>

@@ -1,0 +1,45 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<!-- Óscar Vaz Falagán -->
+
+<catalogo>
+
+
+    <producto>
+        <nome>Owlotech Manager Mesa de Escritorio Regulable en Altura con Motor</nome>
+        <descripcion>
+            La Owlotech Manager Mesa de Escritorio Regulable en Altura con Motor 
+            ofrece una experiencia de trabajo ergonómica y versátil. 
+            Con dimensiones de 100x60cm y una altura ajustable de 70cm a 115cm, 
+            esta mesa se adapta a tus necesidades y preferencias, 
+            brindándote la comodidad ideal para cada tarea.
+        </descripcion>
+        <prezo>139.99€</prezo>
+        <caracteristicas>
+            <altura>Ajustable de 70 cm a 115cm</altura>
+            <superficie material="madera">100x60 cm</superficie>
+            <resistencia>60kg</resistencia>
+            <color>negro</color>
+        </caracteristicas>
+    </producto>
+
+
+    <producto>
+
+        <nome>Orbegozo AM 8000 Batidora Amasadora</nome>
+        <descripcion>
+            Ahora, con Orbegozo, preparar pan, dulces o pizzas es una tarea rápida y sencilla.
+            Puedes vivir la experiencia que quieras en casa gracias a la amasadora AM 8000 de Orbegozo. 
+        </descripcion>
+        <prezo>109.99€</prezo>
+        <caracteristicas>
+            <potencia>1800w</potencia>
+            <Motor>AC de gran resistencia</Motor>
+            <sistema>Incorporado Sistema de seguridad que 
+                impide su funcionamiento si no está correctamente cerrada
+            </sistema>
+        </caracteristicas>
+    </producto>
+
+
+</catalogo>

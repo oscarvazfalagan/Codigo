@@ -1,0 +1,22 @@
+[
+    {
+    "id":1,
+    "nombre":"Licuadora",
+    "precio":50,
+    "categorias":["electronico","Manual"]
+    },
+    {
+    "id":2,
+    "nombre":"Robot Cocina",
+    "precio":300,
+    "categorias":["electronico","Manual"]
+    },
+    {
+    "id":3,
+    "nombre":"Television 40 pulgadas",
+    "precio":300,
+    "categorias":["electronico","Manual"]
+    }
+
+
+]

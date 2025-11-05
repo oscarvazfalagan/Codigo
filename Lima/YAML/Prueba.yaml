@@ -1,0 +1,5 @@
+persona:
+  nombre: Juan
+  edad: 18
+  Lenguaje_de_programacion_preferido: Java
+  Intereses: [Desarollo web,Ciberseguridad,Hackingetico]

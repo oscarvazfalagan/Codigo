@@ -1,0 +1,31 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<sistemaReservas>
+    
+    <pasajeros></pasajeros>
+    <reservas></reservas>
+    <vuelos>
+        <vuelo id_vuelos="1" id_aerolinea="3" origen="Peru" destino="españa" fecha_salida="20-3-2024"
+            fecha_llegada="21-3-2024">
+            <precio moneda="euro">200</precio>
+            <duracion>15 horas 20 minutos 10 segundos</duracion>
+        </vuelo>
+        <vuelo id_vuelos="2" id_aerolinea="1" origen="España" destino="Colombia" fecha_salida="22-7-2025"
+            fecha_llegada="22-7-2025">
+            <precio moneda="dolares">70</precio>
+            <duracion>14 horas 20 minutos 10 segundos</duracion>
+        </vuelo>
+    </vuelos>
+    <aerolineas>
+        <aerolinea id_aerolinea="1" nombre="iberia" pais_aerolinea="España"/>
+
+        <aerolinea id_aerolinea="2" nombre="qatar" pais_aerolinea="Marruecos"/>
+
+        <aerolinea id_aerolinea="3" nombre="Finair" pais_aerolinea="Turquia"/>
+    </aerolineas>
+
+
+
+
+
+</sistemaReservas>

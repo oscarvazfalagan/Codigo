@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "nombre":"rodolfo el reno",
+        "anho":1990
+    },
+    {
+        "id":2,
+        "nombre":"pepito grillo",
+        "anho":2000
+    },
+    {
+        "id":3,
+        "nombre":"batman",
+        "anho":2003
+    }
+]

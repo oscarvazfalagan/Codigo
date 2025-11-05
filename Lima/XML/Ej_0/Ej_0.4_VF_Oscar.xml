@@ -1,0 +1,18 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<!-- <mensaje>
+Resultado: 3 < 5 & 10 > 7
+<detalle>Comprobado el 10/09</detalle>
+</mensaje> -->
+
+<mensajes>
+<mensaje>
+Resultado: 3 &lt; 5 &amp; 10 &gt; 7
+<detalle>Comprobado el 10/09</detalle>
+</mensaje>
+<mensaje>
+<![CDATA[Resultado: 3 < 5 & 10 > 7]]>
+<detalle>Comprobado el 10/09</detalle>
+</mensaje>
+</mensajes>
+<!-- el ]]> simplemente es cerrar el cdata y el texto -->

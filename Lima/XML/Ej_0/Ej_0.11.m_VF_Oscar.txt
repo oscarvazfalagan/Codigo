@@ -1,0 +1,12 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<root>
+<registro id=101><!-- el atributo va entrecomillas -->
+<nombre>Alvaro</apellido><!--Usa mal la etiqueta-->
+<!-- Nota Incompleta --> <!--comentario mal redactado -->
+<detalle>Importe: 30  20</detalle> <!--uso indevido del & deberian de usar su notacion especifica-->
+</registro>
+</root>
+<root><!--no puede a ver dos elementos raid-->
+<registro id="102" />
+</root>

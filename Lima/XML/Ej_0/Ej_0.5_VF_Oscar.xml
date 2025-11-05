@@ -1,0 +1,12 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<equipo codigo="PC-07" >
+    <usuario>nuria</usuario>
+    <estado>ocupado</estado>
+    <!-- Observacion : Falta memoria -->
+</equipo>
+
+<!-- Estado se podria usar de las dos maneras ya que una buena forma de saber si un ordenador 
+ esta libre es gracias al estado dependiendo del contexto si varia consantemente podria ser mas 
+ util como elemento o atributo   
+-->

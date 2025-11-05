@@ -1,0 +1,20 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<catalogo xmlns="http://esquema.ejemplo/libros"
+          xmlns:inv="http://ejemplo.inv/libros">
+
+    <libro>
+        <titulo>Principios de Redes</titulo>
+        <autor>A. Souto</autor>
+    </libro>
+    <libro>
+        <inv:etiquieta>Prueba</inv:etiquieta>
+    </libro>
+
+
+</catalogo>
+
+
+<!-- Porque todas las etiquetasestan dentro de la raiz principal 
+catalogo por lo tanto todas pertenecen al mismo name space -->
+<!-- la herencia sera el namespace igualmente porque 
+  sigue siendo heredero de la raiz -->

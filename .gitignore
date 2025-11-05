@@ -1,0 +1,92 @@
+# =========================
+# Archivos de NetBeans
+# =========================
+**/nbproject/private/
+**/nbproject/configs/
+**/nbproject/private.properties
+**/nbproject/project.properties~
+**/build/
+**/dist/
+**/dist/*
+
+# Archivos de configuración de NetBeans
+**/nbactions.xml
+**/nb-configuration.xml
+
+# =========================
+# Archivos de propiedades y manifiestos
+# =========================
+*.properties
+*.mf
+*.MF
+
+# =========================
+# Archivos compilados y generados de Java
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+*.log
+
+# =========================
+# Maven / Gradle
+# =========================
+target/
+out/
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# =========================
+# Archivos IDEs (NetBeans, IntelliJ, Eclipse, VSCode)
+# =========================
+# NetBeans
+.nb-gradle/
+.nbproject/
+nbproject/private/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# =========================
+# Archivos temporales o del sistema operativo
+# =========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# =========================
+# Archivos personales o temporales
+# =========================
+*.swp
+*.swo
+*.bak
+*.tmp
+*.old

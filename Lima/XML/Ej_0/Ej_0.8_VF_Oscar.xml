@@ -1,0 +1,18 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<videoteca>
+    <pelicula id="M-0007" anho="2022">
+        <titulo>EL viaje de Ada</titulo>
+        <duracion>108 min</duracion>
+        <genero>Aventura</genero>
+        <direccion>Laura Nieto</direccion>
+        <reparto>Tomas Vidal,Sara Millan</reparto>
+        <Sinopsis>"Una ingeniera novata lidera una expedición por montes
+        gallegos para instalar una red de sensores."</Sinopsis>
+    </pelicula>
+</videoteca>
+<!--Si cambias a duracion a atributo este luego no podria desarollar
+subindices pero a su vez valdria para identificarlo mas rapido  -->
+
+
+<!-- Las faltas las subdesarolla usando un subrayado rojo -->

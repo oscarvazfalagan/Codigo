@@ -1,0 +1,388 @@
+[
+    {
+        "nombre": "biblioteca tui",
+        "ubicacion": "tui",
+        "fechadeApertura": 1980,
+        "autores": [
+            {
+                "idAutor": 1,
+                "nombre": "Juan",
+                "nacionalidad": "Española",
+                "fechaNacimiento": 1980,
+                "fechaActualizacion": "2023-08-08"
+            },
+            {
+                "idAutor": 2,
+                "nombre": "Manuel",
+                "nacionalidad": "Italiana",
+                "fechaNacimiento": 1999,
+                "fechaActualizacion": "2022-09-11"
+            },
+            {
+                "idAutor": 3,
+                "nombre": "Fernando",
+                "nacionalidad": "Peruano",
+                "fechaNacimiento": 2000,
+                "fechaActualizacion": "2025-08-07"
+            },
+            {
+                "idAutor": 4,
+                "nombre": "Alma",
+                "nacionalidad": "chilena",
+                "fechaNacimiento": 2006,
+                "fechaActualizacion": "2024-12-06"
+            },
+            {
+                "idAutor": 5,
+                "nombre": "Iwata",
+                "nacionalidad": "China",
+                "fechaNacimiento": 1488,
+                "fechaActualizacion": "2023-12-08"
+            }
+        ],
+        "libros": [
+            {
+                "idLibro": 1,
+                "titulo": "Don Ramon",
+                "autor": {
+                    "nombre": "Juan",
+                    "nacionalidad": "española"
+                },
+                "anioPublicacion": 1980,
+                "categorias": "aventura",
+                "idiomasDisponibles": [
+                    "español",
+                    "frances",
+                    "aleman"
+                ],
+                "precio": 7,
+                "disponible": true,
+                "editorial": {
+                    "nombre": "Cultural",
+                    "pais": "españa"
+                },
+                "valoraciones": [
+                    {
+                        "usuario": "Ramon",
+                        "puntuacion": 3,
+                        "comentraio": "aburrido"
+                    },
+                    {
+                        "usuario": "Susana",
+                        "puntuacion": 5,
+                        "comentraio": "Esta bien"
+                    },
+                    {
+                        "usuario": "Manuel",
+                        "puntuacion": 5,
+                        "comentraio": "no esta mal"
+                    }
+                ]
+            },
+            {
+                "idLibro": 2,
+                "titulo": "La cucaracha",
+                "autor": {
+                    "nombre": "Manuel",
+                    "nacionalidad": "Italiana"
+                },
+                "anioPublicacion": 2001,
+                "categorias": "aventura",
+                "idiomasDisponibles": [
+                    "español",
+                    "frances",
+                    "aleman",
+                    "uruguayo"
+                ],
+                "precio": 10,
+                "disponible": false,
+                "editorial": {
+                    "nombre": "fantasia",
+                    "pais": "españa"
+                },
+                "valoraciones": [
+                    {
+                        "idUsuario": 1,
+                        "usuario": "Diego",
+                        "puntuacion": 5,
+                        "comentraio": "aburrido pero no esta mal"
+                    },
+                    {
+                        "idUsuario": 4,
+                        "usuario": "Berna",
+                        "puntuacion": 6,
+                        "comentraio": "Podria estar mejor"
+                    },
+                    {
+                        "idUsuario": 2,
+                        "usuario": "Felipe",
+                        "puntuacion": 3,
+                        "comentraio": "es horrendo"
+                    }
+                ]
+            },
+            {
+                "idLibro": 3,
+                "titulo": "El caballo jose",
+                "autor": {
+                    "nombre": "Fernando",
+                    "nacionalidad": "Peruano"
+                },
+                "anioPublicacion": 1930,
+                "categorias": [
+                    "trama",
+                    "romance",
+                    "diversion"
+                ],
+                "idiomasDisponibles": [
+                    "frances",
+                    "aleman",
+                    "japones"
+                ],
+                "precio": 16,
+                "disponible": true,
+                "editorial": {
+                    "nombre": "mickey",
+                    "pais": "EEUU"
+                },
+                "valoraciones": [
+                    {
+                        "usuario": "Ruben",
+                        "puntuacion": 4,
+                        "comentraio": "Casi me llega para aprobarlo pero no"
+                    },
+                    {
+                        "usuario": "Saul",
+                        "puntuacion": 10,
+                        "comentraio": "El mejor libro que e leido en mi vida OMG lol"
+                    },
+                    {
+                        "usuario": "Pedro",
+                        "puntuacion": 2,
+                        "comentraio": "No se como le puede gustar este libro a alguien"
+                    }
+                ]
+            },
+            {
+                "idLibro": 4,
+                "titulo": "Kingdom hearts",
+                "autor": {
+                    "nombre": "Iwata",
+                    "nacionalidad": "China"
+                },
+                "anioPublicacion": 2006,
+                "categorias": [
+                    "aventura",
+                    "amor",
+                    "diversion"
+                ],
+                "idiomasDisponibles": [
+                    "español",
+                    "frances",
+                    "aleman",
+                    "chino",
+                    "japones",
+                    "Gallego"
+                ],
+                "precio": 40,
+                "disponible": true,
+                "editorial": {
+                    "nombre": "Kairi",
+                    "pais": "Tailandia"
+                },
+                "valoraciones": [
+                    {
+                        "usuario": "David",
+                        "puntuacion": 3,
+                        "comentraio": "Me encanta pero el final es tan malo que no puedo hacer nada"
+                    },
+                    {
+                        "usuario": "Rodrigo",
+                        "puntuacion": 9,
+                        "comentraio": "La historia de como sora perdio el corazon me conmovio"
+                    },
+                    {
+                        "usuario": "Brayan",
+                        "puntuacion": 10,
+                        "comentraio": "Perfecion absoluta es cine"
+                    }
+                ]
+            },
+            {
+                "idLibro": 5,
+                "titulo": "Dormido pero despierto",
+                "autor": {
+                    "nombre": "Alma",
+                    "nacionalidad": "chilena"
+                },
+                "anioPublicacion": 2009,
+                "categorias": "acertijo mental",
+                "idiomasDisponibles": [
+                    "español",
+                    "catalan",
+                    "chileno"
+                ],
+                "precio": 18,
+                "disponible": true,
+                "editorial": {
+                    "nombre": "tema",
+                    "pais": "Salvador"
+                },
+                "valoraciones": [
+                    {
+                        "usuario": "Pepito",
+                        "puntuacion": 7,
+                        "comentraio": "Me siento identifidado con Pepito el personaje"
+                    },
+                    {
+                        "usuario": "Maria",
+                        "puntuacion": 8,
+                        "comentraio": "Barbaridad miro el mundo diferente la verdad"
+                    },
+                    {
+                        "usuario": "Pedro",
+                        "puntuacion": 7,
+                        "comentraio": "Lo encontre interesante"
+                    }
+                ]
+            },
+            {
+                "idLibro": 6,
+                "titulo": "El precario",
+                "autor": {
+                    "nombre": "Marco",
+                    "nacionalidad": "Estados Unidos"
+                },
+                "anioPublicacion": 2003,
+                "categorias": [
+                    "aventura",
+                    "conocimiento"
+                ],
+                "idiomasDisponibles": [
+                    "ingles",
+                    "chino"
+                ],
+                "precio": 14,
+                "disponible": true,
+                "editorial": {
+                    "nombre": "Persona",
+                    "pais": "Finlandia"
+                },
+                "valoraciones": [
+                    {
+                        "usuario": "Manolo",
+                        "puntuacion": 6,
+                        "comentraio": "Aburrido pero como me lo compre me lo como"
+                    },
+                    {
+                        "usuario": "Gael",
+                        "puntuacion": 7,
+                        "comentraio": "Esta bien pero no tanto"
+                    },
+                    {
+                        "usuario": "Pablo",
+                        "puntuacion": 10,
+                        "comentraio": "La mejor obra que e leido"
+                    }
+                ]
+            }
+        ],
+        "usuarios": [
+            {
+                "idUsuario": 1,
+                "nombre": "Diego",
+                "correo": "Diegodelegado@gmail.com",
+                "prestamos": [
+                    {
+                        "idLibro": 2,
+                        "codigoEjemplar": "UD___00001A",
+                        "fechaPrestamo": "10-08-2010 ",
+                        "fechaDevolucion": null
+                    },
+                    {
+                        "idLibro": 5,
+                        "codigoEjemplar": "UD___0089A",
+                        "fechaPrestamo": "14-08-2025",
+                        "fechaDevolucion": "15-08-2025"
+                    }
+                ]
+            },
+            {
+                "idUsuario": 2,
+                "nombre": "Felipe",
+                "correo": "Felipedelgado@gmail.com",
+                "prestamos": [
+                    {
+                        "idLibro": 2,
+                        "codigoEjemplar": "UD___00001A",
+                        "fechaPrestamo": "19-10-2013 ",
+                        "fechaDevolucion": "20-06-2014"
+                    },
+                    {
+                        "idLibro": 3,
+                        "codigoEjemplar": "UD___1234Z",
+                        "fechaPrestamo": "17-01-2018",
+                        "fechaDevolucion": "25-04-2022"
+                    }
+                ]
+            },
+            {
+                "idUsuario": 3,
+                "nombre": "Ramon",
+                "correo": "Ramonramondino@gmail.com",
+                "prestamos": [
+                    {
+                        "idLibro": 1,
+                        "codigoEjemplar": "UD___0489Y",
+                        "fechaPrestamo": "19-10-2013 ",
+                        "fechaDevolucion": "20-06-2014"
+                    },
+                    {
+                        "idLibro": 6,
+                        "codigoEjemplar": "UD___1000P",
+                        "fechaPrestamo": "15-01-2020",
+                        "fechaDevolucion": "25-04-2021"
+                    }
+                ]
+            },
+            {
+                "idUsuario": 4,
+                "nombre": "Berna",
+                "correo": "Bernaazote@gmail.com",
+                "prestamos": [
+                    {
+                        "idLibro": 2,
+                        "codigoEjemplar": "UD___00001A",
+                        "fechaPrestamo": "10-11-2011",
+                        "fechaDevolucion": "20-12-2011"
+                    },
+                    {
+                        "idLibro": 3,
+                        "codigoEjemplar": "UD___1000A",
+                        "fechaPrestamo": "14-12-2014",
+                        "fechaDevolucion": "15-08-2015"
+                    }
+                ]
+            },
+            {
+                "idUsuario": 5,
+                "nombre": "Ruben",
+                "correo": "RubenFontanero@gmail.com",
+                "prestamos": [
+                    {
+                        "idLibro": 3,
+                        "codigoEjemplar": "UD___0008L",
+                        "fechaPrestamo": "20-01-2017 ",
+                        "fechaDevolucion": "07-06-2018"
+                    },
+                    {
+                        "idLibro": 6,
+                        "codigoEjemplar": "UD___2000Z",
+                        "fechaPrestamo": "20-05-2000",
+                        "fechaDevolucion": null
+                    }
+                ]
+            }
+        ]
+    }
+]

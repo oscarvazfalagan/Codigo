@@ -1,0 +1,17 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<inventario>
+    <objeto codigo="P-101">
+        <nombre>Teclado USB</nombre>
+        <precio>12,50</precio>
+        <stock>40</stock>
+    </objeto>
+    <objeto codigo="P-205">
+        <nombre>Raton optico</nombre>
+        <precio>9,95</precio>
+        <stock>15</stock>
+    </objeto>
+</inventario>
+
+
+<!-- La diferenia seria que el codigo no seria un atributo haciendo que sea mas lento de ubicarlo -->

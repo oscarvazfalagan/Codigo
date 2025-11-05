@@ -1,0 +1,9 @@
+{
+    "nombre":"Manuel",
+    "edad" : 18,
+    "departamento":"Fotografia",
+    "salario":{
+        "base":1500,
+        "bonificaciones":300
+    }
+}

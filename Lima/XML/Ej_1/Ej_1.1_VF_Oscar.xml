@@ -1,0 +1,45 @@
+<?xml  version="1.0" encoding="utf-8"?>
+
+<!-- Óscar Vaz Falagán -->
+
+
+<!DOCTYPE documento [
+<!ENTITY tilde "á" >
+ ]>
+<lista_libros>
+    <libro titulo="el sueño de los fern&tilde;ndez">
+        <autor>Francisco Perturo</autor>
+        <ano>1880</ano>
+        <descripcion>
+            Descubre como los fernandez resuelven
+            su misterio familiar atravez del
+            sueño de su hijo menor
+        </descripcion>
+
+   
+    </libro>
+
+    <libro titulo="los picaletos">
+        <autor>Maria Seoane</autor>
+        <ano>18000</ano>
+        <descripcion>
+            Descubre las aventuras de los picaletos
+            un grupo de niños revoltosos dispuestos
+            a salvar su ciudad
+        </descripcion>
+        
+    </libro>
+
+    <libro titulo="Manual de xml">
+        <autor>Ramiro Gonzalez</autor>
+        <ano>1999</ano>
+        <descripcion>
+            <![CDATA[
+            Libro de enseñanza de xml aprende a usar etiquetas 
+            como <estas> y sus distintas maneras de uso ademas 
+            del uso del & y palabras exclusivas del lenguaje
+            ]]>    
+        </descripcion>
+    </libro>
+
+</lista_libros>

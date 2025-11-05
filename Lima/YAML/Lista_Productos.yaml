@@ -1,0 +1,19 @@
+tienda:
+  productos:
+    electronica:
+      - nombre: "HP-Laptop"
+        precion: 300
+        valoracion:
+          - "no me gusto"
+          - "no esta mal"
+      - nombre: "Impresora CanonSeries-3000"
+        precion: 50
+        valoracion:
+          - "Viene sin tinta"
+          - "no funcionaba bien el escanner"
+    hogar:
+      - nombre: "chainselongue"
+        precion: 486
+        valoracion:
+          - "Es comodo"
+          - "No trae cojines"
