@@ -14,7 +14,15 @@ public class MainClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+        
+        Pen myPen = new Pen();
+        
+        myPen.write(20);
+        myPen.write(15);
+        myPen.write(6);
+        System.out.println(myPen.getInk());
+        
     }
     
 }

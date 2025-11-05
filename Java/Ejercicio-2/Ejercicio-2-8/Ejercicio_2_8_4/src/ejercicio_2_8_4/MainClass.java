@@ -45,7 +45,7 @@ public class MainClass {
 // Bucle de 5 días
         for (int i = 1; i <= 5; i++) {
 // Solo el último día será domingo si includeSunday = true
-            boolean isSunday = includeSunday && i == 4;
+            boolean isSunday = includeSunday && i == 5;
 
             WorkingDay dayWorked = new WorkingDay(quenda, isSunday, hours);
             double dailyPay = dayWorked.earn(quenda, isSunday, hours);
