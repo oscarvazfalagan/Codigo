@@ -1,20 +1,55 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package ejercicio_2_8_4;
 
 /**
- *
- * @author daw1al13
+ * Clase que representa un día de trabajo. Contiene información sobre turno
+ * (diurno/nocturno), si es domingo y horas trabajadas. Permite calcular el
+ * salario del día.
  */
-public class Ejercicio_2_8_4 {
+public class WorkingDay {
+
+    private char quenda;  // 'd' para diurno, 'n' para nocturno
+    private boolean sunday; // true si es domingo
+    private int hours;   // número de horas trabajadas
 
     /**
-     * @param args the command line arguments
+     * Constructor que recibe todos los atributos del día de trabajo.
+     *
+     * @param quenda Turno: 'd' diurno, 'n' nocturno
+     * @param sunday true si es domingo
+     * @param hours Número de horas trabajadas
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public WorkingDay(char quenda, boolean sunday, int hours) {
+        this.quenda = quenda;
+        this.sunday = sunday;
+        this.hours = hours;
     }
-    
+
+    /**
+     * Calcula el salario del día.
+     *
+     * @param quenda Turno
+     * @param sunday true si es domingo
+     * @param hours Número de horas
+     * @return Salario del día con incremento si es domingo
+     */
+    public double earn(char quenda, boolean sunday, int hours) {
+        double earn;
+
+        // Calculamos salario según el turno
+        earn = switch (this.quenda) {
+            case 'd' ->
+                8 * this.hours;  // 8 € diurno
+            case 'n' ->
+                12 * this.hours; // 12 € nocturno
+            default ->
+                0;         // si no es ni 'd' ni 'n', 0
+        };
+
+        // Si es domingo, incrementamos un 20%
+        if (this.sunday) {
+            earn = Math.round(earn * 1.2 * 100) / 100.0;
+        }
+
+        return earn;
+    }
 }
