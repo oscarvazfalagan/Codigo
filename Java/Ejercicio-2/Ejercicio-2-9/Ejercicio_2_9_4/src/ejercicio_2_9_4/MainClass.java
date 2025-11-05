@@ -27,15 +27,15 @@ public class MainClass {
         System.out.println("        COMENZAMOS      ");
         System.out.println("------------------------");
         int number=0;
-        boolean exit= true;
+        boolean exit= false;
         int value = new java.util.Random().nextInt(MAX);
-        for (int i=trys ;i >=0 || !exit; i--){
+        for (int i=trys ;i >=0 && !exit; i--){
             System.out.println("Dime un numero : ");
             number = scan.nextInt();
             int remainTrys = i-1;
             if (number > value){
-                System.out.println("Incorrecto | El numero es mayor que "+number+" te quedan "+remainTrys+" intentos");
-            }else if (value > number){
+                System.out.println("Incorrecto | El numero es menor que "+number+" te quedan "+remainTrys+" intentos");
+            }else if (number < value){
                 System.out.println("Incorrecto | El numero es mayor que "+number+" te quedan "+remainTrys+" intentos");
             }else{
                 System.out.println("Has ganado | El numero era = "+value+" lo has conseguido en un total de "+i+" intentos");
