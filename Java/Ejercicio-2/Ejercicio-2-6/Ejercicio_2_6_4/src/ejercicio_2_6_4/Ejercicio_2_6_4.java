@@ -3,7 +3,15 @@ package ejercicio_2_6_4;
 import java.util.Scanner;
 
 /**
- * Clase Main para crear un identificador de numero primos atraves de bucles
+ * Clase Main para identificar si un número es primo usando un bucle for
+ * @author daw1al13
+ */
+public class Ejepackage ejercicio_2_6_4;
+
+import java.util.Scanner;
+
+/**
+ * Clase Main para identificar si un número es primo usando un bucle for sin break
  * @author daw1al13
  */
 public class Ejercicio_2_6_4 {
@@ -12,21 +20,17 @@ public class Ejercicio_2_6_4 {
         Scanner scan = new Scanner(System.in); // Scanner para introducir datos
         System.out.print("Dime un número: ");
         int numero = scan.nextInt(); // Valor del número introducido
-        int resultado;               // Variable para el bucle
-        int contador = numero - 1;   // Comenzamos comprobando desde numero - 1
-        boolean esPrimo = true;      // Suponemos que es primo hasta demostrar lo contrario
+        boolean esPrimo = true;      // Valor para determinar si es primo
 
         if (numero <= 1) {
-            esPrimo = false; // 0 y 1 no son primos y al dividir darian 0 por lo tanto van fuera
-        }
-
-        // Bucle que busca si un número es primo o no
-        while (contador > 1 && esPrimo) {
-            resultado = numero % contador;
-            if (resultado == 0) {
-                esPrimo = false; // Encontramos si encontramos un divisor no es primo
+            esPrimo = false; // 0 y 1 no son primos
+        } else {
+            // Bucle for que comprueba si el número es divisible por algún número menor que él
+            for (int i = numero - 1; i > 1; i--) {
+                if (numero % i == 0) {
+                    esPrimo = false; // Si se puede dividir, no es primo
+                }
             }
-            contador--; // Pasamos al siguiente numero
         }
 
         // Imprimir resultado
