@@ -1,3 +1,6 @@
+"""
+Clase Main para mostrar la tabla de multiplicar del 5 usando un bucle for
+"""
 def main():
     tabla = 5  # Número de la tabla
     resultado = 0

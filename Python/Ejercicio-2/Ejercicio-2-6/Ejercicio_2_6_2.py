@@ -1,3 +1,7 @@
+"""
+Clase Main para multiplicar dos números usando sumas repetidas
+"""
+
 def main():
     # Pedimos el primer número
     number1 = int(input("Dime un número: "))
