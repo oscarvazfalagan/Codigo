@@ -1,27 +1,17 @@
+# ========================================
+# Git Ignore para proyectos Java en NetBeans
+# Mantiene todos los archivos originales del IDE
+# ========================================
+
 # =========================
-# Archivos de NetBeans
+# Carpetas temporales y de compilación
 # =========================
-**/nbproject/private/
-**/nbproject/configs/
-**/nbproject/private.properties
-**/nbproject/project.properties~
 **/build/
 **/dist/
 **/dist/*
 
-# Archivos de configuración de NetBeans
-**/nbactions.xml
-**/nb-configuration.xml
-
 # =========================
-# Archivos de propiedades y manifiestos
-# =========================
-*.properties
-*.mf
-*.MF
-
-# =========================
-# Archivos compilados y generados de Java
+# Archivos compilados o generados automáticamente
 # =========================
 *.class
 *.jar
@@ -34,38 +24,7 @@
 *.log
 
 # =========================
-# Maven / Gradle
-# =========================
-target/
-out/
-build/
-.gradle/
-!gradle/wrapper/gradle-wrapper.jar
-
-# =========================
-# Archivos IDEs (NetBeans, IntelliJ, Eclipse, VSCode)
-# =========================
-# NetBeans
-.nb-gradle/
-.nbproject/
-nbproject/private/
-
-# IntelliJ
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# Eclipse
-.project
-.classpath
-.settings/
-
-# Visual Studio Code
-.vscode/
-
-# =========================
-# Archivos temporales o del sistema operativo
+# Archivos de sistema (seguridad y limpieza)
 # =========================
 # macOS
 .DS_Store
@@ -83,10 +42,28 @@ $RECYCLE.BIN/
 .nfs*
 
 # =========================
-# Archivos personales o temporales
+# IDEs adicionales (por si abres el proyecto en otros entornos)
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# =========================
+# Archivos temporales o personales
 # =========================
 *.swp
 *.swo
 *.bak
 *.tmp
 *.old
+
