@@ -17,17 +17,17 @@ public class MainClass {
       //Creamos un objeto escaner para poder recibir informacion
         Scanner scan = new Scanner(System.in);
        //Le damos valor a la variable
-       System.out.println("Dime un numero : ");
-       int number1 = scan.nextInt();
-       System.out.println("Dime otro numero : ");
-       int number2 = scan.nextInt();
-       int result = 0 ;
+      System.out.println("Dime un numero : ");
+      int number1 = scan.nextInt();
+      System.out.println("Dime otro numero : ");
+      int number2 = scan.nextInt();
+      int result = 0 ;
        //Ejecutamos un bucle el numero de vezes que haga falta como el segundo factor
-       for (int n=0 ;n<number2;n++){
-           result += number1;
-       }
+      for (int n=0 ;n<number2;n++){
+          result += number1;
+      }
        //Imprimimos el resultado
-       System.out.println("La multiplicacion de tus numeros es : "+result);
+      System.out.println("La multiplicacion de tus numeros es : "+result);
     }
     
 }
