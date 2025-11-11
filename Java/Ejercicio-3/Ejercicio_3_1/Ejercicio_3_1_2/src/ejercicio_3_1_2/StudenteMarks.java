@@ -25,9 +25,10 @@ public class StudenteMarks {
     private void getMarks() {
         System.out.println("Vas a introduzir 10 alumnos con sus respectivas notas : ");
         System.out.println("--------------------------------------------------------");
-        for (int i = 0, j = 0; i < marks.length && j < student.length; i++, j++) {
-            System.out.println("Introduce el estudiante " + (j + 1) + " : ");
-            student[j] = scan.nextLine();
+        //El bucle for toma los valores de marks porque loa arrays tienen la misma longitud
+        for (int i = 0; i < marks.length ; i++) { 
+            System.out.println("Introduce el estudiante " + (i + 1) + " : ");
+            student[i] = scan.nextLine();
             System.out.println("Introduce la nota " + (i + 1) + " : ");
             marks[i] = scan.nextInt();
             scan.nextLine();
@@ -51,12 +52,13 @@ public class StudenteMarks {
      * @return String con el nombre y la nota del estudiante con la nota minima
      */
     public String min() {
-        int mark = Integer.MAX_VALUE;
-        String person = "";
-        for (int i = 0, j = 0; i < marks.length && j < student.length; i++, j++) {
+        int mark = Integer.MAX_VALUE;      //Cojo el valor maximo para que cualquier numero sea menor que el para comenzar
+        String person = "";     //Declaro el string a fuera para introducirlo en el bucle
+        //El bucle for toma los valores de marks porque loa arrays tienen la misma longitud
+        for (int i = 0; i < marks.length; i++) {
             if (marks[i] < mark) {
                 mark = marks[i];
-                person = student[j];
+                person = student[i];
             }
         }
         return "La persona con la nota mas baja es " + person + " con una nota de un : " + mark;
@@ -68,12 +70,13 @@ public class StudenteMarks {
      * @return String con el nombre y la nota del estudiante con la nota maxima
      */
     public String max() {
-        int mark = Integer.MIN_VALUE;
-        String person = "";
-        for (int i = 0, j = 0; i < marks.length && j < student.length; i++, j++) {
+        int mark = Integer.MIN_VALUE;   //Cojo el valor minimo para que cualquier numero sea mayor que el para comenzar
+        String person = "";     //Declaro el string a fuera para introducirlo en el bucle
+        //El bucle for toma los valores de marks porque loa arrays tienen la misma longitud
+        for (int i = 0; i < marks.length ; i++) {
             if (marks[i] > mark) {
                 mark = marks[i];
-                person = student[j];
+                person = student[i];
             }
         }
         return "La persona con la nota mas alta es " + person + " con una nota de un : " + mark;
