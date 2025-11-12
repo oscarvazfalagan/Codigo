@@ -16,8 +16,14 @@ public class MainClass {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in); //Creamos el objeto scan de la clase Scanner
         //Pedimos al usuario la cantidad de numeros que quiere usar
-        System.out.println("Dame la cantidad de numeros que quieres usar : ");
+        System.out.println("Dame la cantidad de numeros que quieres usar impares : ");
         int n = scan.nextInt();
+        while (n%2 == 0){//si el numero es par pide otro numero
+            System.out.println("El numero es par introduce un numero impar : ");
+            n = scan.nextInt();
+        }
+        System.out.println("Introduce "+ n +" numeros : ");
+        System.out.println("--------------------------");
         Statistics numbers = new Statistics(n);//Creamos el objeto numbers de la clase Statistics con el numero de elementos n
         System.out.println("La mediana de tus numeros es : "+numbers.median()); //Mostramos la mediana de los numeros introducidos
          
