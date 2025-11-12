@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicicio_3_2_1;
+package ejercicicio_3_2_2;
 
 /**
  *
@@ -27,6 +27,10 @@ public class MainClass {
         System.out.println("Matriz suma : ");
         System.out.println("------------");
         matrix1.sum(matrix2.getMatrix());
+        System.out.println("");
+        System.out.println("Matriz resta : ");
+        System.out.println("------------");
+        matrix1.subtract(matrix2.getMatrix());
        
     }
     

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicicio_3_2_1;
+package ejercicicio_3_2_2;
 import java.util.Scanner;
 /**
  *
@@ -50,5 +50,15 @@ public class Matrix {
         }
        
     }
-    
+    public void subtract(int matrixrest[][]){
+        int matrixRes[][] = new int [3][3]; 
+       for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+            matrixRes[i][j] =matrix[i][j] - matrixrest[i][j];
+            System.out.print(matrixRes[i][j] + "     ");
+            }
+            System.out.println();
+        }
+       
+    }
 }
