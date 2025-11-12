@@ -17,7 +17,7 @@ public class Matrix {
         
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-                System.out.println("Inroduce el numero de la posicion "+(i + 1)+":"+(j + 1)+" =");
+                System.out.println("Introduce el numero de la posicion "+(i + 1)+":"+(j + 1)+" =");
                 matrix[i][j] = scan.nextInt();
             }
         }
