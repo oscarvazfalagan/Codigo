@@ -18,6 +18,7 @@ public class MainClass {
         System.out.println("Dame la cantidad de numeros que quieres usar : ");
         int n = scan.nextInt();
         Statistics numbers = new Statistics(n);
+        System.out.println("La mediana de tus numeros es : "+numbers.median());
          
     }
     
