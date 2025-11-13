@@ -58,16 +58,16 @@ public class Statistics {
             int contadorMin = 0; // Contador de numeros menores
             int contadorMax = 0; // Contador de numeros mayores
             for (int j = 0; j < numbers.length; j++) {
-                if (numbers[i] > numbers[j]) {
+                if (numbers[i] >= numbers[j]) {
                     contadorMin = contadorMin + 1; // Incrementa cuando un numero es mayor
                 }
-                if (numbers[i] < numbers[j]) {
+                if (numbers[i] <= numbers[j]) {
                     contadorMax = contadorMax + 1; // Incrementa cuando un numero es menot
                 }
 
             }
             // Si los contadores son iguales significa que el numero es la mediana
-            if (contadorMax == contadorMin) {
+            if (contadorMax >= numbers.length/2 && contadorMin >= numbers.length/2) {
                 mediana = numbers[i];
                 exit = true; // Salimos del bucle
             }
