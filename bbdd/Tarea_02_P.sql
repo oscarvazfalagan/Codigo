@@ -28,3 +28,8 @@ CREATE TABLE suministradores (
     cantidad INT UNSIGNED CHECK (cantidad > 0),
     PRIMARY KEY(idproveedor, idpieza, idproyecto)
 )ENGINE=InnoDB;
+
+ALTER TABLE suministradores
+    ADD FOREIGN KEY (idproveedor) REFERENCES proveedores(idproveedor) ON DELETE RESTRICT ON UPDATE CASCADE,
+    ADD FOREIGN KEY (idpieza) REFERENCES piezas(idpieza) ON DELETE RESTRICT ON UPDATE CASCADE,
+    ADD FOREIGN KEY (idproyecto) REFERENCES proyectos(idproyecto) ON DELETE RESTRICT ON UPDATE CASCADE;
