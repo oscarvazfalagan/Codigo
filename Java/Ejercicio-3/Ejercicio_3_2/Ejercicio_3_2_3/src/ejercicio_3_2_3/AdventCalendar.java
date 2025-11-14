@@ -11,29 +11,36 @@ package ejercicio_3_2_3;
 public class AdventCalendar {
 
     private int matrix[][] = new int[6][4];
-
-    public void fill() {
-        int MAX = 24;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                do {
-                    int value = new java.util.Random().nextInt(MAX);
-                    matrix[i][j] = value;
-                    checker(value);
-                    
-                } while (checker != true);
-            }
-        }
-
-    }
-    private void checker(int value){
-        int MAX = 24;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (value == matr)
-            }
-        }
+    public static final int MAX=24;
+    public int min=1;
     
+    
+    public void fill() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                int value;
+                do {
+                    value = (new java.util.Random().nextInt(MAX)) + 1;
+
+                } while (checker(value) == true);
+                matrix[i][j] = value;
+            }
+        }
+        
+    }
+
+    private boolean checker(int value) {
+
+        boolean confirm = false;
+        
+        for (int i = 0; i < matrix.length && !confirm; i++) {
+            for (int j = 0; j < matrix[i].length && !confirm; j++) {
+                if (value == matrix[i][j]) {
+                    confirm = true;
+                }
+            }
+        }
+        return confirm;
     }
 
     public void show() {
@@ -43,5 +50,19 @@ public class AdventCalendar {
             }
             System.out.println();
         }
+    }
+    
+    public void eat(){
+        
+        
+        
+         for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == MIN){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        this.MIN++;
     }
 }

@@ -16,6 +16,8 @@ public class MainClass {
     public static void main(String[] args) {
         AdventCalendar calendar = new AdventCalendar();
         calendar.fill();
+        
+        calendar.eat();
         calendar.show();
     }
 }
