@@ -8,7 +8,7 @@ CREATE TABLE equipo (
     nome_club VARCHAR(200) NOt NULL,
     nome_equipo VARCHAR (200) NOT NUll,
     capacidade_pavillon INT UNSIGNED NOT NULL CHECK (capacidade_pavillon > 0),
-    web VARCHAR(300) UNSIGNED
+    web VARCHAR(300)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Xogador (
