@@ -52,6 +52,8 @@ public class AdventCalendar {
      * Metodo para mostrar la matriz por pantalla
      */
     public void show() {
+        System.out.println("Calendario de Navidad");
+        System.out.println("------------------");
         //Recorremos la matriz y motramos los valores por pantalla
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -59,6 +61,7 @@ public class AdventCalendar {
             }
             System.out.println();
         }
+        System.out.println("------------------");
     }
     /**
      * Metodo para comer el dia mas pequeño del calendario

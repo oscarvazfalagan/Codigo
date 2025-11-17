@@ -5,7 +5,7 @@
 package ejercicio_3_2_3;
 
 /**
- *
+ *Clase principal para ejecutar el calendario de adviento
  * @author daw1al13
  */
 public class MainClass {
@@ -14,15 +14,16 @@ public class MainClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //Creamos un objeto de la clase Advent Calendar
         AdventCalendar calendar = new AdventCalendar();
-        calendar.fill();
+        calendar.fill();//Lo rellenamos con numeros aleatorios
+        // Lo mostramos por pantalla una vez relleno
+        calendar.show();
+        //Mientras no sea navidad se comera un dia del calendario y se volvera a mostrar por pantalla el calendario
         while (!calendar.christmasisHere()) {
-            System.out.println("Calendario de Navidad");
-            System.out.println("------------------");
-            calendar.show();
             calendar.eat();
-            System.out.println("------------------");
-            System.out.println();
+            calendar.show();
+            
         }
     }
 }
