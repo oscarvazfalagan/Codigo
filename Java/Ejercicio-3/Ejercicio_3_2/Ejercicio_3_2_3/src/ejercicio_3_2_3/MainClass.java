@@ -16,9 +16,13 @@ public class MainClass {
     public static void main(String[] args) {
         AdventCalendar calendar = new AdventCalendar();
         calendar.fill();
-        
-        calendar.eat();
-        calendar.show();
+        while (!calendar.christmasisHere()) {
+            System.out.println("Calendario de Navidad");
+            System.out.println("------------------");
+            calendar.show();
+            calendar.eat();
+            System.out.println("------------------");
+            System.out.println();
+        }
     }
 }
-
