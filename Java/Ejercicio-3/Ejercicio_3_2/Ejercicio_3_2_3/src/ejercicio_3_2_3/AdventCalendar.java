@@ -5,7 +5,7 @@
 package ejercicio_3_2_3;
 
 /**
- *
+ *Clase AdventCalendar que representa un calendario de adviento
  * @author daw1al13
  */
 public class AdventCalendar {
