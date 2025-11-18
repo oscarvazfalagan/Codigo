@@ -5,7 +5,8 @@
 package ejercicio_3_2_3;
 
 /**
- *Clase AdventCalendar que representa un calendario de adviento
+ * Clase AdventCalendar que representa un calendario de adviento
+ *
  * @author daw1al13
  */
 public class AdventCalendar {
@@ -30,6 +31,7 @@ public class AdventCalendar {
         }
 
     }
+
     /**
      * Metodo para comprobar si un numero ya existe en la matriz
      */
@@ -46,8 +48,9 @@ public class AdventCalendar {
         }
         //Devolvemos el valor confirm que sera false si el numero no existe en la matriz y true si ya existe
         //haciendo que se ejecute otra vez el bucle do while
-        return confirm; 
+        return confirm;
     }
+
     /**
      * Metodo para mostrar la matriz por pantalla
      */
@@ -63,11 +66,12 @@ public class AdventCalendar {
         }
         System.out.println("------------------");
     }
+
     /**
      * Metodo para comer el dia mas pequeño del calendario
      */
     public void eat() {
-        
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == this.min + 1) { //Comparamos el numero de la matrix hasta que sea equivalente al numero mas pequño
@@ -77,11 +81,13 @@ public class AdventCalendar {
         }
         this.min++; //Como el numero minimo ya se ha comido añadimos un numero mas
     }
+
     /**
      * Metodo para comprobar si ya se ha llegado a navidad
+     *
      * @return booleano que indica si ya se ha llegado a navidad
      */
-    
+
     public boolean christmasisHere() {
         //Inicializamos un contador de dias comidos y un booleano para indicar si es navidad
         int dayCounter = 0;
@@ -94,8 +100,9 @@ public class AdventCalendar {
                 }
             }
         }
+
         //Si el contador es igual a 24 dias sabremos que es navidad
-        if (dayCounter == 24){
+        if (dayCounter == 24) {
             //Mensaje de felicidad por la navidad
             System.out.println("Se comieron todos los dias : ");
             System.out.println("Feliz navidad !!!");
@@ -103,5 +110,5 @@ public class AdventCalendar {
         }
         return isChristmas;//Devolvemos el valor del booleano
     }
-    
+
 }
