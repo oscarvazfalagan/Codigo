@@ -18,7 +18,7 @@ public class Matrix {
     private int matrix[][] = new int[3][3];// Cada objeto sera una matriz 3x3
 
     /**
-     * Metodo privado para obtener los numeros de la matriz con un scanner
+     * Metodo para obtener los numeros de la matriz con un scanner
      */
     public void obtainMatrix() {
         // Texto introductivo

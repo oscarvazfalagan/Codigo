@@ -26,7 +26,6 @@ public class MainClass {
         System.out.println("");
         System.out.println("Matriz 2 : ");
         System.out.println("------------");
-        
         matrix2.showMatrix();
         System.out.println("");
         // Realizamos la suma de las dos matrices
@@ -38,7 +37,7 @@ public class MainClass {
         System.out.println("Matriz resta : ");
         System.out.println("------------");
         Matrix resultadoRes = matrix1.subtract(matrix2);
-        matrix1.showMatrix();
+        resultadoRes.showMatrix();
     }
-    
+
 }

@@ -4,6 +4,7 @@
  */
 package ejercicicio_3_2_1;
 
+
 /**
  *
  * @author daw1al13
@@ -14,10 +15,12 @@ public class MainClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      // Creamos dos objetos Matrix
+        // Creamos dos objetos Matrix
         Matrix matrix1 = new Matrix();
         Matrix matrix2 = new Matrix();
         // Los mostramos por pantalla
+        matrix1.obtainMatrix();
+        matrix2.obtainMatrix();
         System.out.println("Matriz 1 : ");
         System.out.println("------------");
         matrix1.showMatrix();
@@ -29,7 +32,8 @@ public class MainClass {
         // Realizamos la suma de las dos matrices
         System.out.println("Matriz suma : ");
         System.out.println("------------");
-        matrix1.sum(matrix2.getMatrix());
+        Matrix resultadoSum = matrix1.sum(matrix2);
+        resultadoSum.showMatrix();
     }
-    
+
 }
