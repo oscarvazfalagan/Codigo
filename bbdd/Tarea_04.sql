@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS empregados;
-CREATE DATABASE emregados;
+CREATE DATABASE empregados;
 
 USE empregados;
 
@@ -13,16 +13,29 @@ CREATE TABLE empregado (
     empComision DECIMAL(7,2) CHECK (empComision >= 0),
     empFillos INT(10) CHECK (empFillos >= 0),
     empNome VARCHAR(30) NOT NULL
-) ENGNINE = InnoDB;
+) ENGINE=InnoDB;
 
 CREATE TABLE departamento (
-    depNumero INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    depNome VARCHAR (20),
+    depNumero INT UNSIGNED  PRIMARY KEY,
+    depNome VARCHAR(20),
     depDirector INT UNSIGNED NOT NULL,
     deptipoDirector ENUM('P','F') NOT NULL,
-    depPresuposto DECIMAL (7,2) CHECK (depPresuposto > 10000)
-    depDepende INT,
-    depCentro INT,
+    depPresuposto DECIMAL (7,2) CHECK (depPresuposto > 10000),
+    depDepende INT UNSIGNED,
+    depCentro INT UNSIGNED,
+    depEmpregados INT UNSIGNED ChECK (depEmpregados >= 0)
+) ENGINE=InnoDB;
 
+CREATE TABLE centro (
+    cenNumero INT UNSIGNED PRIMARY KEY,
+    cenNome VARCHAR(30) NOT NULL,
+    cenEnderezo VARCHAR(100)
+) ENGINE=InnoDB;
 
-)
+ALTER TABLE departamento 
+    ADD CONSTRAINT departamento_FK_1 FOREIGN KEY (depCentro) REFERENCES centro(cenNumero) ON DELETE RESTRICT ON UPDATE CASCADE,
+    ADD CONSTRAINT departamento_FK_2 FOREIGN KEY (depDepende) REFERENCES departamento(depNumero) ON DELETE SET NULL ON UPDATE CASCADE,
+    ADD CONSTRAINT departamento_FK FOREIGN KEY (depDirector) REFERENCES empregado(empNumero) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE empregado
+    ADD CONSTRAINT empregado_FK FOREIGN KEY (empDepartamento) REFERENCES departamento(depNumero) ON DELETE RESTRICT ON UPDATE CASCADE;
