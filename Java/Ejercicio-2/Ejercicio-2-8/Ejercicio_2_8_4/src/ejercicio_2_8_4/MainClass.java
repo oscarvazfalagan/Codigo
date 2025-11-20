@@ -48,7 +48,7 @@ public class MainClass {
             boolean isSunday = includeSunday && i == 5;
 
             WorkingDay dayWorked = new WorkingDay(quenda, isSunday, hours);
-            double dailyPay = dayWorked.earn(quenda, isSunday, hours);
+            double dailyPay = dayWorked.earn();
             totalPay += dailyPay;
 
             System.out.println("Día " + i + " salario: " + dailyPay + " euros");

@@ -32,7 +32,7 @@ public class WorkingDay {
      * @param hours Número de horas
      * @return Salario del día con incremento si es domingo
      */
-    public double earn(char quenda, boolean sunday, int hours) {
+    public double earn() {
         double earn;
 
         // Calculamos salario según el turno

@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package ejercicio_2_9_4;
+
 import java.util.Scanner;
+
 /**
  *
  * @author daw1al13
@@ -26,24 +28,38 @@ public class MainClass {
         System.out.println("------------------------");
         System.out.println("        COMENZAMOS      ");
         System.out.println("------------------------");
-        int number=0;
-        boolean exit= false;
+        int number = 0;
+        boolean exit = false;
         int value = new java.util.Random().nextInt(MAX);
-        for (int i=trys ;i >=0 && !exit; i--){
+        for (int i = trys; i > 0 && !exit; i--) {
             System.out.println("Dime un numero : ");
             number = scan.nextInt();
-            int remainTrys = i-1;
-            if (number > value){
-                System.out.println("Incorrecto | El numero es menor que "+number+" te quedan "+remainTrys+" intentos");
-            }else if (number < value){
-                System.out.println("Incorrecto | El numero es mayor que "+number+" te quedan "+remainTrys+" intentos");
-            }else{
-                System.out.println("Has ganado | El numero era = "+value+" lo has conseguido en un total de "+i+" intentos");
-                exit = true;
+            int remainTrys = i - 1;
+            if (remainTrys == 0) {
+                if (number == value) {
+                    System.out.println("Has ganado - El numero era | " + value + " | lo has conseguido ");
+                    System.out.println("ENHORABUENA !!!!!!!!!!");
+                    exit = true;
+                } else {
+                    System.out.println("No te quedan intentos perdiste");
+                    exit = true;
+                }
+                    
             }
-            
+            else{
+                if (number > value) {
+                System.out.println("Incorrecto - El numero es menor que " + number + " te quedan " + remainTrys + " intentos");
+                } else if (number < value) {
+                System.out.println("Incorrecto - El numero es mayor que " + number + " te quedan " + remainTrys + " intentos");
+
+                } else if (number == value) {
+                System.out.println("Has ganado - El numero era | " + value + " | lo has conseguido ");
+                System.out.println("ENHORABUENA !!!!!!!!!!");
+                exit = true;
+                }
+            }
         }
-        
+
     }
-    
+
 }
