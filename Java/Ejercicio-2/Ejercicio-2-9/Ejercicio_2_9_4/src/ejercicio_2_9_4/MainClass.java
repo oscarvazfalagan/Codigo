@@ -17,11 +17,11 @@ public class MainClass {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Vamos a jugar un juego ");
+        System.out.println("Vamos a jugar un juego de adivinar un numero aleatorio ");
         System.out.println("------------------------");
         System.out.println("Primero vamos a configurarlo ");
         System.out.println("------------------------");
-        System.out.println("Dime el valor limite en el que quieres jugar ---- > ");
+        System.out.println("Dime el valor maximo de los numeros que quieres jugar ---- > ");
         final int MAX = scan.nextInt();
         System.out.println("Dime cuantos intentos quieres usar para adivinar el numero ---- > ");
         int trys = scan.nextInt();
