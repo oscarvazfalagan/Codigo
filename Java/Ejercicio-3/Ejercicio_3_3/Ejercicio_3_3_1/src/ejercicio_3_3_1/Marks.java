@@ -5,7 +5,7 @@
 package ejercicio_3_3_1;
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
    
 /**
@@ -16,7 +16,8 @@ public class Marks {
     //Añadimos el Scanner para leer por teclado
     Scanner scan = new Scanner(System.in);
     //Array de 10 notas
-    private int marks[] = new int[10];
+ 
+    private ArrayList<Integer> marks =new ArrayList<>(10);
 
     /**
      * Metodo para obtener las notas con un bucle for
@@ -24,15 +25,16 @@ public class Marks {
     private void getMarks(){
         System.out.println("Introduce 10 notas : ");
         System.out.println("---------------------");
-        for (int i=0; i<marks.length ; i++){
+        for (int i=0; i<10 ; i++){
             System.out.println("Introduce la nota " + (i+1) + " : ");
-            marks[i] = scan.nextInt();
+            int nota = scan.nextInt();
+            marks.add(i, nota); 
             
         }
     }
     /**
      * Constructor de la clase Marks que llama al metodo getMarks
-     * @return
+     * 
      */
     public Marks() {
         getMarks();
@@ -43,8 +45,8 @@ public class Marks {
      */
     public double getAverage(){
         Double average = 0.0;
-        for (int i=0; i<marks.length ; i++){
-            average += marks[i];
+        for (int i=0; i<marks.size(); i++){
+            average += marks.get(i);
         }
         return average/10;
     }
