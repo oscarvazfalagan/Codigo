@@ -15,8 +15,7 @@ import java.util.ArrayList;
 public class Marks {
     //Añadimos el Scanner para leer por teclado
     Scanner scan = new Scanner(System.in);
-    //Array de 10 notas
- 
+    //Array list de 10 notas
     private ArrayList<Integer> marks =new ArrayList<>(10);
 
     /**
