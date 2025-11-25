@@ -5,7 +5,8 @@
 package ejercicio_3_3_1;
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 
    
 /**
@@ -15,8 +16,8 @@ import java.util.Scanner;
 public class Marks {
     //Añadimos el Scanner para leer por teclado
     Scanner scan = new Scanner(System.in);
-    //Array de 10 notas
-    private int marks[] = new int[10];
+    //Array list de 10 notas
+    private ArrayList<Integer> marks =new ArrayList<>(10);
 
     /**
      * Metodo para obtener las notas con un bucle for
@@ -24,15 +25,16 @@ public class Marks {
     private void getMarks(){
         System.out.println("Introduce 10 notas : ");
         System.out.println("---------------------");
-        for (int i=0; i<marks.length ; i++){
+        for (int i=0; i<10 ; i++){
             System.out.println("Introduce la nota " + (i+1) + " : ");
-            marks[i] = scan.nextInt();
+            int nota = scan.nextInt();
+            marks.add(i, nota); 
             
         }
     }
     /**
      * Constructor de la clase Marks que llama al metodo getMarks
-     * @return
+     * 
      */
     public Marks() {
         getMarks();
@@ -42,12 +44,28 @@ public class Marks {
      * @return la media de las notas
      */
     public double getAverage(){
+        //Creo un objeto iterador del array list de integer marks
+        Iterator<Integer> mark = marks.iterator();
+        //Defino la variable para que entre al bucle
         Double average = 0.0;
+<<<<<<< HEAD
         for (int i=0; i<marks.length ; i++){
             average += marks[i];
             average 
+=======
+        //El while solo funciona mientras que tenga una nota para usar
+        while (mark.hasNext()){
+            average += mark.next(); //Calcula la media y pasa a la siguiente
+>>>>>>> 00f68f1035982aa3aa77985499f9d731154859ee
         }
         return average/10;
+    }
+    /**
+     * Setter para modificar los valores de marks
+     * @param marks 
+     */
+    public void setMarks(ArrayList<Integer> marks) {
+        this.marks = marks;
     }
     
 }

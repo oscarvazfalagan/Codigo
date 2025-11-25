@@ -21,7 +21,7 @@ public class MainClass {
         myPen.write(20);
         myPen.write(15);
         myPen.write(6);
-        System.out.println(myPen.getInk());
+        
         
     }
     

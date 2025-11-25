@@ -32,6 +32,19 @@ CREATE TABLE centro (
     cenEnderezo VARCHAR(100)
 ) ENGINE=InnoDB;
 
+CREATE TABLE localidad (
+    cod_localidade INT UNSIGNED PRIMARY KEY,
+    nome VARCHAR(100),
+    cod_provincia INT UNSIGNED NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE provincia (
+    cod_provincia INT UNSIGNED PRIMARY KEY,
+    nome VARCHAR(100)
+) ENGINE=InnoDB;
+
+
+
 ALTER TABLE departamento 
     ADD CONSTRAINT departamento_FK_1 FOREIGN KEY (depCentro) REFERENCES centro(cenNumero) ON DELETE RESTRICT ON UPDATE CASCADE,
     ADD CONSTRAINT departamento_FK_2 FOREIGN KEY (depDepende) REFERENCES departamento(depNumero) ON DELETE SET NULL ON UPDATE CASCADE,
@@ -39,3 +52,13 @@ ALTER TABLE departamento
 
 ALTER TABLE empregado
     ADD CONSTRAINT empregado_FK FOREIGN KEY (empDepartamento) REFERENCES departamento(depNumero) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE centro
+    RENAME COLUMN cenEnderezo to cenRuaNum,
+    ADD cod_localidade INT UNSIGNED,
+    ADD Foreign Key (cod_localidade) REFERENCES localidad(cod_localidade);
+
+
+ALTER TABLE localidad
+    ADD FOREIGN KEY (cod_provincia) REFERENCES provincia(cod_provincia);
+
