@@ -45,6 +45,7 @@ public class Marks {
         Double average = 0.0;
         for (int i=0; i<marks.length ; i++){
             average += marks[i];
+            average 
         }
         return average/10;
     }
