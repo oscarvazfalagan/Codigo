@@ -29,8 +29,20 @@ CREATE TABLE Nacionalidade (
     nome VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
 
+CREATE TABLE club (
+    cod_club VARCHAR(3) PRIMARY KEY,
+    nome_club VARCHAR(100)
+) ENGINE = InnoDB;
+
 
 ALTER TABLE Xogador
      ADD FOREIGN KEY (codigo_equipo) REFERENCES Equipo(Codigo) ON DELETE RESTRICT ON UPDATE CASCADE,
-     ADD FOREIGN KEY (nacionalidade) REFERENCES Nacionalidade(Codigo) ON DELETE RESTRICT ON UPDATE CASCADE;
+     ADD FOREIGN KEY (nacionalidade) REFERENCES Nacionalidade(Codigo) ON DELETE RESTRICT ON UPDATE CASCADE,
+     ADD salario DECIMAL (10,0) NOT NULL;
+
+ALTER TABLE Equipo
+    DROP COLUMN nome_club,
+    ADD cod_club VARCHAR(3),
+    ADD Foreign Key (cod_club) REFERENCES club(cod_club)
+
     

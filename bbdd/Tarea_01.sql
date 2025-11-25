@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS tablas;
 CREATE DATABASE tablas;
 
-USE tablas
+USE tablas;
 
 CREATE TABLE tiendas (
     nif VARCHAR(10),
@@ -14,7 +14,8 @@ CREATE TABLE tiendas (
 
 ALTER TABLE tiendas
     ADD PRIMARY KEY (nif),
-    MODIFY nombre VARCHAR(50) NOT NULL; 
+    MODIFY nombre VARCHAR(50) NOT NULL,
+    ADD tipo_tienda ENUM('Principal','Secundaria','Digital') DEFAULT 'Principal';
 
 CREATE TABLE fabricantes (
     cod_fabricantes INT UNSIGNED,
@@ -23,7 +24,9 @@ CREATE TABLE fabricantes (
 ) ENGINE=InnoDB;
 
 ALTER TABLE fabricantes 
-    MODIFY cod_fabricantes INT UNSIGNED AUTO_INCREMENT PRIMARY KEY;
+    MODIFY cod_fabricantes INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    DROP COLUMN pais,
+    ADD continente ENUM('EU', 'AM', 'AF', 'OC', 'AS') DEFAULT 'EU';
 
 CREATE TABLE articulos (
     articulo VARCHAR(20),
@@ -41,7 +44,10 @@ ALTER TABLE articulos
     ADD CHECK (precio_venta > 0),
     ADD CHECK (precio_costo > 0),
     ADD CHECK (peso > 0),
-    MODIFY categoria ENUM('Primera','Segunda','Tercera');
+    MODIFY categoria ENUM('Primera','Segunda','Tercera'),
+    MODIFY precio_venta DECIMAL(8,2),
+    MODIFY precio_costo DECIMAL(8,2);
+
 
 CREATE TABLE ventas (
     nif VARCHAR(10),
@@ -58,7 +64,9 @@ ALTER TABLE ventas
     ADD FOREIGN KEY (nif) REFERENCES tiendas(nif),
     ADD FOREIGN KEY (articulo,cod_fabricantes,categoria,peso) REFERENCES articulos(articulo,cod_fabricantes,categoria,peso),
     ADD CHECK (unidades_vendidas > 0),
-    MODIFY categoria ENUM('Primera','Segunda','Tercera');
+    MODIFY categoria ENUM('Primera','Segunda','Tercera'),
+    MODIFY fecha_venta DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ADD tipo_venta ENUM('Mostrador', 'Bajo Pedido', 'web') NOT NULL;
 
 CREATE TABLE pedidos (
     nif VARCHAR(10),
@@ -76,7 +84,8 @@ ALTER TABLE pedidos
     ADD FOREIGN KEY (nif) REFERENCES tiendas(nif),
     ADD FOREIGN KEY (articulo,cod_fabricantes,categoria,peso) REFERENCES articulos(articulo,cod_fabricantes,categoria,peso),
     ADD CHECK (unidades_pedidas > 0),
-    MODIFY categoria ENUM('Primera','Segunda','Tercera');
+    MODIFY categoria ENUM('Primera','Segunda','Tercera'),
+    MODIFY fecha_pedido DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
 
 ALTER TABLE articulos 
     MODIFY precio_venta DECIMAL (8,2),

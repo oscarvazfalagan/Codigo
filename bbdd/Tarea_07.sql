@@ -5,15 +5,15 @@ USE historialLaboral;
 
 CREATE TABLE empleados (
     dni INT(8) UNSIGNED PRIMARY KEY,
-    nombre VARCHAR(10),
-    apellido1 VARCHAR(15),
-    apellido VARCHAR(15),
+    nombre VARCHAR(10) NOT NULL,
+    apellido1 VARCHAR(15) NOT NULL,
+    apellido2 VARCHAR(15),
     direcc1 VARCHAR(25),
     direcc2 VARCHAR(25),
     ciudad VARCHAR(20),
     provincia VARCHAR(20),
     cod_postal VARCHAR(5),
-    sexo VARCHAR(1),
+    sexo ENUM('h','m'),
     fecha_nac DATE
 ) ENGINE=InnoDB;
 
@@ -33,12 +33,12 @@ CREATE TABLE historial_salarial (
     salario INT UNSIGNED,
     fecha_comienzo DATE,
     fecha_fin DATE,
-    PRIMARY KEY (empleado_dni,salario,fecha_comienzo)
+    PRIMARY KEY (empleado_dni,fecha_comienzo)
 ) ENGINE=InnoDB;
 
 CREATE TABLE departamentos (
     dpto_cod INT(5) PRIMARY KEY,
-    nombre_dpto VARCHAR(30),
+    nombre_dpto VARCHAR(30) UNIQUE,
     dpto_padre INT(5) UNSIGNED,
     presupuesto INT UNSIGNED,
     pres_actual INT UNSIGNED
@@ -63,8 +63,30 @@ CREATE TABLE universidades (
 
 CREATE TABLE trabajos (
     trabajo_cod INT(5) UNSIGNED PRIMARY KEY,
-    nombre_trab VARCHAR(20),
-    salario_min INT(2),
-    salario_max INT(2)
+    nombre_trab VARCHAR(20) UNIQUE,
+    salario_min DECIMAL(2) UNSIGNED NOT NULL,
+    salario_max DECIMAL(2) UNSIGNED NOT NULL
 ) ENGINE=InnoDB;
+
+
+ALTER TABLE historial_laboral
+Add Foreign Key (empleado_dni) REFERENCES empleados(dni) ON DELETE RESTRICT ON UPDATE CASCADE,
+Add Foreign Key (trabajo_cod) REFERENCES trabajos(trabajo_cod) ON DELETE RESTRICT ON UPDATE CASCADE,
+Add Foreign Key (dpto_cod) REFERENCES departamentos(dpto_cod) ON DELETE RESTRICT ON UPDATE CASCADE,
+Add Foreign Key (supervisor_dni) REFERENCES empleados(dni) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
+
+ALTER TABLE historial_salarial
+Add Foreign Key (empleado_dni) REFERENCES empleados(dni) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE departamentos
+Add Foreign Key (dpto_padre) REFERENCES departamentos(dpto_cod) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE estudios
+Add Foreign Key (empleado_dni) REFERENCES empleados(dni) ON DELETE RESTRICT ON UPDATE CASCADE,
+Add Foreign Key (universidad) REFERENCES universidades(univ_cod) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
+
 

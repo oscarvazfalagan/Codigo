@@ -29,6 +29,20 @@ CREATE TABLE suministradores (
     PRIMARY KEY (idproveedor,idpieza,idproyecto)
 )ENGINE=InnoDB;
 
-ALTER TABLE suministradores (
-    
-)
+CREATE TABLE provincias (
+    id_provincia INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre_provincia VARCHAR(20) UNIQUE NOT NULL
+) ENGINE=InnoDB;
+
+ALTER TABLE suministradores 
+    ADD FOREIGN KEY (idproveedor) REFERENCES proveedores(idproveedor) ON DELETE RESTRICT ON UPDATE CASCADE,
+    ADD FOREIGN KEY (idpieza) REFERENCES piezas(idpieza) ON DELETE RESTRICT ON UPDATE CASCADE,
+    ADD FOREIGN KEY (idproyecto) REFERENCES proyectos(idproyecto) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
+ALTER TABLE proveedores 
+    DROP COLUMN nombreprov,
+    ADD id_provincia INT UNSIGNED NOT NULL,
+    ADD Foreign Key (id_provincia) REFERENCES provincias(id_provincia);
+
+
