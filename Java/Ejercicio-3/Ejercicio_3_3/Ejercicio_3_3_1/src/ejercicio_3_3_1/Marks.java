@@ -6,6 +6,7 @@ package ejercicio_3_3_1;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Iterator;
 
    
 /**
@@ -43,11 +44,22 @@ public class Marks {
      * @return la media de las notas
      */
     public double getAverage(){
+        //Creo un objeto iterador del array list de integer marks
+        Iterator<Integer> mark = marks.iterator();
+        //Defino la variable para que entre al bucle
         Double average = 0.0;
-        for (int i=0; i<marks.size(); i++){
-            average += marks.get(i);
+        //El while solo funciona mientras que tenga una nota para usar
+        while (mark.hasNext()){
+            average += mark.next(); //Calcula la media y pasa a la siguiente
         }
         return average/10;
+    }
+    /**
+     * Setter para modificar los valores de marks
+     * @param marks 
+     */
+    public void setMarks(ArrayList<Integer> marks) {
+        this.marks = marks;
     }
     
 }
