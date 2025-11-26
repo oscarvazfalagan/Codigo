@@ -48,9 +48,15 @@ public class Marks {
         Iterator<Integer> mark = marks.iterator();
         //Defino la variable para que entre al bucle
         Double average = 0.0;
+<<<<<<< HEAD
+        for (int i=0; i<marks.length ; i++){
+            average += marks[i];
+            average 
+=======
         //El while solo funciona mientras que tenga una nota para usar
         while (mark.hasNext()){
             average += mark.next(); //Calcula la media y pasa a la siguiente
+>>>>>>> 00f68f1035982aa3aa77985499f9d731154859ee
         }
         return average/10;
     }

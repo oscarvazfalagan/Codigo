@@ -28,7 +28,6 @@ public class AdventCalendar {
                 int value; // Inicializamos la variable value para guardar el numero aleatorio
                 do {
                     value = (new java.util.Random().nextInt(MAX)) + 1; // Generamos un numero aleatorio entre 1 y 24
-
                 } while (checker(value) == true); // Comprobamos que el numero no este repetido en la matriz
                 matrix[i][j] = value; // Si no esta repetido lo guardamos en la matriz
             }
