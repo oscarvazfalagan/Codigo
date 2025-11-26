@@ -31,15 +31,41 @@ public class DataBase {
     }
     
     
-    private void showClient(){
+    private void showClients(){
         for (int i=0 ; i<Clients.size(); i++){
             Client client = Clients.get(i);
             String nif = client.getNif();
-            System.out.println("Cliente numero : "+i+"");
+            System.out.println("Cliente numero : "+(i+1)+" su nif es = "+nif);
         }
     }
     
+    private void removeClient(String nif){
+        boolean checkNifExist= false;
+        for (int i=0 ; i<Clients.size(); i++){
+            Client client = Clients.get(i);
+            if (client.getNif().equals(nif)){
+                Clients.remove(client);
+                System.out.println("Cliente borrado !!!");
+                checkNifExist = true;
+            }
+            
+        }
+        if(!checkNifExist){
+            System.out.println("El nif no coincide con ningun cliente");
+        }
+    }
     
+    private int numClients(){
+        return Clients.size();
+    }
+
+    public ArrayList<Client> getClients() {
+        return Clients;
+    }
+
+    public void setClients(ArrayList<Client> Clients) {
+        this.Clients = Clients;
+    }
     
     
     
@@ -52,6 +78,27 @@ public class DataBase {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         DataBase database = new DataBase();
+         Scanner scan = new Scanner(System.in);
+         System.out.println("Vamos a introducir el primer usuario : ");
+         System.out.println("---------------");
+         database.addClient();
+         System.out.println("Vamos a introducir el segundo usuario : ");
+         System.out.println("---------------");
+         database.addClient();
+         System.out.println("Vamos a mostrar a los usuarios : ");
+         System.out.println("---------------");
+         database.showClients();
+         System.out.println("La base de datos tiene un total de : "+database.numClients());
+         System.out.println("Dime un nif para borrar su cliente : ");
+         String nif = scan.nextLine();
+         database.removeClient(nif);
+         System.out.println("Vamos a mostrar a los usuarios : ");
+         System.out.println("---------------");
+         database.showClients();
+         System.out.println("La base de datos tiene un total de : "+database.numClients());
+         
+         // Client client = database.getClients().get(0); Manera de usar atributos del metodo desde el propio main
          
     }
     
