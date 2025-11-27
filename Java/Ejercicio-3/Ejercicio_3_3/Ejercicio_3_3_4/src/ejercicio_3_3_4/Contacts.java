@@ -46,6 +46,10 @@ public class Contacts {
          System.out.println("Vamos a introducir el primer usuario : ");
          System.out.println("---------------");
          contact.addClient();
+         System.out.println("Vamos a introducir el segundo usuario : ");
+         System.out.println("---------------");
+         contact.addClient();
+         
     }
     
 }
