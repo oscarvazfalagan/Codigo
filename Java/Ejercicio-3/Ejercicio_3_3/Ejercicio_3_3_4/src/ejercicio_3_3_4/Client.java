@@ -5,7 +5,7 @@
 package ejercicio_3_3_4;
 
 /**
- *Clase Client que crea client que se usaran en la database
+ *Clase Client que crea client que se usaran para almacenar contacts
  * @author daw1al13
  */
 public class Client {
@@ -13,6 +13,7 @@ public class Client {
     private String nif;
     private String name;
     private String surname;
+   
     /**
      * Metodo get que devuelve el valor de nif
      * @return nif
