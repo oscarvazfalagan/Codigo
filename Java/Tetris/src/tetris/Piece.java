@@ -86,8 +86,7 @@ public class Piece {
         }
         return canMove;
     }
-
-
+   
     /**
      * Move a ficha a abaixo se é posible
      *
