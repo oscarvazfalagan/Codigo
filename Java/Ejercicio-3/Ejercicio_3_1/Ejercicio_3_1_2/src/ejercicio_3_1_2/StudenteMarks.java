@@ -55,7 +55,7 @@ public class StudenteMarks {
     public String min() {
         int mark = Integer.MAX_VALUE;      //Cojo el valor maximo para que cualquier numero sea menor que el para comenzar
         String person = "";     //Declaro el string a fuera para introducirlo en el bucle
-        //El bucle for toma los valores de marks porque loa arrays tienen la misma longitud
+        //El bucle for toma los valores de marks porque los arrays tienen la misma longitud
         for (int i = 0; i < marks.length; i++) {
             if (marks[i] < mark) {
                 mark = marks[i];

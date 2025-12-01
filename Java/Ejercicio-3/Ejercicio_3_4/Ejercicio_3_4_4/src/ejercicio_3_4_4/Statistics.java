@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicio_3_1_3;
+package ejercicio_3_4_4;
 
 import java.util.Scanner;
 
@@ -34,11 +34,29 @@ public class Statistics {
      *
      * @param n numero de elementos del array numbers
      */
-
     public Statistics(int n) {
         // Si el numero es impar no deja continuar
         this.numbers = new int[n];
         getNumbers();
+    }
+
+    /**
+     * Metodo privado para ordenar el array se trata de un algoritmo de
+     * ordenamiento por insercion
+     */
+    private void sort() {
+        //El algoritmo de insercion se basa en recorrese el array haciendo comparaciones
+        //y introduciendo dicho numero en su lugar correspondiente,deteniendose si encuentra
+        //un numero menor que el posicionandose enfrente, si no sigue hasta el final del array
+        for (int i = 0; i < numbers.length; i++) {
+            int copyNumber = numbers[i];
+            int j = i;
+            while (j > 0 && copyNumber < numbers[j - 1]) {
+                numbers[j] = numbers[j - 1];
+                j--;
+            }
+            numbers[j] = copyNumber;
+        }
     }
 
     /**
@@ -48,29 +66,11 @@ public class Statistics {
      * @return mediana de los numeros del array numbers
      */
     public int median() {
-        int mediana = 0; // Declaro la variable mediana
-        boolean exit = false;
-        // Bucle doble para contar cuantos numeros son mayores y menores que el numero
-        // actual
-        for (int i = 0; i < numbers.length && !exit; i++) {
-            int contadorMin = 0; // Contador de numeros menores
-            int contadorMax = 0; // Contador de numeros mayores
-            for (int j = 0; j < numbers.length; j++) {
-                if (numbers[i] >= numbers[j]) {
-                    contadorMin = contadorMin + 1; // Incrementa cuando un numero es mayor
-                }
-                if (numbers[i] <= numbers[j]) {
-                    contadorMax = contadorMax + 1; // Incrementa cuando un numero es menot
-                }
-
-            }
-            // Si los contadores son iguales significa que el numero es la mediana
-            if (contadorMax >= numbers.length/2 && contadorMin >= numbers.length/2) {
-                mediana = numbers[i];
-                exit = true; // Salimos del bucle
-            }
-        }
-        return mediana;
+        int median = 0;//Establezemos la mediana a 0
+        sort();//Ordenamos el arrray
+        //La mediana es igual al numero del array que este en la mitad ya que esta ordenado
+        median = numbers[numbers.length/2];
+        return median;//Devuelve la mediana
     }
 
 }

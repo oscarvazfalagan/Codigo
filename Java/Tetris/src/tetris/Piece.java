@@ -23,6 +23,7 @@ import java.awt.Color;
  *
  * @author Profe de Programación
  */
+
 public class Piece {
 
     /**
@@ -55,7 +56,16 @@ public class Piece {
      * @return true se o movemento da ficha é posible, se non false
      */
     public boolean moveRight() {
-        return true;
+        int x = Math.max(Math.max(b.getX(), a.getX()),Math.max(c.getX(), d.getX()));
+        boolean canMove = false;
+        if(game.isValidPosition(x+20, 0)){
+            a.setX(a.getX()+20);
+            b.setX(b.getX()+20);
+            c.setX(c.getX()+20);
+            d.setX(d.getX()+20);
+            canMove=true;
+        }
+        return canMove;
     }
 
     /**
@@ -64,8 +74,19 @@ public class Piece {
      * @return true se o movemento da ficha é posible, se non false
      */
     public boolean moveLeft() {
-        return true;
+        //Le establecemos a x el valor mas pequeño que 
+        int x = Math.min(Math.min(b.getX(), a.getX()),Math.min(c.getX(), d.getX()));
+        boolean canMove = false;
+        if(game.isValidPosition(x-20, 0)){
+            a.setX(a.getX()-20);
+            b.setX(b.getX()-20);
+            c.setX(c.getX()-20);
+            d.setX(d.getX()-20);
+            canMove=true;
+        }
+        return canMove;
     }
+
 
     /**
      * Move a ficha a abaixo se é posible
@@ -73,7 +94,17 @@ public class Piece {
      * @return true se o movemento da ficha é posible, se non false
      */
     public boolean moveDown() {
-        return true;
+        //Le establecemos a y el valor mas pequeño que haya en los cuadrados
+        int y = Math.max(Math.max(b.getY(), a.getY()),Math.max(c.getY(), d.getY()));
+        boolean canMove = false;
+        if(game.isValidPosition(y+20, 0)){
+            a.setY(a.getY()+20);
+            b.setY(b.getY()+20);
+            c.setY(c.getY()+20);
+            d.setY(d.getY()+20);
+            canMove=true;
+        }
+        return canMove;
     }
 
     /**

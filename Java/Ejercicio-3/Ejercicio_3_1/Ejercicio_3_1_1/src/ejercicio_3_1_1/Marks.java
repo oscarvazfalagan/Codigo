@@ -3,46 +3,64 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ejercicio_3_1_1;
+
 import java.util.Scanner;
+
 /**
- *Clase Marks que contiene un array de 10 notas y metodos para obtener las notas y la media
+ * Clase Marks que contiene un array de 10 notas y metodos para obtener las
+ * notas y la media
+ * 
  * @author daw1al13
  */
 public class Marks {
-    //Añadimos el Scanner para leer por teclado
+    // Añadimos el Scanner para leer por teclado
     Scanner scan = new Scanner(System.in);
-    //Array de 10 notas
+    // Array de 10 notas
     private int marks[] = new int[10];
 
     /**
      * Metodo para obtener las notas con un bucle for
      */
-    private void getMarks(){
+    private void getMarks() {
+        //Pedimos al usuario que introduzca 10 notas
         System.out.println("Introduce 10 notas : ");
         System.out.println("---------------------");
-        for (int i=0; i<marks.length ; i++){
-            System.out.println("Introduce la nota " + (i+1) + " : ");
+        for (int i = 0; i < marks.length; i++) {
+            //El bucle va pasando por cada hueco del array y pide que le introduzcamos una nota
+            System.out.println("Introduce la nota " + (i + 1) + " : ");
             marks[i] = scan.nextInt();
-            
+
         }
     }
+
     /**
      * Constructor de la clase Marks que llama al metodo getMarks
+     * 
      * @return
      */
     public Marks() {
         getMarks();
     }
+
     /**
      * Metodo para calcular la media de las notas
+     * 
      * @return la media de las notas
      */
-    public double getAverage(){
+    public double getAverage() {
         Double average = 0.0;
-        for (int i=0; i<marks.length ; i++){
-            average += marks[i];
+        for (int mark : marks) {
+            //Recorre el bucle y hace un sumatorio de las notas
+            average += marks[mark];
         }
-        return average/10;
+        return average / 10; //Devuelve ese sumatorio /10 para dar la media
     }
-    
+    /**
+     * Metodo set para darle valores a marks
+     * @param marks 
+     */
+    public void setMarks(int[] marks) {
+        this.marks = marks;
+    }
+
 }
