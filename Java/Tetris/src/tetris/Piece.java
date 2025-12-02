@@ -45,9 +45,48 @@ public class Piece {
         this.game = game;
         a = new Square(Game.MAX_X / 2 - Game.SQUARE_SIDE, 0, Color.BLUE, game);
         b = new Square(Game.MAX_X / 2, 0, Color.BLUE, game);
-        c = new Square(Game.MAX_X / 2 - Game.SQUARE_SIDE, Game.SQUARE_SIDE,
-                Color.BLUE, game);
+        c = new Square(Game.MAX_X / 2 - Game.SQUARE_SIDE, Game.SQUARE_SIDE,Color.BLUE, game);
         d = new Square(Game.MAX_X / 2, Game.SQUARE_SIDE, Color.BLUE, game);
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Square getA() {
+        return a;
+    }
+
+    public void setA(Square a) {
+        this.a = a;
+    }
+
+    public Square getB() {
+        return b;
+    }
+
+    public void setB(Square b) {
+        this.b = b;
+    }
+
+    public Square getC() {
+        return c;
+    }
+
+    public void setC(Square c) {
+        this.c = c;
+    }
+
+    public Square getD() {
+        return d;
+    }
+
+    public void setD(Square d) {
+        this.d = d;
     }
 
     /**
@@ -97,7 +136,7 @@ public class Piece {
         //Le establecemos a y el valor mas pequeño que haya en los cuadrados
         int y = Math.max(Math.max(b.getY(), a.getY()),Math.max(c.getY(), d.getY()));
         boolean canMove = false;
-        if(game.isValidPosition(y+20, 0)){
+        if(game.isValidPosition(0, y + 20)){
             a.setY(a.getY()+20);
             b.setY(b.getY()+20);
             c.setY(c.getY()+20);

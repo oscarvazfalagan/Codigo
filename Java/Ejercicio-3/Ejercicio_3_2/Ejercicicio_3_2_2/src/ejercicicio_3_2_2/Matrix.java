@@ -14,13 +14,14 @@ import java.util.Scanner;
  */
 public class Matrix {
 
-    Scanner scan = new Scanner(System.in);// Objeto Scanner para entrada de datos
+   
     private int matrix[][] = new int[3][3];// Cada objeto sera una matriz 3x3
 
     /**
      * Metodo para obtener los numeros de la matriz con un scanner
      */
     public void obtainMatrix() {
+         Scanner scan = new Scanner(System.in);// Objeto Scanner para entrada de datos
         // Texto introductivo
         System.out.println("Vas a introduzir una matriz 3x3  : ");
         System.out.println("--------------------------------------------------------");
@@ -39,9 +40,9 @@ public class Matrix {
     public void showMatrix() {
         // Muestra los valores de la matriz asignados a cada posicion recoorriendo el
         // bucle
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + "    ");
+        for (int[] matrix1 : matrix) {
+            for (int j = 0; j < matrix1.length; j++) {
+                System.out.print(matrix1[j] + "    ");
             }
             System.out.println();
         }
