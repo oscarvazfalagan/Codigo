@@ -16,7 +16,7 @@
  */
 package tetris;
 
-import java.awt.Color;
+
 
 /**
  * Clase que implementa a peza cadrada do xogo do Tetris
@@ -83,6 +83,7 @@ public class Piece {
             c.setX(c.getX()-20);
             d.setX(d.getX()-20);
             canMove=true;
+            
         }
         return canMove;
     }
