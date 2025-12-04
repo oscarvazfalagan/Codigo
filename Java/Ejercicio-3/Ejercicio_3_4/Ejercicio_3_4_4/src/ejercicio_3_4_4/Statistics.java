@@ -39,7 +39,7 @@ public class Statistics {
         this.numbers = new int[n];
         getNumbers();
     }
-
+    
     /**
      * Metodo privado para ordenar el array se trata de un algoritmo de
      * ordenamiento por insercion
