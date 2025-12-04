@@ -14,15 +14,15 @@ import java.util.Scanner;
 public class Primitiva {
 
     //Atributos estaticos para establecer los valores maxmios
-    public static int TOTAL_NUMBERS = 6;
-    public static int MAX_NUMBER = 49;
-    public static int MAX_REFUND_NUMBER = 9;
+    public final static int TOTAL_NUMBERS = 6;
+    public final static int MAX_NUMBER = 49;
+    public final static int MAX_REFUND_NUMBER = 9;
     //Atributos que obtienen la fecha como day,month,year
     private int day;
     private int month;
     private int year;
     //Atributos que establecen Numeros premiados
-    private int winnerNumber[] = new int[6];
+    private int winnerNumber[] = new int[TOTAL_NUMBERS];
     private int winnerComplement;
     private int refundNumber;
 
@@ -155,7 +155,7 @@ public class Primitiva {
         Scanner scan = new Scanner(System.in);
         //Introducimos los valores del bolleto
         System.out.println("Vamos a hacer un boleto de primitiva");
-        int[] numbers = new int[6];
+        int[] numbers = new int[TOTAL_NUMBERS];
         int reintegro;
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("Introduze el numero " + (i + 1) + " :");
@@ -191,10 +191,10 @@ public class Primitiva {
         //Desde aqui muestra por pantalla las diferentes opciones
         if (Premied == 6){ //Con 6 premiados
             System.out.println(" 6 acertos. Premio de 500000€!");
-        }else if (Premied == 5){ //Con 5 premiados
-            System.out.println(" 5 acertos. Premio de 500€!");
-        }else if (Premied == 5 && complementaries){ //5 premiados + el complementario
+        }else if (Premied == 5 && complementaries){ //Con 5 premiados
             System.out.println("5 acertos mais o complementario. Premio de 10000€!");
+        }else if (Premied == 5 ){ //5 premiados + el complementario
+            System.out.println("5 acertos. Premio de 500€!");
         }else if (Premied == 4 && complementaries){ //4 mas el complementario
             System.out.println("4 acertos mais o complementario. Premio de 20€!");
         }else if (ticketReintegro == refundNumber){ // Comprueba el reintegro
