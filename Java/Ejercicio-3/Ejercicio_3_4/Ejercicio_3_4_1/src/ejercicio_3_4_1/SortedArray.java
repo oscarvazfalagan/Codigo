@@ -141,13 +141,15 @@ public class SortedArray {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        SortedArray array = new SortedArray();
+        SortedArray array = new SortedArray();//Creamos un objeto array
+        //Imprimimos los numeros sin ordenar
         System.out.println("Numeros sin ordenar :");
         array.show();
-
+        //Pregunta por un numero en el array
         System.out.println("Dime un numero a ver si esta en el array :");
         int numberToFound = scan.nextInt();
-        System.out.println("El resutado de que tu numero estaba en el array es : " + array.coontains(numberToFound));
+        System.out.println("El resutado de que tu numero estaba en el array es : " + array.coontains(numberToFound));//Muestra si el numero esta en el array
+        //Muestra los numeros ordenados porque como los busco los ordeno
         System.out.println("Numeros ordenados :");
         array.show();
 
