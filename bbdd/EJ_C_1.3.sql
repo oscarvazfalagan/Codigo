@@ -19,6 +19,10 @@ FROM empregado e
 WHERE (e.empDepartamento = 110 or e.empDepartamento =111);
 
 -- q3
-SELECT 
+SELECT count(e.empNumero) AS empleado_23
 FROM empregado e 
-WHERE 
+WHERE (YEAR(CURDATE())-YEAR(e.empDataIngreso)) = 23; 
+
+-- q4
+SELECT 
+FROM 
