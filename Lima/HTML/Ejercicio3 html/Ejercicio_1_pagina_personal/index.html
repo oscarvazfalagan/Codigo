@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Pagina personal basica</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <header>
+        <h1>Óscar vaz Falagán</h1>
+        <hr>
+        <nav>
+            <ul style="display: flex; gap: 2rem;">
+                <li><a href="#Sobre mi">Sobre mi</a></li>
+                <li><a href="#Habilidades">Habilidades</a></li>
+                <li><a href="#Proyectos">Proyectos</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="Sobre mi">
+            <h2>Sobre mi :</h2>
+            <p>
+                Mi nombre es <strong>Oscar vaz falagan</strong> en el futuro me gustaria ser desarollador<br>
+                para eso estudio el ciclo superior de desarollo web en as neves
+            </p>
+            <figure>
+                <img src="./assets/images/xpWfz7bc_400x400.jpg" width="200"></img>
+            </figure>
+        </section>
+        <section id="Habilidades">
+            <h2>Habilidades :</h2>
+            <p>
+                Me considero una persona que no tiene altas capacidades pero<br>
+                que las compenso atraves de <em>esfuerzo y constancia</em>
+            </p>
+        </section>
+        <section id="Proyectos">
+            <h2>Proyectos :</h2>
+            <a href="https://github.com/araceliponce-es/projects"><h3>Git hub de los proyectos</h3></a>
+            <p>
+            <ol>
+                <li>
+                    <h3>Tetris</h3>
+                    <p>
+                        El tetris es un proyecto que pone a prueba tu manejo de las clases y los objetos es ideal para
+                        comenzar
+                    </p>
+                    <a href="./assets/documents/Tetris.pdf"><i>Documentacion Tetris</i></strong></a>
+                </li>
+
+                <li>
+                    <h3>Ahorcado</h3>
+                    <p>
+                        El ahorcado es un proyecto ideal para programar con listas/arrays este te fuerza usarlos ademas
+                        de una pequeña base de datos
+                    </p>
+                    <a href="./assets/documents/Ahorcado.pdf"><i>Documentacion Ahorcado</i></strong></a>
+                </li>
+                <li>
+                    <h3>Tacebook</h3>
+                    <p>
+                        El proyecto mas grande este combina todas las caracteristicas de los anteriores junto con algo
+                        de diseño de interfaz
+                    </p>
+                    <a href="./assets/documents/Tacebook.pdf"><i>Documentacion Tacebook</i></strong></a>
+                </li>
+            </ol>
+            </p>
+        </section>
+        <section id="Contacto">
+            <h2>Contacto :</h2>
+            <form>
+                <fieldset>
+                    <legend>Introduzca sus datos personales para ponerse en contacto conmigo</legend>
+                    <label for="Correo">Correo : </label><input type="text" id="Correo" />
+                    <br>
+                    <p>Mensaje :</p>
+                    <label for="user_message"></label><textarea type="text" id="user_message"></textarea>
+                    <br>
+                    <br>
+                    <button>ENVIAR</button>
+                </fieldset>
+            </form>
+
+        </section>
+    </main>
+    <footer>
+        <p>Hecho por <em>Oscar Vaz Falagan</em></p>
+        <p>
+        <blockquote><mark>Insertar frase inspiradora</mark></blockquote>
+        </p>
+    </footer>
+</body>
+
+</html>
