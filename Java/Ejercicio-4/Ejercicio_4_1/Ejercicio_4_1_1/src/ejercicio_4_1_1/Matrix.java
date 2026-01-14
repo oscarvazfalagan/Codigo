@@ -35,7 +35,7 @@ public class Matrix {
      * @param defaultValues
      */
     public Matrix(boolean defaultValues) {
-        if (defaultValues) {
+       if (defaultValues) {
             for (int i = 0; i < values.length; i++) {
                 for (int j = 0; j < values[i].length; j++) {
                     values[i][j] = i + j;
