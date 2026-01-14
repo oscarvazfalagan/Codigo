@@ -5,10 +5,11 @@
 package ejercicio_4_1_2;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- *
+ * Implementa la clase abstracta teacher que le da valores al resto de clases
  * @author daw1al13
  */
 public abstract class Teacher {
@@ -120,49 +121,45 @@ public abstract class Teacher {
     }
 
     /**
+     * Constructor teacher que establece los valores del nombre,apellidos,direccion y salario base
+     * @param name
+     * @param surname
+     * @param address
+     * @param baseSalary 
+     */
+    public Teacher(String name, String surname, String address, double baseSalary) {
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.baseSalary = baseSalary;
+    }
+
+    /**
      * Metodo main en el que crea tres objetos profesores de distintas clases y los prueba
      * @param args
      */
     public static void main(String[] args) {
         //Crea los objetos
-        CareerOfficer oficer = new CareerOfficer();
-        Interim interin = new Interim();
-        Substitute substitute = new Substitute();
+        CareerOfficer oficer = new CareerOfficer(300,14,"Segundo","Laura","Pedregal","Lugo",1800);
+        Interim interin = new Interim(200,"Pazo da Merce","Ramon","Perez","Pontevedra",1700);
+        Calendar gc = new GregorianCalendar(2025, 12, 06);
+        Substitute substitute = new Substitute(100, gc.getTime(),"Fernando","Pedregal","A coruña",1600);
 
-        //Officer establece los valores
-        oficer.setName("Laura");
-        oficer.setAddress("Lugo");
-        oficer.setOfficerComplement(300);
-        oficer.setOppositionPlace("Segundo");
-        oficer.setSurname("Pedregal");
-        oficer.setBaseSalary(1800);
+        //Officer establece los valores de salary
         oficer.generatePayroll();
         System.out.println("Chámome " + oficer.getName() + " e o meu salario é de " + oficer.getSalary() + "$");
-
         oficer.teach();
 
-        //Interim establece los valores
-        interin.setName("Ramon");
-        interin.setAddress("Pontevedra");
-        interin.setSurname("Fenal");
-        interin.setBaseSalary(1700);
-        interin.setDestination("Honduras");
-        interin.setInterimComplement(200);
+        //Interim establece los valores de salary 
         interin.generatePayroll();
         System.out.println("Chámome " + interin.getName() + " e o meu salario é de " + interin.getSalary() + "$");
         interin.teach();
 
-        //Substitute establece los valores
-        substitute.setName("Fernando");
-        substitute.setAddress("Lugo");
-        substitute.setSurname("Pedregal");
-        substitute.setBaseSalary(1600);
-        substitute.setDisplacement(100);
-        Calendar gc = new GregorianCalendar(2025, 12, 06);
-        substitute.setIntiDate(gc.getTime());
+        //Substitute establce los valores de salary
         substitute.generatePayroll();
         System.out.println("Chámome " + substitute.getName() + " e o meu salario é de " + substitute.getSalary() + "$");
         substitute.teach();
     }
+    
 
 }

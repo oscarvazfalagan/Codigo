@@ -7,7 +7,7 @@ package ejercicio_4_1_2;
 import java.util.Date;
 
 /**
- *
+ * Subclase de Teacher que establece los valores de la propia clase Substitute
  * @author daw1al13
  */
 public class Substitute extends Teacher {
@@ -16,15 +16,15 @@ public class Substitute extends Teacher {
     private java.util.Date intiDate;
 
     /**
-     *
-     * @return
+     * Metodo que obtiene los valores de displacement
+     * @return displacement
      */
     public double getDisplacement() {
         return displacement;
     }
 
     /**
-     *
+     * Metodo que establece los valores de displacement
      * @param displacement
      */
     public void setDisplacement(double displacement) {
@@ -32,15 +32,15 @@ public class Substitute extends Teacher {
     }
 
     /**
-     *
-     * @return
+     * Metodo que obtiene los valores de intiDate
+     * @return initDate
      */
     public Date getIntiDate() {
         return intiDate;
     }
 
     /**
-     *
+     * Metodo que establece los valores de displacement
      * @param intiDate
      */
     public void setIntiDate(Date intiDate) {
@@ -48,7 +48,7 @@ public class Substitute extends Teacher {
     }
 
     /**
-     *
+     * s
      */
     @Override
     public void generatePayroll() {
@@ -56,11 +56,26 @@ public class Substitute extends Teacher {
     }
 
     /**
-     *
+     * Metodo abstracto que sobrescribe el metodo teach para mostrar por pantalla un mensaje
      */
     @Override
     public void teach() {
         System.out.println("Substitúo unha clase de programación en Java");
+    }
+    
+    /**
+     * Constructor que establece los valores de la superclase ademas de los propios valores de la clase 
+     * @param displacement
+     * @param intiDate
+     * @param name
+     * @param surname
+     * @param address
+     * @param baseSalary 
+     */
+    public Substitute(double displacement, Date intiDate, String name, String surname, String address, double baseSalary) {
+        super(name, surname, address, baseSalary);
+        this.displacement = displacement;
+        this.intiDate = intiDate;
     }
 
 

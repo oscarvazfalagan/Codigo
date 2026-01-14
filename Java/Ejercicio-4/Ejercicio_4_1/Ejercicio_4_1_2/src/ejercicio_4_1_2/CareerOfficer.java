@@ -69,6 +69,22 @@ public class CareerOfficer extends Teacher {
     public void setOppositionPlace(String oppositionPlace) {
         this.oppositionPlace = oppositionPlace;
     }
+    /**
+     * Constructor que establece los valores de la superclase ademas de los propios valores de la clase 
+     * @param officerComplement
+     * @param oppositionYear
+     * @param oppositionPlace
+     * @param name
+     * @param surname
+     * @param address
+     * @param baseSalary 
+     */
+    public CareerOfficer(double officerComplement, int oppositionYear, String oppositionPlace, String name, String surname, String address, double baseSalary) {
+        super(name, surname, address, baseSalary);
+        this.officerComplement = officerComplement;
+        this.oppositionYear = oppositionYear;
+        this.oppositionPlace = oppositionPlace;
+    }
     
     
     
