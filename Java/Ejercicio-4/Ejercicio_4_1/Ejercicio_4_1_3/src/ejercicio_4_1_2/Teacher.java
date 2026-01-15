@@ -160,6 +160,6 @@ public abstract class Teacher {
         System.out.println("Chámome " + substitute.getName() + " e o meu salario é de " + substitute.getSalary() + "$");
         substitute.teach();
     }
-    
+
 
 }
