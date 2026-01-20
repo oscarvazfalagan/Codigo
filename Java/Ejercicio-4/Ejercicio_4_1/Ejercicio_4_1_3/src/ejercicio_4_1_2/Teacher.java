@@ -134,32 +134,4 @@ public abstract class Teacher {
         this.baseSalary = baseSalary;
     }
 
-    /**
-     * Metodo main en el que crea tres objetos profesores de distintas clases y los prueba
-     * @param args
-     */
-    public static void main(String[] args) {
-        //Crea los objetos
-        CareerOfficer oficer = new CareerOfficer(300,14,"Segundo","Laura","Pedregal","Lugo",1800);
-        Interim interin = new Interim(200,"Pazo da Merce","Ramon","Perez","Pontevedra",1700);
-        Calendar gc = new GregorianCalendar(2025, 12, 06);
-        Substitute substitute = new Substitute(100, gc.getTime(),"Fernando","Pedregal","A coruña",1600);
-
-        //Officer establece los valores de salary
-        oficer.generatePayroll();
-        System.out.println("Chámome " + oficer.getName() + " e o meu salario é de " + oficer.getSalary() + "$");
-        oficer.teach();
-
-        //Interim establece los valores de salary 
-        interin.generatePayroll();
-        System.out.println("Chámome " + interin.getName() + " e o meu salario é de " + interin.getSalary() + "$");
-        interin.teach();
-
-        //Substitute establce los valores de salary
-        substitute.generatePayroll();
-        System.out.println("Chámome " + substitute.getName() + " e o meu salario é de " + substitute.getSalary() + "$");
-        substitute.teach();
-    }
-
-
 }
