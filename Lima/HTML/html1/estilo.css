@@ -1,3 +1,16 @@
 h3{
-    color: rgb(0, 0, 0);
+    color: rgb(44, 175, 207);
+    font-style: italic;
+    background-color: aqua;
+    border: 20px solid red;
+
+}
+h4{
+    color: pink;
+    font-size: 2em;
+}
+p.OSTION{
+    font-size: 3em;
+    font-style: oblique;
+    color: red;
 }
