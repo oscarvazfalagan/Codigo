@@ -11,5 +11,26 @@ package ejercicio_4_3_3;
 public abstract class Device {
     protected int Consumption;
     protected double price;
+
+    public Device(int Consumption, double price) {
+        this.Consumption = Consumption;
+        this.price = price;
+    }
+
+    public int getConsumption() {
+        return Consumption;
+    }
+
+    public void setConsumption(int Consumption) {
+        this.Consumption = Consumption;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
     
 }
