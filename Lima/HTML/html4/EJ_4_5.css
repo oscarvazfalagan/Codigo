@@ -1,0 +1,10 @@
+a[target="_blank"]{
+    font-style: inherit;
+    color: green;
+}
+a[href$=".pdf"]{
+    color: red;
+}
+a[href^="https://"]::before{
+    content: " 🔒";
+}

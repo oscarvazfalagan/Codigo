@@ -1,0 +1,9 @@
+.nova a{
+    color: red;
+}
+.nova > p{
+    color: green;
+}
+footer a{
+    color: blueviolet;
+}

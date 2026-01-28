@@ -1,0 +1,14 @@
+#titulo-principal{
+    text-transform: uppercase;
+    background-color: aqua;
+}
+.destacado{
+    background-color: yellow;
+    font-weight: bold;
+}
+.produto{
+    color: crimson;
+}
+.produto.novo{
+    color: blueviolet;
+}
