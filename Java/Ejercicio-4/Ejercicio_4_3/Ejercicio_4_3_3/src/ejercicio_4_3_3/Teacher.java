@@ -12,6 +12,27 @@ public class Teacher extends Person {
     private String office;
     private String email;
 
+    public Teacher(String office, String email) {
+        this.office = office;
+        this.email = email;
+    }
+
+    public String getOffice() {
+        return office;
+    }
+
+    public void setOffice(String office) {
+        this.office = office;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
    
     
     

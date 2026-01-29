@@ -14,25 +14,22 @@ public abstract class Person {
     protected int age;
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
-    public void setAge(int Age) {
-        this.Age = Age;
+    public void setAge(int age) {
+        this.age = age;
     }
+
     
-    public Person(String Name, int Age) {
-        this.Name = Name;
-        this.Age = Age;
-    }
     
     
 
