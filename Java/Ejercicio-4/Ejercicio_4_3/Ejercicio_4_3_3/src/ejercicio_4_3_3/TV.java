@@ -9,21 +9,21 @@ package ejercicio_4_3_3;
  * @author daw1al13
  */
 public class TV extends Device {
-    private boolean Teletext;
+    private boolean teletext;
     private double inchees;
 
-    public TV(boolean Teletext, double inchees, int Consumption, double price) {
-        super(Consumption, price);
-        this.Teletext = Teletext;
+    public TV(boolean teletext, double inchees, int consumption, double price) {
+        super(consumption, price);
+        this.teletext = teletext;
         this.inchees = inchees;
     }
 
     public boolean isTeletext() {
-        return Teletext;
+        return teletext;
     }
 
-    public void setTeletext(boolean Teletext) {
-        this.Teletext = Teletext;
+    public void setTeletext(boolean teletext) {
+        this.teletext = teletext;
     }
 
     public double getInchees() {
@@ -33,5 +33,6 @@ public class TV extends Device {
     public void setInchees(double inchees) {
         this.inchees = inchees;
     }
+
     
 }

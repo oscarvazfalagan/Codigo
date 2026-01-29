@@ -9,29 +9,29 @@ package ejercicio_4_3_3;
  * @author daw1al13
  */
 public class Concierge extends Person {
-    private String Turn;
-    private String Seniority;
+    private String turn;
+    private String seniority;
 
     public String getTurn() {
-        return Turn;
+        return turn;
     }
 
-    public void setTurn(String Turn) {
-        this.Turn = Turn;
+    public void setTurn(String turn) {
+        this.turn = turn;
     }
 
     public String getSeniority() {
-        return Seniority;
+        return seniority;
     }
 
-    public void setSeniority(String Seniority) {
-        this.Seniority = Seniority;
+    public void setSeniority(String seniority) {
+        this.seniority = seniority;
     }
 
-    public Concierge(String Turn, String Seniority, String Name, int Age) {
-        super(Name, Age);
-        this.Turn = Turn;
-        this.Seniority = Seniority;
+    public Concierge(String turn, String seniority) {
+        this.turn = turn;
+        this.seniority = seniority;
     }
-    
+
+ 
 }

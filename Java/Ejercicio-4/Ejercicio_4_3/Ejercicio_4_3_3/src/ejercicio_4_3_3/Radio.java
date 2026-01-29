@@ -9,29 +9,30 @@ package ejercicio_4_3_3;
  * @author daw1al13
  */
 public class Radio extends Device {
-    private boolean Casette;
+    private boolean casette;
     private int power;
 
     public boolean isCasette() {
-        return Casette;
+        return casette;
     }
 
-    public void setCasette(boolean Casette) {
-        this.Casette = Casette;
+    public void setCasette(boolean casette) {
+        this.casette = casette;
     }
 
     public int getPower() {
         return power;
     }
 
-    public void setPower(int power) {
+   public void setPower(int power) {
         this.power = power;
     }
 
-    public Radio(boolean Casette, int power, int Consumption, double price) {
-        super(Consumption, price);
-        this.Casette = Casette;
+    public Radio(boolean casette, int power, int consumption, double price) {
+        super(consumption, price);
+        this.casette = casette;
         this.power = power;
     }
+
     
 }

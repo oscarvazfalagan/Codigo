@@ -10,8 +10,8 @@ package ejercicio_4_3_3;
  */
 public abstract class Person {
     
-    protected String Name;
-    protected int Age;
+    protected String name;
+    protected int age;
 
     public String getName() {
         return Name;

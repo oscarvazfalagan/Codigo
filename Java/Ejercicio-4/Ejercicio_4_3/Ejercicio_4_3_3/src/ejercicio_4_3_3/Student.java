@@ -10,32 +10,29 @@ package ejercicio_4_3_3;
  */
 public class Student extends Person {
 
-    private String Career;
-    private int Course;
+    private String career;
+    private int course;
 
-    public Student(String Career, int Course, String Name, int Age) {
-        super(Name, Age);
-        this.Career = Career;
-        this.Course = Course;
+    public Student(String career, int course) {
+        this.career = career;
+        this.course = course;
     }
 
     public String getCareer() {
-        return Career;
+        return career;
     }
 
-    public void setCareer(String Career) {
-        this.Career = Career;
+    public void setCareer(String career) {
+        this.career = career;
     }
 
     public int getCourse() {
-        return Course;
+        return course;
     }
 
-    public void setCourse(int Course) {
-        this.Course = Course;
+    public void setCourse(int course) {
+        this.course = course;
     }
-
-
-    
     
 }
+   
