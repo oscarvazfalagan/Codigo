@@ -5,12 +5,19 @@
 package ejercicio_4_3_3;
 
 /**
- *
+ * Clase Abstracta que genera los metodos y atributos de un dispositivo
  * @author daw1al13
  */
 public abstract class Device {
+    //Atributos que heredan todos los dispositivos
     protected int consumption;
+    protected double price;
 
+    /**
+     * Constructor de la clase Device que usa sus atributos para construir un objeo dispositivos
+     * @param consumption
+     * @param price 
+     */
     public Device(int consumption, double price) {
         this.consumption = consumption;
         this.price = price;
@@ -31,8 +38,7 @@ public abstract class Device {
     public void setPrice(double price) {
         this.price = price;
     }
-    protected double price;
-
+    
 
     
 }

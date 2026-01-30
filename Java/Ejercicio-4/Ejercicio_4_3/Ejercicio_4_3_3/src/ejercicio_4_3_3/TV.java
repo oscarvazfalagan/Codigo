@@ -8,7 +8,8 @@ package ejercicio_4_3_3;
  *
  * @author daw1al13
  */
-public class TV extends Device {
+public class TV extends Device implements Speaker{
+
     private boolean teletext;
     private double inchees;
 
@@ -34,5 +35,17 @@ public class TV extends Device {
         this.inchees = inchees;
     }
 
-    
+    @Override
+    public void speak() {
+        String teleTextRes = "Si";
+        if (!this.teletext) {
+            teleTextRes = "No";
+        }
+        System.out.println("Ola, son unha Tv e sei falar.");
+        System.out.print("Consumo : " + this.consumption);
+        System.out.println("  Teletext : " + teleTextRes);
+        System.out.print("Precio : " + this.price);
+        System.out.println("  Pulgadas : " + this.inchees);
+        System.out.println("");
+    }
 }

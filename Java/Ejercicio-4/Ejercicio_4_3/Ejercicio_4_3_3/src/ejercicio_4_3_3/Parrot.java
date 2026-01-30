@@ -8,7 +8,8 @@ package ejercicio_4_3_3;
  *
  * @author daw1al13
  */
-public class Parrot extends Bird {
+public class Parrot extends Bird implements Speaker{
+
     private String region;
     private String color;
 
@@ -33,6 +34,17 @@ public class Parrot extends Bird {
         this.region = region;
         this.color = color;
     }
-    
+    /**
+     * Metodo sobre escrito que expresa los valores de un loro
+     */
+    @Override
+    public void speak() {
+        System.out.println("Ola, son un Loro e sei falar.");
+        System.out.print("Sexo : " + this.sex);
+        System.out.println("  Region : " + this.region);
+        System.out.print("Edad : " + this.age);
+        System.out.println("  Color : " + this.color);
+        System.out.println("");
+    }
 
 }

@@ -5,7 +5,7 @@
 package ejercicio_4_3_3;
 
 /**
- *
+ * Clase Abstracta que genera los metodos y atributos de una persona
  * @author daw1al13
  */
 public abstract class Person {
@@ -26,6 +26,11 @@ public abstract class Person {
     }
 
     public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 

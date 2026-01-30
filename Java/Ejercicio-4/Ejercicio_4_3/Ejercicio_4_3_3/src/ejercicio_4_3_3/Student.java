@@ -8,12 +8,13 @@ package ejercicio_4_3_3;
  *
  * @author daw1al13
  */
-public class Student extends Person {
+public class Student extends Person implements Speaker {
 
     private String career;
     private int course;
 
-    public Student(String career, int course) {
+    public Student(String career, int course, String name, int age) {
+        super(name, age);
         this.career = career;
         this.course = course;
     }
@@ -34,5 +35,18 @@ public class Student extends Person {
         this.course = course;
     }
     
+    /**
+     * Metodo sobre escrito que expresa los valores de un estudiante
+     */
+    @Override
+    public void speak() {
+        System.out.println("Ola, son un Estudiante e sei falar.");
+        System.out.print("Nombre : " + this.name);
+        System.out.println("  Carrera : " + this.career);
+        System.out.print("Edad : " + this.age);
+        System.out.println("  Curso : " + this.course);
+        System.out.println("");
+
+    }
+
 }
-   
