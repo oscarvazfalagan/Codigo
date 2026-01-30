@@ -9,10 +9,16 @@ package ejercicio_4_3_3;
  * @author daw1al13
  */
 public class Student extends Person implements Speaker {
-
+    //Atributos privados de la clase Student
     private String career;
     private int course;
-
+    /**
+     * 
+     * @param career
+     * @param course
+     * @param name
+     * @param age 
+     */
     public Student(String career, int course, String name, int age) {
         super(name, age);
         this.career = career;
