@@ -20,7 +20,7 @@ public class Canary extends Bird {
      * @param age 
      */
     public Canary(String sing, String Sex, int age) {
-        super(Sex, age);
+//        super(Sex, age);
         this.sing = sing;
     }
     

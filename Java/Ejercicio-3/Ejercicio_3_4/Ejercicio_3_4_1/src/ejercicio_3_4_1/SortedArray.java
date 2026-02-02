@@ -17,17 +17,19 @@ public class SortedArray {
     //Atributos 
     private int numbers[] = new int[6];//Array de numeros
     private boolean sorted = false;//Booleano para comprobar si esta sorteado
-    
+
     /**
      * Meto set para establecer valores al atributo sot
-     * @param sorted 
+     *
+     * @param sorted
      */
     public void setSorted(boolean sorted) {
         this.sorted = sorted;
     }
-    
+
     /**
      * Metodo get para obtener los valores del atributo sorted
+     *
      * @return sorted
      */
     public boolean isSorted() {
@@ -51,7 +53,7 @@ public class SortedArray {
     public void setNumbers(int[] numbers) {
         this.numbers = numbers;
     }
-    
+
     /**
      * Metodo sort se basa en ordenar el array atraves del algoritmo Bubble sort
      */
@@ -72,9 +74,10 @@ public class SortedArray {
         //Una vez termina el proceso se da el array como ordenado
         this.sorted = true;
     }
-        
+
     /**
-     * Metodo para obetener los 6 numeros del array se usa dentro del constructor
+     * Metodo para obetener los 6 numeros del array se usa dentro del
+     * constructor
      */
     private void obtainNumbers() {
         //Scanner
@@ -87,27 +90,37 @@ public class SortedArray {
             this.numbers[i] = scan.nextInt();
         }
     }
+
     /**
-     * Constructor de la clase SortedArray que utiliza un metodo para pedir los numeros
+     * Constructor de la clase SortedArray que utiliza un metodo para pedir los
+     * numeros
      */
     public SortedArray() {
         obtainNumbers();
     }
+
     /**
      * Un metodo que imprime los numeros que tiene el array
      */
-    private void show() {
-        for (int number : numbers) {
-            System.out.print(number + " ");
+    private void show() throws ArrayIndexOutOfBoundsException {
+       
+        for (int i = 0; i <= numbers.length; i++) {
+            if(i>=numbers.length){
+                throw new ArrayIndexOutOfBoundsException("ERROR te saliste del array");
+            }
+            System.out.println(numbers[i] + "");
+            
         }
         System.out.println();
     }
 
     /**
-     * El metodo comprueba si esta ordenado si no esta ordenado lo ordena una vez hay,
-     * usa un algoritmo de busqueda dicotomica para encontrar el numero que le has introducido al metodo
+     * El metodo comprueba si esta ordenado si no esta ordenado lo ordena una
+     * vez hay, usa un algoritmo de busqueda dicotomica para encontrar el numero
+     * que le has introducido al metodo
+     *
      * @param numeroBuscado
-     * @return 
+     * @return
      */
     public boolean coontains(int numeroBuscado) {
         //Comprueba si el array esta ordenado
@@ -125,7 +138,7 @@ public class SortedArray {
         //numeros el ciclo se terminara
         while (limiteInferior <= limiteSuperior && !found) {
             //El indice es el numero del medio
-            indice = limiteInferior + (limiteSuperior-limiteInferior) / 2;
+            indice = limiteInferior + (limiteSuperior - limiteInferior) / 2;
             //Si el numero es el indice numero encontrado
             if (numbers[indice] == numeroBuscado) {
                 found = true;//Le da valor a found y sale del bucle
@@ -140,18 +153,24 @@ public class SortedArray {
     }
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        SortedArray array = new SortedArray();//Creamos un objeto array
-        //Imprimimos los numeros sin ordenar
-        System.out.println("Numeros sin ordenar :");
-        array.show();
-        //Pregunta por un numero en el array
-        System.out.println("Dime un numero a ver si esta en el array :");
-        int numberToFound = scan.nextInt();
-        System.out.println("El resutado de que tu numero estaba en el array es : " + array.coontains(numberToFound));//Muestra si el numero esta en el array
-        //Muestra los numeros ordenados porque como los busco los ordeno
-        System.out.println("Numeros ordenados :");
-        array.show();
-
+         
+        try {
+            Scanner scan = new Scanner(System.in);
+            SortedArray array = new SortedArray();//Creamos un objeto array
+            assert array.numbers.length != 6;
+             System.out.println("O array debe ter 6 elementos!");
+            //Imprimimos los numeros sin ordenar
+            System.out.println("Numeros sin ordenar :");
+            array.show();
+            //Pregunta por un numero en el array
+            System.out.println("Dime un numero a ver si esta en el array :");
+            int numberToFound = scan.nextInt();
+            System.out.println("El resutado de que tu numero estaba en el array es : " + array.coontains(numberToFound));//Muestra si el numero esta en el array
+            //Muestra los numeros ordenados porque como los busco los ordeno
+            System.out.println("Numeros ordenados :");
+            array.show();
+        } catch (ArrayIndexOutOfBoundsException Aex) {
+            System.out.println(Aex.getMessage());
+        }
     }
 }
