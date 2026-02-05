@@ -1,0 +1,20 @@
+.info{
+    color: rgb(66, 201, 201);
+    border: 2px solid rgb(66, 201, 201);
+    padding: 2rem;
+    margin: 1rem;
+}
+.aviso{
+    color: rgb(199, 4, 206);
+    background-color: yellow;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.erro{
+    background-color: rgb(255, 0, 0);
+    opacity: 0.7;
+    padding: 2rem;
+    margin: 1rem;
+    color:white
+}
