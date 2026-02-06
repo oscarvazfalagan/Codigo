@@ -1,5 +1,27 @@
-.xeral{
-    background-color: white;
+.tarxeta{
+    background-color: rgb(93, 250, 93);
     border-radius: 1rem;
-    box-shadow: ;
+    box-shadow: 0 2rem 14px rgba(18, 131, 151, 0.6);
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.asir{
+    background-color: rgb(250, 186, 114);
+}
+.daw{
+    background-color: rgb(68, 243, 121);
+}
+.dam{
+    background-color: cornflowerblue;
+}
+
+.tarxeta.asir h2{
+    color :rgb(107, 16, 6);
+}
+.tarxeta.daw h2{
+    color :rgb(0, 121, 90);
+}
+.tarxeta.dam h2{
+    color :rgb(49, 0, 165);
 }
