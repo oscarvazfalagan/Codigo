@@ -1,0 +1,22 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.slogan{
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.codigo{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

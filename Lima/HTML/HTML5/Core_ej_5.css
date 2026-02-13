@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+}
+
+.intro{
+    font-size: 18px;
+    color: blueviolet;
+}
+.cita{
+    text-align: center;
+    font-style: italic;
+    border-left: 10px solid black;
+}
+.ligazon{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
