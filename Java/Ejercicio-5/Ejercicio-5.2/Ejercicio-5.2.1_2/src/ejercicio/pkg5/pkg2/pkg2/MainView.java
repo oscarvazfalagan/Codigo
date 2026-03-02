@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ejercicio.pkg5.pkg2.pkg1;
+package ejercicio.pkg5.pkg2.pkg2;
 
 import javax.swing.JOptionPane;
 
@@ -11,10 +11,11 @@ import javax.swing.JOptionPane;
  * @author daw1al13
  */
 public class MainView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainView.class.getName());
-    private String soundAnimal;
-    private String animal;
+    private String soundAnimal = "";
+    private String animal = "";
+
     /**
      * Creates new form MainView
      */
@@ -31,45 +32,17 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Animals = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        JRBCan = new javax.swing.JRadioButton();
-        JRBGato = new javax.swing.JRadioButton();
-        jRBGalo = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jCB_Can = new javax.swing.JCheckBox();
+        jCB_Cat = new javax.swing.JCheckBox();
+        jCB_Galo = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Animales Falantes");
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
-
-        Animals.add(JRBCan);
-        JRBCan.setText("Can");
-        JRBCan.setPreferredSize(new java.awt.Dimension(130, 30));
-        JRBCan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBCanActionPerformed(evt);
-            }
-        });
-
-        Animals.add(JRBGato);
-        JRBGato.setText("Gato");
-        JRBGato.setPreferredSize(new java.awt.Dimension(130, 30));
-        JRBGato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBGatoActionPerformed(evt);
-            }
-        });
-
-        Animals.add(jRBGalo);
-        jRBGalo.setText("Galo");
-        jRBGalo.setPreferredSize(new java.awt.Dimension(130, 30));
-        jRBGalo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRBGaloActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Escolle o animal que queres que fale:");
 
@@ -80,75 +53,80 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        jCB_Can.setText("Can");
+
+        jCB_Cat.setText("Gato");
+
+        jCB_Galo.setText("Galo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JRBGato, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addComponent(JRBCan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRBGalo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jCB_Cat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCB_Galo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCB_Can, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JRBCan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JRBGato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jRBGalo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jCB_Can)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCB_Cat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCB_Galo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGap(72, 72, 72))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JRBCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBCanActionPerformed
-        animal = "Perro";
-        soundAnimal = "Guau";
-    }//GEN-LAST:event_JRBCanActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        if (animal !=null){
-        JOptionPane.showMessageDialog(this, "Hola son o "+animal+" e saludoche con un : "+soundAnimal,"Mensaxe dos animais",JOptionPane.PLAIN_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Tes que selecionar un animal","Error 305",JOptionPane.ERROR_MESSAGE);
+        String MensaxeAnimais = "";
+        if (jCB_Can.isSelected()) {
+            animal = "Perro";
+            soundAnimal ="Guau";
+            MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
+         if (jCB_Cat.isSelected()) {
+            animal = "Gato";
+            soundAnimal ="Miau";
+            MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
+        }
+        if (jCB_Galo.isSelected()) {
+            animal = "Galo";
+            soundAnimal = "Kikiriki";
+            MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
+        }
+
+ 
+        if (animal != "") {
+            JOptionPane.showMessageDialog(this, MensaxeAnimais, "Mensaxe dos animais", JOptionPane.PLAIN_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Tes que selecionar un animal", "Error 305", JOptionPane.ERROR_MESSAGE);
+        }
+        animal = "";
+        soundAnimal="";
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void JRBGatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBGatoActionPerformed
-        animal = "Gato";
-        soundAnimal = "Miau";
-    }//GEN-LAST:event_JRBGatoActionPerformed
-
-    private void jRBGaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBGaloActionPerformed
-        animal = "Galo";
-        soundAnimal = "kikiriki";
-    }//GEN-LAST:event_jRBGaloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,12 +154,11 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup Animals;
-    private javax.swing.JRadioButton JRBCan;
-    private javax.swing.JRadioButton JRBGato;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCB_Can;
+    private javax.swing.JCheckBox jCB_Cat;
+    private javax.swing.JCheckBox jCB_Galo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRBGalo;
     // End of variables declaration//GEN-END:variables
 }

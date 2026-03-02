@@ -11,10 +11,11 @@ import javax.swing.JOptionPane;
  * @author daw1al13
  */
 public class MainView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainView.class.getName());
     private String soundAnimal;
     private String animal;
+
     /**
      * Creates new form MainView
      */
@@ -47,20 +48,10 @@ public class MainView extends javax.swing.JFrame {
         Animals.add(JRBCan);
         JRBCan.setText("Can");
         JRBCan.setPreferredSize(new java.awt.Dimension(130, 30));
-        JRBCan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBCanActionPerformed(evt);
-            }
-        });
 
         Animals.add(JRBGato);
         JRBGato.setText("Gato");
         JRBGato.setPreferredSize(new java.awt.Dimension(130, 30));
-        JRBGato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBGatoActionPerformed(evt);
-            }
-        });
 
         Animals.add(jRBGalo);
         jRBGalo.setText("Galo");
@@ -105,9 +96,9 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(JRBCan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JRBGato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRBGalo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jButton1)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
@@ -126,28 +117,27 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JRBCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBCanActionPerformed
-        animal = "Perro";
-        soundAnimal = "Guau";
-    }//GEN-LAST:event_JRBCanActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (JRBCan.isSelected()) {
+            animal = "Perro";
+            soundAnimal = "Guau";
+        } else if (JRBGato.isSelected()) {
+            animal = "Gato";
+            soundAnimal = "Miau";
+        } else if (jRBGalo.isSelected()) {
+            animal = "Galo";
+            soundAnimal = "kikiriki";
+        }
 
-        if (animal !=null){
-        JOptionPane.showMessageDialog(this, "Hola son o "+animal+" e saludoche con un : "+soundAnimal,"Mensaxe dos animais",JOptionPane.PLAIN_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Tes que selecionar un animal","Error 305",JOptionPane.ERROR_MESSAGE);
+        if (animal != null) {
+            JOptionPane.showMessageDialog(this, "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !", "Mensaxe dos animais", JOptionPane.PLAIN_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Tes que selecionar un animal", "Error 305", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void JRBGatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBGatoActionPerformed
-        animal = "Gato";
-        soundAnimal = "Miau";
-    }//GEN-LAST:event_JRBGatoActionPerformed
-
     private void jRBGaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBGaloActionPerformed
-        animal = "Galo";
-        soundAnimal = "kikiriki";
+        // TODO add your handling code here:
     }//GEN-LAST:event_jRBGaloActionPerformed
 
     /**
