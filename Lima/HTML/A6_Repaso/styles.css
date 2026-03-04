@@ -1,0 +1,87 @@
+html{
+    font-family: Arial;
+}
+body{
+    background-color: #eaecec;
+}
+
+#titulo-principal{
+    color: blue;
+}
+
+h2{
+    color: aqua;
+}
+
+.resumen{
+    font-style: italic;
+    background-color: #d9dbdb;
+}
+
+.destacado h2{
+    text-decoration: underline 2px black;
+}
+
+
+a:hover{
+    color: red
+}
+
+a{
+    text-decoration: none;
+}
+
+article:first-of-type{
+    background-color: #c7c7c7;
+}
+
+td:nth-child(2){
+    color: blue;
+}
+
+tr:nth-child(even){
+    background-color: #c7c7c7;
+}
+
+table,td,th{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+button:active{
+    color: red;
+}
+
+input:focus{
+    background-color: rgb(239, 241, 92);
+}
+
+input:valid{
+    border: 2px solid green;
+}
+input:invalid{
+    border:2px solid red;
+}
+
+.destacado h2::before{
+    content: "★";
+}
+
+article::first-letter{
+    font-size:150%;
+    font-style: bold;
+}
+
+.destacado p{
+    color: rebeccapurple;
+}
+
+article strong{
+    color:aquamarine;
+}
+footer{
+    color: gray;
+}
+footer{
+    color: inherit;
+}

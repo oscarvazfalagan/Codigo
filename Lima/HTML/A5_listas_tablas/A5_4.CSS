@@ -1,0 +1,15 @@
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    thead{
+        background-color: lightgray;
+    }
+}
+th{
+    border: 2px solid black;
+    padding: 0.5rem;
+}
+
+td{
+    border: 2px solid black;
+}

@@ -1,0 +1,9 @@
+li{
+    list-style: none;
+   display: inline-block;
+   margin: 2rem;
+}
+
+a:hover{
+    background-color: lightblue;
+}

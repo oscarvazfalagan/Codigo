@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ejercicio.pkg5.pkg2.pkg3;
+package ejercicio.pkg5.pkg2.pkg4;
 
 import javax.swing.JOptionPane;
 
@@ -35,7 +35,8 @@ public class MainView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jCB_Animais = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLAnimais = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Animales Falantes");
@@ -51,8 +52,12 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        jCB_Animais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Can", "Gato", "Galo" }));
-        jCB_Animais.setToolTipText("");
+        jLAnimais.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Can", "Gato", "Galo" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jLAnimais);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -64,23 +69,24 @@ public class MainView extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jCB_Animais, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(106, 106, 106)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(24, 24, 24))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jCB_Animais, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(72, 72, 72))
+                .addGap(23, 23, 23))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -89,31 +95,35 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
+        
         String MensaxeAnimais = "";
-        if (jCB_Can.isSelected()) {
-            animal = "Perro";
-            soundAnimal ="Guau";
+        
+        
+        if (jLAnimais.getSelectedValuesList().contains("Can")) {
+            animal = "Can";
+            soundAnimal = "Guau";
             MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
-         if (jCB_Cat.isSelected()) {
+        if (jLAnimais.getSelectedValuesList().contains("Gato")) {
             animal = "Gato";
-            soundAnimal ="Miau";
+            soundAnimal = "Miau";
             MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
-        if (jCB_Galo.isSelected()) {
+        if (jLAnimais.getSelectedValuesList().contains("Galo")) {
             animal = "Galo";
             soundAnimal = "Kikiriki";
             MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
 
- 
         if (animal != "") {
             JOptionPane.showMessageDialog(this, MensaxeAnimais, "Mensaxe dos animais", JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Tes que selecionar un animal", "Error 305", JOptionPane.ERROR_MESSAGE);
         }
         animal = "";
-        soundAnimal="";
+        soundAnimal = "";
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -143,8 +153,9 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jCB_Animais;
+    private javax.swing.JList<String> jLAnimais;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,0 +1,17 @@
+label{
+    display: block;
+
+}
+
+input,textarea{
+    width: 300px;
+    margin-bottom: 50px
+}
+
+button{
+    margin: auto;
+    display: block;
+    background-color: rgb(231, 3, 252);
+    border-radius: 10px;
+    color: white;
+}

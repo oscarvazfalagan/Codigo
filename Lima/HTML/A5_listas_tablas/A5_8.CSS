@@ -1,0 +1,21 @@
+input[required]{
+    border: 2px solid blue;
+    background-color: rgb(245, 245, 135);
+}
+
+input,select{
+    width: 200px;
+}
+
+input:focus,select:focus{
+    border: 6px solid rgb(0, 255, 0);
+}
+
+button{
+    margin-top: 20px;
+}
+form{
+    display: grid;
+    margin: auto;
+    width: 200px;
+}

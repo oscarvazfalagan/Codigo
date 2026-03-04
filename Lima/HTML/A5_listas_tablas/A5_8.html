@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rexistro</title>
+    <link rel="stylesheet" href="A5_8.CSS">
+</head>
+<body>
+    <h1>Rexistro de usuario</h1>
+
+    <form>
+        <label for="usuario">Nome de usuario *</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="contrasinal">Contrasinal *</label>
+        <input type="password" id="contrasinal" name="contrasinal" required>
+
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade">
+
+        <label for="rol">Rol no curso</label>
+        <select id="rol" name="rol">
+            <option>Estudante</option>
+            <option>Profesorado</option>
+            <option>Outro</option>
+        </select>
+
+        <button type="submit">Crear conta</button>
+    </form>
+</body>
+</html>

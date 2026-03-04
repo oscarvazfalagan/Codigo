@@ -1,0 +1,15 @@
+tbody tr:nth-child(odd){
+    background-color: antiquewhite;
+}
+
+tbody tr:hover{
+    background-color: lightcoral;
+   
+}
+
+tbody tr{
+    text-align: right;
+}
+tbody tr td:nth-child(1){
+    text-align: center;
+}

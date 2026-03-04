@@ -90,25 +90,22 @@ public class MainView extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String MensaxeAnimais = "";
-        if (jCB_Can.isSelected()) {
-            animal = "Perro";
+        if (jCB_Animais.getSelectedItem().equals("Can")) {
+            animal = "Can";
             soundAnimal ="Guau";
-            MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
-         if (jCB_Cat.isSelected()) {
+         if (jCB_Animais.getSelectedItem().equals("Gato")) {
             animal = "Gato";
             soundAnimal ="Miau";
-            MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
-        if (jCB_Galo.isSelected()) {
+        if (jCB_Animais.getSelectedItem().equals("Galo")) {
             animal = "Galo";
             soundAnimal = "Kikiriki";
-            MensaxeAnimais += "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !\n";
         }
 
  
         if (animal != "") {
-            JOptionPane.showMessageDialog(this, MensaxeAnimais, "Mensaxe dos animais", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Hola son o " + animal + " e saludoche con un : " + soundAnimal + " !", "Mensaxe dos animais", JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Tes que selecionar un animal", "Error 305", JOptionPane.ERROR_MESSAGE);
         }
