@@ -1,0 +1,22 @@
+-- q1
+(SELECT * FROM artigos a WHERE  a.art_color LIKE('NEGRO'))
+UNION 
+(SELECT * FROM artigos a WHERE a.art_peso > 5000);
+
+
+
+-- q2
+(SELECT c.clt_apelidos as apelidos,c.clt_nome as nomes,c.clt_enderezo as enderezo , c.clt_cp as CP, c.clt_poboacion as pobloacion,'Clientes' as rol FROM clientes c)
+UNION
+(SELECT e.emp_apelidos,e.emp_nome,e.emp_enderezo ,e.emp_cp ,e.emp_poboacion,'Empleados' as rol FROM empregados e )
+ORDER BY 1,2;
+
+-- Codigo valido pero forzando la tabla a que se llamen igual
+-- SELECT *
+-- FROM(
+-- (SELECT c.clt_nome as nombre,c.clt_apelidos as apelidos,c.clt_enderezo , c.clt_cp , c.clt_poboacion, "Cliente" as Rol FROM clientes c)
+-- UNION
+-- (SELECT e.emp_nome as nombre,e.emp_apelidos as apelidos,e.emp_enderezo ,e.emp_cp ,e.emp_poboacion,"Empregado" as Rol FROM empregados e )
+-- ) datospromo
+-- ORDER BY datospromo.apelidos ,datospromo.nombre; 
+

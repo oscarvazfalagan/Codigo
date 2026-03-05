@@ -1,0 +1,27 @@
+-- q1
+SELECT a.art_codigo, ROUND(AVG(a.art_pv),2) as media,a.art_color
+FROM artigos a 
+WHERE a.art_color IS NOT NULL
+GROUP BY a.art_color
+order by a.art_codigo ,media ;
+
+-- q2
+SELECT a.art_codigo, ROUND(AVG(a.art_pv),2) as media,a.art_color
+FROM artigos a 
+WHERE a.art_pv >= 50 AND a.art_color IS NOT NULL
+GROUP BY a.art_color
+order by a.art_codigo ,media ;
+
+-- q3
+SELECT c.clt_poboacion, COUNT(c.clt_id) AS Habitantes
+FROM clientes c 
+GROUP BY c.clt_poboacion
+ORDER BY Habitantes DESC ;
+
+-- q4
+
+-- q5
+SELECT t.tda_id, COUNT(v.ven_id)
+FROM tendas t 
+JOIN vendas v ON (t.tda_id = v.ven_tenda )
+JOIN detalle_vendas dv ON (dv.dev_numero = v.ven_id )

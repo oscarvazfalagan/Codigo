@@ -27,31 +27,59 @@ public class MainView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        JBPares = new javax.swing.JButton();
+        JBImpares = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLNumero = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.X_AXIS));
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1);
+        jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2);
+        JBPares.setText("jButton2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(139, 15, 50, 0);
+        jPanel3.add(JBPares, gridBagConstraints);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.WEST);
+        JBImpares.setText("jButton1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(139, 30, 139, 0);
+        jPanel3.add(JBImpares, gridBagConstraints);
 
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel1.add(jPanel3, java.awt.BorderLayout.WEST);
+
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jPanel4.setLayout(new java.awt.GridBagLayout());
+
+        jLNumero.setText("Numero:");
+        jPanel4.add(jLNumero, new java.awt.GridBagConstraints());
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 20;
+        jPanel4.add(jComboBox1, gridBagConstraints);
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+        jPanel2.add(jPanel4, java.awt.BorderLayout.EAST);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.EAST);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.WEST);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,10 +110,13 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton JBImpares;
+    private javax.swing.JButton JBPares;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLNumero;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

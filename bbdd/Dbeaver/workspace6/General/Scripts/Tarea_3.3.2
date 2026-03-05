@@ -1,0 +1,18 @@
+-- q8
+SELECT e.empNome,
+(SELECT d.depNome  FROM departamento d WHERE e.empDepartamento = d.depEmpregados ) AS nome_departamento 
+FROM empregado e 
+WHERE e.empDepartamento IN(
+SELECT d.depEmpregados FROM departamento d  WHERE d.depCentro LIKE 'SEDE CENTRAL' )
+ORDER BY e.empNome,nome_departamento ;
+
+-- q10.1
+SELECT (SELECT e.empNome  FROM empregado e  WHERE d.depDirector = e.empNumero)
+FROM departamento d 
+ORDER BY d.depNumero;
+
+-- q10.2
+SELECT 
+FROM departamento d 
+JOIN empregado e ON (d.depEmpregados =)
+WHERE

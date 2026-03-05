@@ -1,0 +1,40 @@
+-- q1
+SELECT a.*
+FROM artigos a 
+WHERE EXISTS (
+	SELECT *
+	FROM artigos a2
+	WHERE a.art_pv > a2.art_pv
+	AND a2.art_color LIKE 'NEGRO'
+)ORDER BY a.art_pv;
+
+-- q2
+SELECT a.art_nome
+FROM artigos a  
+WHERE a.art_codigo IN (
+	SELECT dv.dev_artigo
+	FROM detalle_vendas dv 
+	WHERE EXISTS (
+		SELECT a2.art_color
+		FROM artigos a2 
+		WHERE dv.dev_cantidade > 5
+		AND a.art_color LIKE 'NEGRO'
+	)
+)ORDER BY a.art_nome;
+
+SELECT DISTINCT a.art_nome
+FROM artigos a 
+JOIN detalle_vendas dv ON (dv.dev_artigo = a.art_codigo )
+WHERE dv.dev_cantidade > 5 AND a.art_color LIKE 'NEGRO'
+
+-- q3
+SELECT c.clt_nome,c.clt_apelidos
+FROM clientes c 
+WHERE NOT EXISTS (
+	SELECT v.ven_cliente
+	FROM vendas v 
+	WHERE v.ven_cliente = c.clt_id
+) ORDER BY c.clt_nome,c.clt_apelidos
+ 
+
+-- q3

@@ -1,0 +1,52 @@
+-- q1
+SELECT p.prv_nome
+FROM provedores p 
+WHERE p.prv_id  IN(
+SELECT a.art_provedor FROM artigos a  WHERE a.art_color LIKE 'NEGRO')
+ORDER BY p.prv_nome
+
+-- q3
+
+SELECT c.clt_id,c.clt_nome
+FROM clientes c 
+WHERE c.clt_id IN ( 
+	SELECT v.ven_cliente
+	FROM vendas v 
+	WHERE v.ven_data >(
+		SELECT MAX(v2.ven_data)
+		FROM vendas v2 
+		where v2.ven_cliente = 6
+		)
+	)
+	ORDER BY c.clt_id;
+
+
+-- q4
+SELECT  
+(SELECT e.emp_nome FROM empregados e WHERE e.emp_id = t.tda_xerente )
+AS nome
+FROM tendas t 
+WHERE t.tda_id IN(
+SELECT v.ven_tenda FROM  vendas v)
+ORDER BY nome ;
+
+-- q5
+SELECT ROUND( SUM((dv.dev_prezo_unitario*dv.dev_cantidade)*(1-dv.dev_desconto/100)),2)AS total 
+FROM detalle_vendas dv  
+WHERE dv.dev_venda IN(
+	SELECT v.ven_id
+	FROM vendas v 
+	WHERE v.ven_cliente 
+	IN(
+		SELECT c.clt_id 
+		FROM clientes c  WHERE 
+		CONCAT(c.clt_nome,' ',c.clt_apelidos) = 'LEANDRO FERREIRO BENITEZ')
+)
+
+
+-- q6
+SELECT e.emp_id,e.emp_apelidos,e.emp_nome
+FROM empregados e
+WHERE e.emp_id NOT IN (
+SELECT v.ven_empregado FROM vendas v)
+

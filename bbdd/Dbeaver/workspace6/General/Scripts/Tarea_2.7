@@ -1,0 +1,109 @@
+-- q0
+SELECT e.emp_id ,e.emp_dni,e.emp_apelidos,e.emp_nome ,e.emp_enderezo ,e.emp_cp,p.pai_nome ,e.emp_alta ,e.emp_dataNac
+FROM empregados e 
+LEFT JOIN paises p ON (p.pai_id = e.emp_pais )
+where e.emp_poboacion not in('asturias','malaga' ,'leon') 
+order by e.emp_apelidos,e.emp_nome;
+
+-- q1
+SELECT c.clt_id,c.clt_cif,c.clt_apelidos,c.clt_nome,c.clt_enderezo ,c.clt_poboacion,p.pai_nome as nombre_pais,p.pai_isonum as pais_insonum
+FROM clientes c 
+left join paises p ON (c.clt_pais = p.pai_id )
+where c.clt_poboacion not in('sevilla','segovia' ,'sabadell') or c.clt_poboacion is null
+ORDER BY nombre_pais ,c.clt_apelidos,c.clt_nome	dddd			
+
+-- q2
+SELECT e.emp_apelidos,e.emp_nome,p.pai_nome as nombre_pais,e.emp_dataNac ,TIMESTAMPDIFF(year,e.emp_dataNac,CURDATE())AS edad
+FROM empregados e
+JOIN paises p ON (e.emp_pais = p.pai_id )
+WHERE TIMESTAMPDIFF(year,e.emp_dataNac,CURDATE())>=35
+ORDER BY e.emp_apelidos,e.emp_nome
+
+-- q3
+SELECT a.art_nome,a.art_pc ,a.art_pv,a.art_stock,a.art_provedor,IF(a.art_pv >= 100,(50-a.art_stock ),(100-a.art_stock )) AS unidades_pedir
+FROM artigos a 
+where a.art_stock <20
+ORDER BY a.art_nome,a.art_pc
+
+-- q4
+SELECT e.emp_apelidos, e.emp_nome,e.emp_dataNac,TIMESTAMPDIFF(year,e.emp_dataNac,CURDATE())AS edad,e.emp_poboacion
+FROM empregados e 
+JOIN tendas t ON (e.emp_id =t.tda_xerente )
+ORDER BY edad,e.emp_apelidos,e.emp_nome;
+
+-- q5
+SELECT a.art_nome,p.prv_nome,dv.dev_cantidade,dv.dev_prezo_unitario,dv.dev_desconto ,
+(dv.dev_cantidade * dv.dev_prezo_unitario) * (dv.dev_desconto/100) AS coste_total
+FROM artigos a 
+right JOIN detalle_vendas dv ON (dv.dev_artigo = a.art_codigo )
+right JOIN provedores p ON (a.art_provedor = p.prv_id)
+WHERE ((dv.dev_cantidade * dv.dev_prezo_unitario) * (dv.dev_desconto/100)) > 100 
+
+-- q6
+SELECT v.ven_data,v.ven_tenda ,e.emp_apelidos,e.emp_nome,pE.pai_nome AS paias_Empregado,c.clt_apelidos,c.clt_nome,pC.pai_nome AS nacionalidadComprador
+FROM vendas v 
+left JOIN tendas t ON (t.tda_id = v.ven_tenda )
+left JOIN empregados e ON (e.emp_id = t.tda_xerente )
+left JOIN paises pE On (e.emp_pais = pE.pai_id )
+left JOIN clientes c ON (v.ven_cliente =c.clt_id )
+left JOIN paises pC ON (c.clt_pais = pC.pai_id )
+ORDER BY v.ven_data ,v.ven_tenda,e.emp_apelidos,e.emp_nome;
+
+
+-- q7
+
+SELECT v.*
+FROM vendas v 
+JOIN tendas t ON (t.tda_id = v.ven_tenda )
+JOIN empregados e ON (e.emp_id = t.tda_xerente )
+JOIN paises pE On (e.emp_pais = pE.pai_id )
+JOIN clientes c ON (v.ven_cliente =c.clt_id )
+JOIN paises pC ON (c.clt_pais = pC.pai_id )
+where pE.pai_id != pE.pai_id;
+
+-- q8
+SELECT t.tda_poboacion,a.art_nome,dv.dev_cantidade,dv.dev_prezo_unitario,
+dv.dev_desconto,
+CONCAT(c.clt_nome,',',c.clt_apelidos) as nombre_completo_comprador,
+
+CONCAT(e.emp_nome,',',e.emp_apelidos) AS nombre_completo_vendedor
+FROM detalle_vendas dv 
+left JOIN vendas v ON (v.ven_id = dv.dev_artigo )
+left JOIN tendas t ON(v.ven_tenda = t.tda_id )
+left join artigos a ON (dv.dev_artigo = a.art_codigo )
+left JOIN clientes c ON (c.clt_id = v.ven_cliente )
+left JOIN empregados e ON (e.emp_id = t.tda_xerente )
+WHERE (ROUND((dv.dev_cantidade * dv.dev_prezo_unitario) * (dv.dev_desconto/100),2)) >= 1000 AND ((MONTH(v.ven_data) = 5)AND(YEAR(v.ven_data) = 2015))
+ORDER by t.tda_poboacion,nombre_completo_vendedor ,nombre_completo_comprador ;
+
+-- q9
+SELECT DISTINCT p.prv_nome
+FROM provedores p 
+left JOIN artigos a ON (a.art_provedor = p.prv_id )
+left join detalle_vendas dv  ON (dv.dev_artigo = a.art_codigo )
+ORDER BY p.prv_nome
+
+-- q10
+SELECT DISTINCT e.emp_nome ,e.emp_apelidos,e.emp_dni
+FROM empregados e
+LEFT JOIN vendas v  ON(v.ven_empregado  != e.emp_id )
+where v.ven_id is null
+ORDER By e.emp_nome,e.emp_apelidos;
+
+-- q11
+SELECT DISTINCT a.art_nome,a.art_stock,p.prv_nome
+FROM artigos a 
+left JOIN provedores p ON (a.art_provedor = p.prv_id )
+JOIN detalle_vendas dv ON (a.art_codigo = dv.dev_artigo )
+
+
+-- q12
+SELECT DISTINCT c.clt_apelidos ,c.clt_nome,c.clt_poboacion
+FROM clientes c 
+left JOIN vendas v ON (c.clt_id = v.ven_cliente )
+where v.ven_id is null
+
+-- q13
+
+
+

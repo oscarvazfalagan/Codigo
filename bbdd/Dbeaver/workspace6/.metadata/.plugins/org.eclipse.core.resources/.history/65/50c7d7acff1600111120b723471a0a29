@@ -1,0 +1,80 @@
+-- q1
+SELECT n.nome ,COUNT(x.numero_licencia) AS numeroJugadores
+FROM nacionalidade n 
+LEFT JOIN xogador x ON (x.nacionalidade = n.codigo )
+GROUP BY n.codigo 
+ORDER BY numeroJugadores DESC ,n.nome;
+
+
+-- q2
+SELECT n.nome,x.posicion,COUNT(x.numero_licencia ) AS jugadores_en_posicion
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+group by x.nacionalidade ,x.posicion
+ORDER by x.nacionalidade ,x.posicion ,jugadores_en_posicion;
+
+
+-- q3
+SELECT n.nome,x.posicion,COUNT(x.nome) AS numeroJugadores
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+group by x.nacionalidade ,x.posicion
+ORDER by x.posicion,numeroJugadores  DESC, x.nacionalidade;
+
+-- q4
+SELECT e.nome_equipo,n.nome AS nacionalidade ,count(*) AS num_jugadores
+FROM equipo e 
+JOIN xogador x on (x.codigo_equipo = e.codigo )
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+GROUP BY e.codigo,n.codigo
+ORDER BY num_jugadores DESC ,n.nome
+
+-- q5
+SELECT n.nome,ROUND(AVG(TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())),0) AS edad_media
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+GROUP BY n.codigo
+ORDER BY edad_media , n.nome
+
+-- q6
+SELECT n.nome, COUNT(x.numero_licencia ) AS numero_jugadores_altos
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+WHERE x.estatura > (SELECT AVG(x2.estatura)FROM xogador x2)
+GROUP BY n.codigo
+ORDER BY numero_jugadores_altos DESC,n.nome;
+
+-- q7
+SELECT n.nome,ROUND( AVG(x.estatura),2) AS Media_estatura
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+GROUP BY n.codigo
+HAVING Media_estatura >(SELECT AVG(x2.estatura)FROM xogador x2)
+ORDER BY Media_estatura  DESC,n.nome;
+
+-- q8
+SELECT n.nome, COUNT((TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE()))) AS num_jugadores_menores
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+WHERE (TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())) < (SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR,x2.data_nacemento,CURDATE())),0)FROM xogador x2 )
+GROUP BY n.codigo
+ORDER BY  num_jugadores_menores DESC, n.nome;
+
+-- q9
+SELECT n.nome, ROUND(AVG((TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE()))),0) AS edad_media_pais,
+(SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR,x2.data_nacemento,CURDATE())),0)FROM xogador x2 ) as edad_media_general
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+GROUP BY x.nacionalidade
+HAVING edad_media_general > edad_media_pais  
+ORDER BY  edad_media_pais   DESC, n.nome;
+
+
+-- q10
+SELECT n.nome ,x.temporadas,COUNT(x.numero_licencia) as NUM_temporadas
+FROM xogador x 
+JOIN nacionalidade n on (x.nacionalidade = n.codigo )
+GROUP BY n.codigo,x.temporadas
+ORDER BY  , n.nome
+
+ 

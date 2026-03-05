@@ -1,0 +1,41 @@
+-- q1
+SELECT p.nombre,p.dni ,pa.apellidos,pa.nombre,ma.apellidos,ma.nombre
+FROM persona p
+left join persona pa on (p.padre = pa.id_persona )
+left join persona ma on (p.madre = ma.id_persona )
+ORDER BY p.apellidos ,p.nombre ;
+
+-- q2
+SELECT DISTINCT ma.nombre,ma.dni ,ma.apellidos
+FROM persona p
+join persona ma on (p.madre = ma.id_persona )
+order BY p.apellidos ,p.nombre ;
+
+-- q3
+SELECT DISTINCT pa.nombre,pa.dni ,pa.apellidos
+FROM persona p
+join persona pa on (p.padre = pa.id_persona )
+order BY p.apellidos ,p.nombre ;
+
+-- q4
+SELECT abu.id_persona,abu.nombre,abu.apellidos,pro.id_persona ,pro.nombre,pro.apellidos,p.id_persona,p.nombre,p.apellidos
+FROM persona p
+left join persona pro on (p.padre = pro.id_persona) OR (p.madre = pro.id_persona )
+join persona abu on (pro.padre = abu.id_persona)
+order by abu.apellidos ,abu.nombre,pro.nombre ,pro.apellidos,p.nombre,p.apellidos;
+
+-- q5
+SELECT bisabu.id_persona ,bisabu.nombre ,bisabu.apellidos ,abu.id_persona,abu.nombre,abu.apellidos,pro.id_persona ,pro.nombre,pro.apellidos,p.id_persona,p.nombre,p.apellidos
+FROM persona p
+left join persona pro on (p.padre = pro.id_persona) OR (p.madre = pro.id_persona )
+join persona abu on (pro.padre = abu.id_persona) OR (pro.madre = abu.id_persona)
+join persona bisabu on (abu.madre = bisabu.id_persona )
+order by bisabu.apellidos,bisabu.nombre,abu.apellidos ,abu.nombre,pro.nombre ,pro.apellidos,p.nombre,p.apellidos;
+
+-- q6
+
+SELECT p.nombre,p.dni ,pa.apellidos,pa.nombre,ma.apellidos,ma.nombre
+FROM persona p
+left join persona pa on (p.padre = pa.id_persona )
+left join persona ma on (p.madre = ma.id_persona )
+ORDER BY p.apellidos ,p.nombre ;

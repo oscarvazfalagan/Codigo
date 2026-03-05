@@ -1,0 +1,28 @@
+-- q6
+SELECT DISTINCT e.empExtension ,COUNT (e.empExtension) AS empregadosUsando
+FROM empregado e 
+GROUP BY e.empExtension;
+
+-- q7
+SELECT COUNT(e.empFillos) AS N_personas,e.empFillos as numero_filloas
+FROM empregado e 
+GROUP BY e.empFillos
+ORDER BY N_personas ,numero_filloas ;
+
+-- q8
+SELECT d.depNome ,e.empFillos as numero_filloas
+FROM empregado e 
+join departamento d on (d.depNumero = e.empDepartamento )
+ORDER BY numero_filloas DESC ,d.depNome;
+
+-- q9
+SELECT c.cenNome,COUNT(d.depCentro)  
+FROM departamento d 
+JOIN centro c ON (c.cenNumero = d.depCentro )
+GROUP BY d.depCentro
+
+-- q10
+SELECT MAX(e.empSalario) AS salarioMaxForDepartament,MIN(e.empSalario) as salarioMinForDepartament
+FROM departamento d 
+JOIN empregado e on (e.empDepartamento = d.depNumero  )
+GROUP BY e.empDepartamento 

@@ -1,0 +1,14 @@
+-- q1
+SELECT a.art_codigo, ROUND(AVG(a.art_pv),2) as media,a.art_color
+FROM artigos a 
+WHERE a.art_color IS NOT NULL
+GROUP BY a.art_color
+order by a.art_codigo ,media ;
+
+-- q2
+SELECT a.art_codigo, ROUND(AVG(a.art_pv),2) as media,a.art_color
+FROM artigos a 
+WHERE a.art_pv >= 50 AND a.art_color IS NOT NULL
+GROUP BY a.art_color
+order by a.art_codigo ,media ;
+

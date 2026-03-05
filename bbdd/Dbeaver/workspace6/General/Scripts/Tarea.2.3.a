@@ -1,0 +1,5 @@
+-- q1
+SELECT a.*
+FROM artigos a
+LEFT JOIN artigos alist ON (a.art_codigo = '0713242')
+WHERE  a.art_pv > a.art_codigo;

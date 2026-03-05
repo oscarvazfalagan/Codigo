@@ -1,0 +1,15 @@
+-- q1
+SELECT e.empNome,(e.empSalario  - (SELECT MIN(e2.empSalario)FROM empregado e2))AS diferenza
+FROM  empregado e 
+WHERE e.empNumero NOT IN(SELECT d.depDirector  FROM departamento d )
+ORDER BY diferenza desc, e.empNome;
+
+-- prueba
+SELECT MAX(e.empSalario),MIN(e.empSalario),AVG(e.empSalario) ,(select d.depNome from departamento d where d.depNumero = e.empDepartamento ) AS Departamentos
+FROM empregado e 
+GROUP by e.empDepartamento;
+
+SELECT MAX(e.empSalario),MIN(e.empSalario),AVG(e.empSalario) ,(select d.depNome from departamento d where d.depNumero = e.empDepartamento ) AS Departamentos
+FROM empregado e 
+WHERE e.empNumero NOT IN(SELECT d.depDirector  FROM departamento d )
+GROUP by e.empDepartamento;

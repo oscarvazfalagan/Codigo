@@ -1,0 +1,18 @@
+-- q1
+SELECT c.clt_id ,c.clt_apelidos ,c.clt_nome , IFNULL(v.ven_data ,'Sin Compras') 
+FROM clientes c
+LEFT JOIN vendas v ON (v.ven_cliente = c.clt_id )
+ORDER BY c.clt_id, c.clt_apelidos  ;
+
+-- q2
+SELECT p.pro_nome
+FROM provincias p 
+LEFT JOIN clientes c ON (LEFT(c.clt_cp, 2) = p.pro_id)
+WHERE c.clt_id IS NULL
+ORDER BY p.pro_nome ;
+
+-- q3
+SELECT DISTINCT e.emp_id, e.emp_apelidos,e.emp_nome, IF (v.ven_id IS NULL,'No','Si') AS Vendas
+FROM empregados e
+LEFT JOIN vendas v  ON (v.ven_empregado  = e.emp_id )
+ORDER BY e.emp_id,e.emp_apelidos;

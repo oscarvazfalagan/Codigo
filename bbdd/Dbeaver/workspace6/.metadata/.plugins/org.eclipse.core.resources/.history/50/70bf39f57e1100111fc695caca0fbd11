@@ -1,0 +1,5 @@
+-- q1
+SELECT a.art_codigo, AVG(a.art_pv) as media,a.art_color
+FROM artigos a 
+WHERE  NOT NULL(a.art_color)
+GROUP BY a.art_color

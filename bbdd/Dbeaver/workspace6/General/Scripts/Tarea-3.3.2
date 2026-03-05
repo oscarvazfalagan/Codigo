@@ -1,0 +1,68 @@
+-- q8
+SELECT e.empNome,(SELECT d.depNome FROM departamento d  WHERE e.empDepartamento =d.depNumero) AS nombreDepartamento
+FROM empregado e 
+WHERE e.empDepartamento IN (
+SELECT d.depNumero  FROM departamento d WHERE d.depCentro =(
+SELECT c.cenNumero  FROM centro c WHERE c.cenNome LIKE 'SEDE CENTRAL' 
+)
+)
+ORDER BY nombreDepartamento ,e.empNome;
+
+-- q10
+SELECT (SELECT e.empNome FROM empregado e WHERE e.empNumero = d.depDirector) AS DIRECTORES
+FROM departamento d 
+ORDER BY d.depNumero;
+
+SELECT e.empNome AS DIRECTORES
+FROM departamento d 
+JOIN empregado e ON (d.depDirector = e.empNumero)
+ORDER BY d.depNumero;
+
+-- q11
+SELECT (SELECT e.empNome FROM empregado e WHERE e.empNumero = d.depDirector) AS DIRECTORES
+FROM departamento d 
+WHERE d.depCentro IN (
+	SELECT c.cenNumero 
+	FROM centro c 
+	WHERE c.cenNome LIKE 'S%')
+ORDER BY DIRECTORES ;
+
+SELECT e.empNome AS DIRECTORES
+FROM departamento d 
+JOIN empregado e ON (d.depDirector = e.empNumero)
+LEFT JOIN centro c ON (c.cenNumero = d.depCentro)
+WHERE c.cenNome LIKE 'S%'
+ORDER BY DIRECTORES ;
+
+-- q12
+SELECT e.empNome, e.empSalario, (e.empSalario*0.05)AS Gratificacion, (e.empSalario+(e.empSalario*0.05)) AS salariofinal 
+FROM empregado e 
+WHERE e.empNumero IN(
+	SELECT d.depDirector
+	FROM departamento d 
+)
+order by e.empNome;
+
+SELECT e.empNome, e.empSalario, (e.empSalario*0.05)AS Gratificacion, (e.empSalario+(e.empSalario*0.05)) AS salariofinal 
+FROM empregado e 
+JOIN departamento d ON (e.empNumero = d.depDirector )
+ORDER BY e.empNome;
+
+-- q13
+SELECT e.empNome,e.empSalario
+FROM empregado e 
+where e.empSalario >(
+	SELECT AVG(e.empSalario) 
+	FROM empregado e 
+	WHERE  e.empNumero IN(
+		SELECT d.depDirector
+		FROM departamento d 
+)
+)
+ORDER BY e.empNome,e.empSalario;
+
+-- q14
+
+
+
+

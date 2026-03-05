@@ -1,0 +1,9 @@
+-- q2
+SELECT e.empNome,d.depNumero
+FROM departamento d 
+join empregado e ON e.empDepartamento = d.depEmpregados
+WHERE d.depPresuposto BETWEEN(
+SELECT d2.depPresuposto FROM departamento d2 WHERE d2.depNumero = 122)
+AND(
+SELECT d3.depPresuposto FROM departamento d3  WHERE d3.depNumero = 121)
+ORDER BY d.depNumero;

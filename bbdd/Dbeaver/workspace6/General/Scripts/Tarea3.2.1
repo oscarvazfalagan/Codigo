@@ -1,0 +1,9 @@
+-- q1
+SELECT a.art_nome,a.art_pv
+FROM artigos a 
+where a.art_pv BETWEEN(
+SELECT a2.art_pv FROM artigos a2 WHERE a2.art_codigo LIKE '0713242')
+AND 
+(SELECT AVG(a2.art_pv) FROM artigos a2)
+ORDER BY a.art_nome,a.art_pv;
+

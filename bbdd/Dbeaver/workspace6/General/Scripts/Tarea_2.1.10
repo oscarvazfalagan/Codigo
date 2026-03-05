@@ -1,0 +1,23 @@
+-- q10
+SELECT d.depNumero ,d.depNome ,e.empNome
+FROM departamento d 
+JOIN empregado e ON (d.depDirector = e.empNumero )
+WHERE d.depDepende IS NULL
+ORDER BY d.depNumero ,d.depNome ;
+
+-- q11
+SELECT e.empNome,c.cenEnderezo 
+FROM centro c  
+JOIN departamento d ON (d.depCentro = c.cenNumero ) 
+JOIN empregado e ON (d.depNumero  = e.empDepartamento  )
+WHERE e.empNome  LIKE '%, A%'
+ORDER BY c.cenNome,c.cenEnderezo ;
+
+
+-- q12
+SELECT d.depNome,e.empNome AS nom_empregado,e.empSalario AS salarioEmpregado ,director.empNome AS nome_director,
+director.empSalario AS salarioDirector,(director.empSalario - e.empSalario) AS diferencia
+FROM empregado e 
+JOIN departamento d ON (d.depNumero = e.empDepartamento )
+JOIN empregado director on d.deptipoDirector =e.empNumero
+where e.empNumero != d.depDirector;

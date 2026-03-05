@@ -1,0 +1,72 @@
+-- q1
+SELECT a.art_codigo,a.art_peso,a.art_nome,p.prv_nome
+FROM artigos a 
+JOIN provedores p ON (p.prv_id = a.art_provedor )
+WHERE a.art_color LIKE 'Negro'
+ORDER BY a.art_color,a.art_codigo ;
+
+
+-- q2
+SELECT c.clt_apelidos,c.clt_nome ,p.pro_nome
+FROM clientes c 
+JOIN provincias p ON LEFT(c.clt_cp,2)=p.pro_id
+ORDER BY p.pro_nome,c.clt_apelidos,c.clt_nome;
+
+-- q3
+SELECT c.clt_nome,c.clt_apelidos,DAY(v.ven_data) AS diaVenta,WEEK(v.ven_data) AS semanaVenta,YEAR(v.ven_data) AS anoVenda
+FROM  vendas v 
+JOIN clientes c ON (v.ven_cliente = c.clt_id )
+ORDER BY c.clt_nome,c.clt_apelidos;
+
+-- q4
+SELECT COUNT(DISTINCT v.ven_id) AS numeroVentas,
+COUNT(DISTINCT dv.dev_artigo) AS articulosVentas,
+SUM(dv.dev_cantidade) AS unidades_vendidas,
+AVG(dv.dev_prezo_unitario ) AS media
+FROM vendas v 
+JOIN detalle_vendas dv  ON (dv.dev_venda = v.ven_id)
+ORDER BY COUNT(DISTINCT v.ven_id);
+
+
+-- q5
+SELECT a.art_codigo ,a.art_nome, a.art_peso, p.peso_nome
+FROM artigos a 
+JOIN pesos p ON (p.peso_min <= a.art_peso AND a.art_peso < p.peso_max)
+ORDER BY a.art_peso DESC ;
+
+-- q6
+SELECT c.clt_nome,c.clt_apelidos,DATE_FORMAT(v.ven_data, '%d/%m/%y') AS Date,TIMESTAMPDIFF(day,v.ven_data,CURDATE()) AS diferenciaDias
+FROM vendas v 
+JOIN clientes c ON(v.ven_cliente = c.clt_id )
+order by TIMESTAMPDIFF(day,v.ven_data,CURDATE());
+
+-- q7
+SELECT DISTINCT p.pro_nome
+FROM clientes c 
+JOIN provincias p ON (p.pro_id = LEFT(c.clt_cp,2))
+ORDER BY p.pro_nome;
+
+-- q8
+SELECT 
+v.ven_id,v.ven_data,
+CONCAT(c.clt_nome,',',c.clt_apelidos) AS nome_cliente,
+CONCAT(e.emp_nome,',',c.clt_apelidos) AS nome_emp
+FROM vendas v 
+JOIN clientes c ON (v.ven_cliente = c.clt_id )
+JOIN tendas t ON (v.ven_tenda = t.tda_id )
+JOIN empregados e ON (t.tda_xerente = e.emp_id)
+ORDER BY c.clt_apelidos,c.clt_nome;
+
+-- q9
+SELECT 
+	CONCAT(c.clt_nome,',',c.clt_apelidos) AS nome_cliente,
+	a.art_nome,a.art_stock,dv.dev_prezo_unitario,c.clt_desconto,
+	ROUND((dv.dev_cantidade * dv.dev_prezo_unitario)*(100 - dv.dev_desconto/100)) AS precio_final 
+FROM clientes c 
+JOIN vendas v ON (v.ven_cliente = c.clt_id )
+JOIN detalle_vendas dv ON (dv.dev_venda = v.ven_id )
+JOIN artigos a ON (a.art_codigo = dv.dev_artigo )
+ORDER BY a.art_nome;
+
+
+
