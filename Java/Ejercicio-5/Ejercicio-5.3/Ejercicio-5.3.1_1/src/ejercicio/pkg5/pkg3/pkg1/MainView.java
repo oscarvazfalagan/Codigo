@@ -69,8 +69,8 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jSNotesSelectosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSNotesSelectosStateChanged
-        
-        
+        double value = jSNotesSelectos.getValue()/10.0;
+        jLNotas.setText(Double.toString(value));
     }//GEN-LAST:event_jSNotesSelectosStateChanged
     
     /**
@@ -93,7 +93,6 @@ public class MainView extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new MainView().setVisible(true));
     }

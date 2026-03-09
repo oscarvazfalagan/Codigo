@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen CSS 1º DAW</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="titulo-principal">Examen CSS</h1>
+        <p class="subtitulo">Asignatura: Lenguaje de Marcas</p>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Módulos</a></li>
+            <li><a href="#">Notas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="presentacion">
+            <h2>Presentación</h2>
+            <p class="intro">
+                Esta página contiene distintos elementos HTML para practicar CSS.
+            </p>
+            <p>
+                Debes aplicar estilos relacionados con selectores, colores, texto,
+                listas, tablas y formularios.
+            </p>
+            <p class="aviso">
+                Lee bien cada ejercicio antes de empezar.
+            </p>
+        </section>
+
+        <section class="modulos">
+            <h2>Módulos de 1º DAW</h2>
+            <ul class="lista-modulos">
+                <li>Programación</li>
+                <li>Bases de datos</li>
+                <li>Sistemas informáticos</li>
+                <li class="destacado">Linguajes de marcas</li>
+            </ul>
+        </section>
+
+        <section class="notas">
+            <h2>Tabla de notas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Alumno</th>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                        <th>Media</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>8.5</td>
+                    </tr>
+                    <tr>
+                        <td>Lucas</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>6.5</td>
+                    </tr>
+                    <tr>
+                        <td>Marta</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>9.5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="contacto">
+            <h2>Formulario de contacto</h2>
+            <form>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>IES Pazo da Mercé - 1º DAW</p>
+    </footer>
+
+</body>
+</html>

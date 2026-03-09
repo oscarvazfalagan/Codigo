@@ -1,0 +1,120 @@
+/*1.1*/
+h2{
+    color: darkblue;
+}
+/*1.2*/
+#titulo-principal{
+    text-align: center;
+}
+/*1.3*/
+.aviso{
+    color:  yellow;
+    opacity:60%;
+}
+/*1.4*/
+.destacado{
+    color: red;
+}
+/*1.5*/
+p{
+    text-decoration: line-height 1.5px;
+}
+/*2.1*/
+.menu{
+    list-style: none;
+   
+}
+/*2.2*/
+/*2.3*/
+.menu{
+    margin-right: 10px;
+}
+/*2.4*/
+a:hover{
+    background-color: green;
+}
+/*2.5*/
+.lista-modulos{
+    list-style-type: square;
+}
+/*3.1*/
+header{
+    background-color: darkgreen;
+    color: (255,255,255);
+}
+/*3.2*/
+html{
+    font-family: arial;
+}
+/*3.3*/
+.intro{
+    font-size: 50px;
+}
+/*3.4*/
+.presentacion{
+    text-justify: justify;
+}
+/*3.5*/
+.subtitulo{
+    font-style:italic;
+}
+/*4.1*//*4.2*/
+table,td,th{
+    border-collapse:collapse;
+    border: 1px solid black;
+}
+/*4.3*/
+/*4.4*/
+teadh{
+    background-color: blue;
+}
+/*4.5*/
+tr:nth-child(odd){
+     background-color: grey   
+}
+
+/*5.1*/
+/*5.2*/
+input,textarea{
+    height:1rem;
+    width: 3rem;
+}
+/*5.3*/
+form:nth-child(1){
+    margin-top:2px;
+}
+
+/*5.4*/
+bottom{
+    color:white;
+    background-color:blue;
+    border:
+}
+/*5.5*/
+required{
+    border: 3px solid yellow;
+}
+
+/*6.1*/
+input:focus{
+    border: 3px solid orange;
+}
+/*6.2*/
+.lista-modulos:nth-child(2){
+    font-style: italic;
+}
+/*6.3*//*6.4*/
+footer{
+    text-align:center;
+    text-decoration:overline;
+}   
+
+
+
+
+
+
+
+
+
+

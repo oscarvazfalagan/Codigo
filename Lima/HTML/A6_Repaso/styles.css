@@ -60,7 +60,7 @@ input:valid{
     border: 2px solid green;
 }
 input:invalid{
-    border:2px solid red;
+    border:2px solid rgb(255, 0, 0);
 }
 
 .destacado h2::before{
