@@ -9,7 +9,7 @@ package ejercicio.pkg5.pkg3.pkg1;
  * @author daw1al13
  */
 public class MainView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainView.class.getName());
 
     /**
@@ -27,16 +27,14 @@ public class MainView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        JBPares = new javax.swing.JButton();
-        JBImpares = new javax.swing.JButton();
+        jSNotesSelectos = new javax.swing.JSlider();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLNumero = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jLNotas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,21 +42,12 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        JBPares.setText("jButton2");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(139, 15, 50, 0);
-        jPanel3.add(JBPares, gridBagConstraints);
-
-        JBImpares.setText("jButton1");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(139, 30, 139, 0);
-        jPanel3.add(JBImpares, gridBagConstraints);
+        jSNotesSelectos.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSNotesSelectosStateChanged(evt);
+            }
+        });
+        jPanel3.add(jSNotesSelectos, new java.awt.GridBagConstraints());
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.WEST);
 
@@ -66,14 +55,9 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
-        jLNumero.setText("Numero:");
+        jLNumero.setText("Nota:");
         jPanel4.add(jLNumero, new java.awt.GridBagConstraints());
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        jPanel4.add(jComboBox1, gridBagConstraints);
+        jPanel4.add(jLNotas, new java.awt.GridBagConstraints());
 
         jPanel2.add(jPanel4, java.awt.BorderLayout.EAST);
 
@@ -84,6 +68,11 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jSNotesSelectosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSNotesSelectosStateChanged
+        
+        
+    }//GEN-LAST:event_jSNotesSelectosStateChanged
+    
     /**
      * @param args the command line arguments
      */
@@ -110,13 +99,12 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBImpares;
-    private javax.swing.JButton JBPares;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLNotas;
     private javax.swing.JLabel jLNumero;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JSlider jSNotesSelectos;
     // End of variables declaration//GEN-END:variables
 }

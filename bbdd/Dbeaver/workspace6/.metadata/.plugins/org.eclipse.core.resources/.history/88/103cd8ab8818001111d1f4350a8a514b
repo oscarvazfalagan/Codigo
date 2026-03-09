@@ -1,0 +1,4 @@
+-- q1
+SELECT e.empExtension ,e.empNome 
+FROM  empregado e 
+GROUP BY e.empExtension

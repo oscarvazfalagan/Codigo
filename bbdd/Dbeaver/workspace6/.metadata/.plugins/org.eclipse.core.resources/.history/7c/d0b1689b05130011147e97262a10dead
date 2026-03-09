@@ -1,9 +1,0 @@
--- q6
-SELECT DISTINCT e.empExtension ,COUNT (e.empExtension) AS empregadosUsando
-FROM empregado e 
-GROUP BY e.empExtension;
-
--- q7
-SELECT COUNT(e.empFillos) AS N_fillos,e.empFillos
-FROM empregado e 
-GROUP BY e.empFillos 

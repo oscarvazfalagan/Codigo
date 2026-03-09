@@ -1,0 +1,4 @@
+-- q1
+SELECT e.empExtension ,count(e.empNumero) 
+FROM  empregado e 
+GROUP BY e.empExtension

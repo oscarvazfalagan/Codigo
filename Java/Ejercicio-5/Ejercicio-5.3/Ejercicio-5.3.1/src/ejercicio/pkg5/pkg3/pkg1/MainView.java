@@ -9,7 +9,7 @@ package ejercicio.pkg5.pkg3.pkg1;
  * @author daw1al13
  */
 public class MainView extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainView.class.getName());
 
     /**
@@ -44,7 +44,12 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        JBPares.setText("jButton2");
+        JBPares.setText("Pares");
+        JBPares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBParesActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -52,7 +57,12 @@ public class MainView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(139, 15, 50, 0);
         jPanel3.add(JBPares, gridBagConstraints);
 
-        JBImpares.setText("jButton1");
+        JBImpares.setText("Impares");
+        JBImpares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBImparesActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -69,7 +79,6 @@ public class MainView extends javax.swing.JFrame {
         jLNumero.setText("Numero:");
         jPanel4.add(jLNumero, new java.awt.GridBagConstraints());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 20;
@@ -83,6 +92,25 @@ public class MainView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBParesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBParesActionPerformed
+
+        jComboBox1.removeAllItems();
+
+        for (int i = 0; i <= 100; i += 2) {
+            jComboBox1.addItem(Integer.toString(i));
+        }
+
+
+    }//GEN-LAST:event_JBParesActionPerformed
+
+    private void JBImparesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBImparesActionPerformed
+        jComboBox1.removeAllItems();
+
+        for (int i = 1; i <= 100; i += 2) {
+            jComboBox1.addItem(Integer.toString(i));
+        }
+    }//GEN-LAST:event_JBImparesActionPerformed
 
     /**
      * @param args the command line arguments

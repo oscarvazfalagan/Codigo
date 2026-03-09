@@ -1,0 +1,5 @@
+-- q1
+SELECT e.empExtension ,count(e.empNumero) AS Comparte_Ext
+FROM  empregado e 
+GROUP BY e.empExtension
+ORDER BY 

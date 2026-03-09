@@ -1,0 +1,19 @@
+-- q1
+SELECT e.empExtension ,count(e.empNumero) AS Comparte_Ext
+FROM  empregado e 
+GROUP BY e.empExtension
+ORDER BY Comparte_Ext DESC;
+
+-- q2
+SELECT c.clt_id,CONCAT(c.clt_apelidos,",",c.clt_nome)
+FROM clientes c 
+WHERE c.clt_vendas = 1
+ORDER BY c.clt_id;
+
+-- q3
+SELECT d.depNumero, count(e.empNumero)
+FROM departamento d
+JOIN empregado e ON (e.empDepartamento = d.depNumero)
+where d.depPresuposto > 36000
+GROUP BY e.empNumero
+

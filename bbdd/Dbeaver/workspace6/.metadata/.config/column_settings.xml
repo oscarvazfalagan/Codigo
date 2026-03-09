@@ -118,16 +118,16 @@
 		<column name="Database size" visible="true" order="4" width="100"/>
 	</item>
 	<item id="Suggestion/NodeList/MySQLTableColumn">
-		<column name="Column Name" visible="true" order="0" width="125"/>
-		<column name="#" visible="true" order="1" width="29"/>
-		<column name="Data Type" visible="true" order="2" width="118"/>
+		<column name="Column Name" visible="true" order="0" width="132"/>
+		<column name="#" visible="true" order="1" width="59"/>
+		<column name="Data Type" visible="true" order="2" width="102"/>
 		<column name="Not Null" visible="false" order="3" width="100"/>
 		<column name="Auto Increment" visible="false" order="4" width="108"/>
 		<column name="Key" visible="false" order="5" width="100"/>
 		<column name="Default" visible="false" order="6" width="100"/>
 		<column name="Extra" visible="false" order="7" width="100"/>
 		<column name="Expression" visible="false" order="8" width="100"/>
-		<column name="Comment" visible="true" order="3" width="68"/>
+		<column name="Comment" visible="true" order="3" width="109"/>
 	</item>
 	<item id="Suggestion/NodeList/SQLiteTableColumn">
 		<column name="Column Name" visible="true" order="0" width="156"/>
@@ -144,9 +144,20 @@
 		<column name="DataSource" visible="true" order="1" width="171"/>
 	</item>
 	<item id="scriptSelectorViewer">
-		<column name="Script" visible="true" order="0" width="174"/>
-		<column name="Time" visible="true" order="1" width="190"/>
-		<column name="Info" visible="true" order="2" width="61"/>
-		<column name="Folder" visible="true" order="3" width="76"/>
+		<column name="Script" visible="true" order="0" width="200"/>
+		<column name="Time" visible="true" order="1" width="182"/>
+		<column name="Info" visible="true" order="2" width="53"/>
+		<column name="Folder" visible="true" order="3" width="68"/>
+	</item>
+	<item id="tareas">
+		<column name="Nombre" visible="true" order="0" width="100"/>
+		<column name="Última ejecución (Hora del sistema)" visible="true" order="1" width="231"/>
+		<column name="Ultimo resultado" visible="true" order="2" width="113"/>
+		<column name="Tipo" visible="true" order="3" width="100"/>
+	</item>
+	<item id="taskruns">
+		<column name="Hora Del Sistema" visible="true" order="0" width="116"/>
+		<column name="Duración" visible="true" order="1" width="100"/>
+		<column name="Resultado" visible="true" order="2" width="100"/>
 	</item>
 </items>
