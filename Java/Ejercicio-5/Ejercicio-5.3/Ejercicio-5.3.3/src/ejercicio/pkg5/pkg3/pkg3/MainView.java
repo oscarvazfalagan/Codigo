@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ejercicio.pkg5.pkg3.pkg1;
+package ejercicio.pkg5.pkg3.pkg3;
+
+import java.awt.Color;
 
 /**
  *
@@ -27,52 +29,99 @@ public class MainView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jSNotesSelectos = new javax.swing.JSlider();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLNumero = new javax.swing.JLabel();
-        jLNotas = new javax.swing.JLabel();
+        barraMenus = new javax.swing.JMenuBar();
+        menuArchivo = new javax.swing.JMenu();
+        menuItemAbrir = new javax.swing.JMenuItem();
+        menuItemGuardar = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menuSalir = new javax.swing.JMenuItem();
+        menuEdicion = new javax.swing.JMenu();
+        menuColores = new javax.swing.JMenu();
+        Rojo = new javax.swing.JMenuItem();
+        Verde = new javax.swing.JMenuItem();
+        Amarillo = new javax.swing.JMenuItem();
+        menuInsertar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 300));
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        menuArchivo.setText("File");
 
-        jPanel3.setLayout(new java.awt.GridBagLayout());
-
-        jSNotesSelectos.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSNotesSelectosStateChanged(evt);
+        menuItemAbrir.setText("Abrir");
+        menuItemAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemAbrirActionPerformed(evt);
             }
         });
-        jPanel3.add(jSNotesSelectos, new java.awt.GridBagConstraints());
+        menuArchivo.add(menuItemAbrir);
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.WEST);
+        menuItemGuardar.setText("Guardar");
+        menuArchivo.add(menuItemGuardar);
+        menuArchivo.add(jSeparator1);
 
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        menuSalir.setText("Salir");
+        menuArchivo.add(menuSalir);
 
-        jPanel4.setLayout(new java.awt.GridBagLayout());
+        barraMenus.add(menuArchivo);
 
-        jLNumero.setText("Nota:");
-        jPanel4.add(jLNumero, new java.awt.GridBagConstraints());
-        jPanel4.add(jLNotas, new java.awt.GridBagConstraints());
+        menuEdicion.setText("Edit");
 
-        jPanel2.add(jPanel4, java.awt.BorderLayout.EAST);
+        menuColores.setText("Colores");
 
-        jPanel1.add(jPanel2, java.awt.BorderLayout.EAST);
+        Rojo.setText("Rojo");
+        Rojo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RojoActionPerformed(evt);
+            }
+        });
+        menuColores.add(Rojo);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.WEST);
+        Verde.setText("Verde");
+        Verde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerdeActionPerformed(evt);
+            }
+        });
+        menuColores.add(Verde);
+
+        Amarillo.setText("Amarillo");
+        Amarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AmarilloActionPerformed(evt);
+            }
+        });
+        menuColores.add(Amarillo);
+
+        menuEdicion.add(menuColores);
+
+        barraMenus.add(menuEdicion);
+
+        menuInsertar.setText("Insertar");
+        barraMenus.add(menuInsertar);
+
+        setJMenuBar(barraMenus);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jSNotesSelectosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSNotesSelectosStateChanged
-        double value = jSNotesSelectos.getValue()/10.0;
-        jLNotas.setText(Double.toString(value));
-    }//GEN-LAST:event_jSNotesSelectosStateChanged
-    
+    private void menuItemAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAbrirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemAbrirActionPerformed
+
+    private void RojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RojoActionPerformed
+        this.getContentPane().setBackground(Color.RED);
+    }//GEN-LAST:event_RojoActionPerformed
+
+    private void VerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerdeActionPerformed
+        this.getContentPane().setBackground(Color.GREEN);
+    }//GEN-LAST:event_VerdeActionPerformed
+
+    private void AmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmarilloActionPerformed
+        this.getContentPane().setBackground(Color.YELLOW);
+    }//GEN-LAST:event_AmarilloActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -98,12 +147,17 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLNotas;
-    private javax.swing.JLabel jLNumero;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JSlider jSNotesSelectos;
+    private javax.swing.JMenuItem Amarillo;
+    private javax.swing.JMenuItem Rojo;
+    private javax.swing.JMenuItem Verde;
+    private javax.swing.JMenuBar barraMenus;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu menuArchivo;
+    private javax.swing.JMenu menuColores;
+    private javax.swing.JMenu menuEdicion;
+    private javax.swing.JMenu menuInsertar;
+    private javax.swing.JMenuItem menuItemAbrir;
+    private javax.swing.JMenuItem menuItemGuardar;
+    private javax.swing.JMenuItem menuSalir;
     // End of variables declaration//GEN-END:variables
 }

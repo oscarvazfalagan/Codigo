@@ -1,0 +1,16 @@
+-- q1
+SELECT p.apellidos,p.nombre
+FROM persona p 
+WHERE p.apellidos LIKE('%Estévez')
+ORDER BY p.apellidos,p.nombre;
+
+-- q2
+SELECT p.apellidos,p.nombre
+FROM persona p 
+WHERE p.apellidos LIKE('Fernández%')
+
+-- q3
+SELECT p.apellidos,p.nombre
+FROM persona p 
+WHERE p.id_persona != p.madre OR p.id_persona != p.padre 
+ORDER BY p.apellidos,p.nombre;

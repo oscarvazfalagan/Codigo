@@ -1,0 +1,8 @@
+-- q1
+CREATE VIEW artigos_provedor
+AS(
+	SELECT a.art_codigo,a.art_nome,p.prv_nome
+	FROM artigos a 
+	left join provedores p ON (a.art_provedor = p.prv_id )
+);
+

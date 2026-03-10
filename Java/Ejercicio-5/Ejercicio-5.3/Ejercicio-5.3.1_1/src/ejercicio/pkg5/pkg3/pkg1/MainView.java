@@ -27,6 +27,7 @@ public class MainView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -37,6 +38,7 @@ public class MainView extends javax.swing.JFrame {
         jLNotas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 300));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -56,8 +58,12 @@ public class MainView extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
         jLNumero.setText("Nota:");
-        jPanel4.add(jLNumero, new java.awt.GridBagConstraints());
-        jPanel4.add(jLNotas, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 40, 0, 20);
+        jPanel4.add(jLNumero, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel4.add(jLNotas, gridBagConstraints);
 
         jPanel2.add(jPanel4, java.awt.BorderLayout.EAST);
 

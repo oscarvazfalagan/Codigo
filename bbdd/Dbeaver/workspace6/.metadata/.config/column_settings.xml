@@ -25,7 +25,7 @@
 		<column name="Auto Increment" visible="true" order="2" width="108"/>
 		<column name="Data Length" visible="true" order="3" width="100"/>
 		<column name="Partitioned" visible="true" order="4" width="100"/>
-		<column name="Description" visible="true" order="5" width="692"/>
+		<column name="Description" visible="true" order="5" width="889"/>
 	</item>
 	<item id="NodeList/MySQLTableColumn">
 		<column name="Column Name" visible="true" order="0" width="154"/>
@@ -118,16 +118,16 @@
 		<column name="Database size" visible="true" order="4" width="100"/>
 	</item>
 	<item id="Suggestion/NodeList/MySQLTableColumn">
-		<column name="Column Name" visible="true" order="0" width="132"/>
-		<column name="#" visible="true" order="1" width="59"/>
-		<column name="Data Type" visible="true" order="2" width="102"/>
+		<column name="Column Name" visible="true" order="0" width="122"/>
+		<column name="#" visible="true" order="1" width="56"/>
+		<column name="Data Type" visible="true" order="2" width="116"/>
 		<column name="Not Null" visible="false" order="3" width="100"/>
 		<column name="Auto Increment" visible="false" order="4" width="108"/>
 		<column name="Key" visible="false" order="5" width="100"/>
 		<column name="Default" visible="false" order="6" width="100"/>
 		<column name="Extra" visible="false" order="7" width="100"/>
 		<column name="Expression" visible="false" order="8" width="100"/>
-		<column name="Comment" visible="true" order="3" width="109"/>
+		<column name="Comment" visible="true" order="3" width="96"/>
 	</item>
 	<item id="Suggestion/NodeList/SQLiteTableColumn">
 		<column name="Column Name" visible="true" order="0" width="156"/>

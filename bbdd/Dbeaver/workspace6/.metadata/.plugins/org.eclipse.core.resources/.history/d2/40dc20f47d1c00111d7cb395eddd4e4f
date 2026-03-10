@@ -1,0 +1,14 @@
+-- q1
+SELECT p.apellidos,p.nombre
+FROM persona p 
+WHERE p.apellidos LIKE('%Estévez')
+
+
+
+
+WHERE p.madre = (
+	SELECT p2.id_persona
+	FROM persona p2
+	WHERE p2.apellidos LIKE('Estévez%')
+)
+ORDER BY 
