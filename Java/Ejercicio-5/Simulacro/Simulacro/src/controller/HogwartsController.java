@@ -4,6 +4,7 @@
  */
 package controller;
 
+import Excepcions.UnderConstructionException;
 import model.Pet;
 import model.Student;
 import model.Subject;
@@ -22,17 +23,26 @@ public class HogwartsController {
 
     public HogwartsController() {
         view = new TextAppHogwarts(this);
-        view.showMenu();
+       
     }
     
     public void initApp(){
         view.setCharacters(HogwartsCharacterDB.getHogwartsCharacters());
+        view.showMenu();
     }
     public void showCharacterData(String hogwartsCode){
-        view.showCharacterData(HogwartsCharacterDB.findByCode(hogwartsCode));
+        try {
+            view.showCharacterData(HogwartsCharacterDB.findByCode(hogwartsCode));
+        } catch (UnderConstructionException ex) {
+            view.showUnderConstructionMessage("mostrar personaje");
+        }
     }
     public void showsubjectData(String subjectCode){
-        view.showSubjectData(SubjectDB.findByCode(subjectCode));
+        try {
+            view.showSubjectData(SubjectDB.findByCode(subjectCode));
+        } catch (UnderConstructionException ex) {
+            view.showUnderConstructionMessage("mostrar materia");
+        }
     }
     public void loadSampleData(){
         Student harry = new Student("Harry Potter", "Cicatriz en forma de raio na fronte","A-1992-0001", "Griffindor", new Pet("Curuxa", "Hedwig", 3), "Buscador", 3);

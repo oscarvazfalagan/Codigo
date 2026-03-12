@@ -4,6 +4,7 @@
  */
 package view;
 
+import Excepcions.UnderConstructionException;
 import java.util.ArrayList;
 import model.HogwartsCharacter;
 import model.Subject;
@@ -15,16 +16,16 @@ import model.Subject;
 public interface HogwartsView {
     
 
-    public void setCharacters(ArrayList<HogwartsCharacter> characters);
+    public void setCharacters(ArrayList<HogwartsCharacter> characters) throws UnderConstructionException;
     
-    public void setSubjects(ArrayList<Subject> subjects);
+    public void setSubjects(ArrayList<Subject> subjects)throws UnderConstructionException;
     
-    public void showMenu();
+    public void showMenu()throws UnderConstructionException;
     
-    public void showCharacterData(HogwartsCharacter character);
+    public void showCharacterData(HogwartsCharacter character)throws UnderConstructionException;
     
-    public void showSubjectData(Subject subject);
+    public void showSubjectData(Subject subject)throws UnderConstructionException;
     
-    public void showUnderConstructionMessage(String operationName);
+    public void showUnderConstructionMessage(String operationName)throws UnderConstructionException;
     
 }
