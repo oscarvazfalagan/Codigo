@@ -110,7 +110,7 @@ FROM persona p
 LEFT JOIN persona h ON (h.padre = p.id_persona OR h.madre = p.id_persona )
 WHERE h.apellidos LIKE('%Darriba%')
 GROUP BY p.id_persona
-HAVING num_hijos_darriba  >= 2  
+HAVING num_hijos_darriba  > 2  
 ORDER BY p.apellidos,p.nombre;
 
 -- q13
