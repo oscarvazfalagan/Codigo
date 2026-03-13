@@ -1,0 +1,15 @@
+-- q1
+SELECT u.nombre,g.grupo,c.center_name 
+FROM usuarios u 
+JOIN grupos g ON (u.id_grupo = g.id_grupo )
+JOIN centers c ON (u.id_center = c.id_center )
+WHERE u.theme LIKE('default')
+ORDER BY nombre;
+
+
+-- q2
+SELECT 
+FROM usuarios u 
+JOIN grupos g ON (g.id_grupo = u.id_grupo)
+WHERE YEAR(u.last_date) LIKE('2019') AND month(u.last_date) LIKE('10') 
+

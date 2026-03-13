@@ -47,9 +47,9 @@ ORDER BY d.upload_date ;
 SELECT *
 FROM projects p 
 JOIN rel_user_project_input_hours pi ON(p.id_project = pi.id_project ) 
-JOIN usuarios u ON(u.id_usuario = pi.id_project )
+JOIN usuarios u ON(u.id_usuario = p.project_administrator)
 JOIN centers c ON(c.id_center = u.id_center)
 WHERE 
 p.project_name LIKE('Caring Rivers') AND
-(pi.task_date >= '2018-12-0' AND pi.task_date < '2019-4-1') AND 
-u.id_center IN(12,14)
+(pi.id_project >= '2018-12-0' AND pi.id_project < '2019-4-0') AND 
+(u.id_center = 12 AND u.id_center = 14)

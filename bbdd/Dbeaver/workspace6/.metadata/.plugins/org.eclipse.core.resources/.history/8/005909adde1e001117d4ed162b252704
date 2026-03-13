@@ -39,17 +39,7 @@ JOIN usuarios u ON (d.id_user = u.id_usuario )
 JOIN centers c ON (c.id_center = u.id_center )
 WHERE 
 dt.document_type_name LIKE('Signed Timesheet') AND 
-((d.upload_date >= '2019-10-1') AND (d.upload_date < '2019-11-0')) AND
-d.deleted = FALSE AND c.center_name =('Agentia Metropolitana Pentru')
-ORDER BY d.upload_date ;
+((d.upload_date >= '2019-10-1') AND (d.upload_date < '2019-11-0')) 
+d.deleted = FALSE AND
 
--- q5
-SELECT *
-FROM projects p 
-JOIN rel_user_project_input_hours pi ON(p.id_project = pi.id_project ) 
-JOIN usuarios u ON(u.id_usuario = pi.id_project )
-JOIN centers c ON(c.id_center = u.id_center)
-WHERE 
-p.project_name LIKE('Caring Rivers') AND
-(pi.task_date >= '2018-12-0' AND pi.task_date < '2019-4-1') AND 
-u.id_center IN(12,14)
+ORDER BY d.upload_date ;
