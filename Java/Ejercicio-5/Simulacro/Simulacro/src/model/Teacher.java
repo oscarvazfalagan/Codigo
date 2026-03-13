@@ -19,7 +19,7 @@ public class Teacher extends HogwartsCharacter {
         this.CV = CV;
     }
 
-    public Teacher(String CV, String nome, String caracteristicas, String codigoHowarts, Pet mascota, String casa) {
+    public Teacher( String nome, String caracteristicas, String codigoHowarts,String casa, Pet mascota, String CV) {
         super(nome, caracteristicas, codigoHowarts, mascota, casa);
         this.CV = CV;
     }

@@ -17,13 +17,4 @@ public class UnderConstructionException extends Exception {
     public UnderConstructionException() {
     }
 
-    /**
-     * Constructs an instance of <code>UnderConstructionExceptio</code> with the
-     * specified detail message.
-     *
-     * @param msg the detail message.
-     */
-    public UnderConstructionException(String msg) {
-        super(msg);
-    }
 }

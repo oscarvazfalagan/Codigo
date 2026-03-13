@@ -34,14 +34,18 @@ public class HogwartsController {
         try {
             view.showCharacterData(HogwartsCharacterDB.findByCode(hogwartsCode));
         } catch (UnderConstructionException ex) {
-            view.showUnderConstructionMessage("mostrar personaje");
+            System.out.println("");
+            view.showUnderConstructionMessage("mostrar personaje ");
+            System.out.println("");
         }
     }
     public void showsubjectData(String subjectCode){
         try {
             view.showSubjectData(SubjectDB.findByCode(subjectCode));
         } catch (UnderConstructionException ex) {
-            view.showUnderConstructionMessage("mostrar materia");
+            System.out.println("");
+            view.showUnderConstructionMessage("mostrar materia ");
+            System.out.println("");
         }
     }
     public void loadSampleData(){

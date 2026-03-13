@@ -1,9 +1,0 @@
--- q1
-SELECT e.empExtension ,count(e.empNumero) AS Comparte_Ext
-FROM  empregado e 
-GROUP BY e.empExtension
-ORDER BY Comparte_Ext DESC;
-
--- q2
-SELECT c.clt_id,CONCAT(c.clt_apelidos,",",c.clt_nome)
-FROM clientes c 

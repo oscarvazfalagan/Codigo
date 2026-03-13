@@ -1,8 +1,0 @@
--- q1
-SELECT p.apellidos
-FROM persona p 
-WHERE p.madre = (
-	SELECT
-	FROM persona p2
-	WHERE p2.apellidos LIKE('Estévez%')
-)

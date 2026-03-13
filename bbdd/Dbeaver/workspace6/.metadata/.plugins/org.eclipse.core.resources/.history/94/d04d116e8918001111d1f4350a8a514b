@@ -1,7 +1,0 @@
--- q1
-SELECT e.empExtension ,count(e.empNumero) AS Comparte_Ext
-FROM  empregado e 
-GROUP BY e.empExtension
-HAVING MAX(Comparte_Ext) >= count (e.empNumero)
-ORDER BY Comparte_Ext DESC
-

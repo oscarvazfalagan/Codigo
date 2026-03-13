@@ -59,11 +59,6 @@ public class TextAppHogwarts implements HogwartsView {
                     System.out.println(characters.get(i).getNome());
                     System.out.println(characters.get(i).getCasa());
                     System.out.println(characters.get(i).getCaracteristicas());
-                    try {
-                        System.out.println(characters.get(i).getMascota().getName());
-                    } catch (NullPointerException ex) {
-                        System.out.println("Null");;
-                    }
                     System.out.println("");
                 }
             } else if (optionMenu == 2) {
@@ -89,13 +84,12 @@ public class TextAppHogwarts implements HogwartsView {
 
     @Override
     public void showCharacterData(HogwartsCharacter character) throws UnderConstructionException {
-        throw new UnderConstructionException("Metodo en construcion");
+        throw new UnderConstructionException();
     }
 
     @Override
     public void showSubjectData(Subject subject) throws UnderConstructionException {
-        showUnderConstructionMessage("hola");
-        throw new UnderConstructionException(" ");
+        throw new UnderConstructionException();
     }
 
     @Override
@@ -104,4 +98,3 @@ public class TextAppHogwarts implements HogwartsView {
     }
 
 }
-//metodo 3 showUnderConstructionMessage profesores personaxes
