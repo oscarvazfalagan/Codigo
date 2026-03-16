@@ -58,51 +58,22 @@ ORDER BY num_hijos DESC,p.apellidos,p.nombre;
 
 
 -- q8
-select 
-  avg(
-    personasmayormediahijos.num_hijos
-  ) as mediahijomayormedia 
-from 
-  (
-    select 
-      count(h.id_persona) as num_hijos, 
-      (
-        select 
-          avg(tabla.num_hijos) 
-        from 
-          (
-            select 
-              count(h.id_persona) as num_hijos 
-            from 
-              persona p 
-              left join persona h on (
-                h.padre = p.id_persona 
-                or h.madre = p.id_persona
-              ) 
-            group by 
-              p.id_persona 
-            order by 
-              num_hijos desc, 
-              p.apellidos, 
-              p.nombre
-          ) as tabla
-      ) as media_hijos 
-    from 
-      persona p 
-      left join persona h on (
-        h.padre = p.id_persona 
-        or h.madre = p.id_persona
-      ) 
-    group by 
-      p.id_persona 
-    having 
-      num_hijos > media_hijos
-  ) as personasmayormediahijos;
+SELECT AVG(personasMayormediaHijos.num_hijos ) as mediaHijoMayorMedia,
+FROM (SELECT COUNT(h.id_persona)AS num_hijos,(
+			SELECT  AVG(tabla.num_hijos)
+				FROM (
+					SELECT count(h.id_persona) AS num_hijos
+					FROM persona p 
+					LEFT JOIN persona h ON (h.padre = p.id_persona OR h.madre = p.id_persona )
+					GROUP BY p.id_persona
+					ORDER BY num_hijos DESC,p.apellidos,p.nombre
+				) as tabla
+			)AS  media_hijos
+	FROM persona p 
+	LEFT JOIN persona h ON (h.padre = p.id_persona OR h.madre = p.id_persona )
+	GROUP BY p.id_persona
+	HAVING num_hijos > media_hijos)as personasMayormediaHijos;
 
-	
-	
-	
-	
 SELECT AVG(mas_media_hijos.num_hijos)
 FROM (
 	SELECT COUNT(hijo.id_persona) AS num_hijos, (

@@ -55,3 +55,10 @@ p.project_name LIKE('Caring Rivers') AND
 u.id_center IN(12,14);
 
 
+
+SELECT *
+FROM rel_user_project_input_hours rupih
+JOIN projects p ON p.id_project = rupih.id_project
+JOIN usuarios u ON u.id_usuario = rupih.id_user
+WHERE p.project_name = 'Caring Rivers' AND rupih.task_date >= '2018-12-01' AND rupih.task_date < '2019-04-01' AND u.id_center IN (12, 14);
+
