@@ -12,17 +12,17 @@ import model.Teacher;
 import persistencia.HogwartsCharacterDB;
 import persistencia.SubjectDB;
 import view.HogwartsView;
-import view.TextAppHogwarts;
+import view.IntAppHogwarts;
 
 /**
  *
  * @author daw1al13
  */
 public class HogwartsController {
-    private TextAppHogwarts view;
+    private IntAppHogwarts view;
 
     public HogwartsController() {
-        view = new TextAppHogwarts(this);
+        view = new IntAppHogwarts(this);
        
     }
     
