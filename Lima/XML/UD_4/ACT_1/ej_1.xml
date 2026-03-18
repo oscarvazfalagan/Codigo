@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensaxe [
+    <!ELEMENT mensaxe (mensaxeDeTexto*)>
+    <!ELEMENT mensaxeDeTexto (numeroDeTelefono, dataDeEnvio, HoraDeEnvio, contidoDaMensaxe)>
+    <!ELEMENT numeroDeTelefono (#PCDATA)>
+    <!ELEMENT dataDeEnvio (#PCDATA)>
+    <!ELEMENT HoraDeEnvio (#PCDATA)>
+    <!ELEMENT contidoDaMensaxe (#PCDATA)>
+]>
+
+
+<mensaxe>
+    <mensaxeDeTexto>
+        <numeroDeTelefono>123456789</numeroDeTelefono>
+        <dataDeEnvio>2024-06-01</dataDeEnvio>
+        <HoraDeEnvio></HoraDeEnvio>
+        <contidoDaMensaxe></contidoDaMensaxe>
+    </mensaxeDeTexto>
+</mensaxe>

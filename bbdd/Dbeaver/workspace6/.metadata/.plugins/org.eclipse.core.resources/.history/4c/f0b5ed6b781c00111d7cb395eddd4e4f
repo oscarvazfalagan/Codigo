@@ -1,9 +1,0 @@
--- q1
-CREATE VIEW artigos
-(
-
-)
-
-SELECT a.art_codigo,a.art_nome,a.
-FROM artigos a 
-left join provedores p ON (a.art_provedor = p.prv_id )

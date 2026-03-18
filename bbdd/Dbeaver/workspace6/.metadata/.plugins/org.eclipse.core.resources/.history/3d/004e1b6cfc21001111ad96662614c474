@@ -1,0 +1,25 @@
+-- q1
+SELECT a.*,p.prv_nome
+FROM artigos a 
+LEFT JOIN provedores p ON (a.art_provedor = p.prv_id )
+WHERE YEAR(a.art_alta) ='2010' AND p.prv_nome = 'TOSHIBA'
+ORDER BY a.art_alta ;
+
+-- q2
+SELECT a.*
+FROM artigos a 
+LEFT JOIN provedores p ON (a.art_provedor = p.prv_id )
+WHERE a.art_peso  > (
+	SELECT p.peso_min 
+	FROM pesos p 
+	WHERE p.peso_nome = 'pesado'
+) AND a.art_stock >= 13 AND p.prv_nome = 'ACER'
+ORDER BY a.art_stock,a.art_nome
+
+
+-- q3
+SELECT  (50- a.art_stock)as a_reponer
+FROM artigos a 
+WHERE a.art_peso < 2000 and a.art_stock < 50
+
+

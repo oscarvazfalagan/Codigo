@@ -1,0 +1,72 @@
+-- q1
+SELECT x.nome,x.posicion,n.nome as nacionalidad_nome,e.nome_equipo,x.data_nacemento
+FROM xogador x
+LEFT JOIN equipo e  ON (x.codigo_equipo = e.codigo)
+LEFT JOIN nacionalidade n ON (x.nacionalidade = n.codigo )
+WHERE  TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())<38
+ORDER BY x.data_nacemento DESC,x.nome,x.posicion;
+
+-- q2
+SELECT x.*
+FROM xogador x 
+LEFT JOIN equipo e  ON (x.codigo_equipo = e.codigo)
+LEFT JOIN nacionalidade n ON (x.nacionalidade = n.codigo)
+WHERE (TIMESTAMPDIFF(YEAR,CURDATE(),x.data_nacemento) >= 37 and TIMESTAMPDIFF(YEAR,CURDATE(),x.data_nacemento) <=47) 
+ORDER BY x.data_nacemento DESC,x.nome ,x.posicion 
+
+
+
+-- q3
+SELECT DISTINCT n.nome
+FROM xogador x 
+LEFT JOIN nacionalidade n ON (x.nacionalidade = n.codigo )
+WHERE x.codigo_equipo  IN(
+	SELECT e.codigo
+	FROM equipo e
+	WHERE e.pavillon LIKE('%Arena%')
+)ORDER BY n.nome;
+
+
+
+-- q4
+SELECT DISTINCT e.nome_club
+FROM equipo e 
+WHERE e.codigo IN(
+	SELECT x.codigo_equipo
+	FROM xogador x 
+	WHERE ((x.data_nacemento >= '17-04-1980') AND (x.data_nacemento <= '02-05-1988')) AND x.temporadas >= 7
+)ORDER BY  e.nome_club ;
+
+-- q5
+SELECT x.nome,x.estatura,x.posicion,n.nome as nacionalidade ,e.nome_club,e.nome_equipo
+FROM xogador x 
+LEFT JOIN nacionalidade n ON (n.codigo = x.nacionalidade )
+LEFT JOIN equipo e  ON (x.codigo_equipo = e.codigo)
+WHERE x.posicion = 'B'  AND (x.estatura > '1,90' and x.estatura < '2,10') 
+AND (e.nome_equipo LIKE('%caja%') OR e.nome_equipo LIKE('%banca%'))
+ORDER BY e.nome_equipo ,x.nome;
+
+-- q6
+SELECT x.nome,x.estatura,x.posicion,n.nome as nacionalidade ,e.nome_club,e.nome_equipo
+FROM xogador x 
+LEFT JOIN nacionalidade n ON (n.codigo = x.nacionalidade )
+LEFT JOIN equipo e  ON (x.codigo_equipo = e.codigo)
+WHERE x.posicion = 'B'  AND x.estatura >= (
+	SELECT AVG(x2.estatura)
+	FROM xogador x2 
+	WHERE x2.posicion = 'A'
+)ORDER BY x.nome,x.estatura;
+
+-- q7
+SELECT x.nome,e.nome_club,e.nome_equipo
+FROM xogador x
+JOIN equipo e  ON (x.codigo_equipo = e.codigo)
+WHERE  TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())>42 AND x.temporadas = 1 AND e.pavillon IS NULL
+
+
+-- q8
+SELECT  TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE()) as edad_media
+FROM xogador x 
+WHERE x.posicion = 'A' AND x.temporadas ='5'
+
+
