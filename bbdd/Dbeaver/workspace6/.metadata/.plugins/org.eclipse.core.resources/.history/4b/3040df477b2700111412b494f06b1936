@@ -1,0 +1,10 @@
+-- q1
+INSERT INTO centro VALUES (40,'FRANQUICIA','C/ PROGRESO, 8 - LUGO')
+
+-- q2
+INSERT	INTO empregado(empNome,empNumero,empDepartamento,empExtension,empDataNacemento,empDataIngreso,empSalario,empComision,empFillos) 
+VALUES('BARCIA, ANGELES',750,110,25,'1990-02-12',CURDATE(),825,50,1)
+
+INSERT	INTO empregado(empNome,empNumero,empDepartamento,empExtension,empDataNacemento,empDataIngreso,empSalario,empComision,empFillos) 
+VALUES('BERNARDEZ, LUCIA',752,120,45,'1992-05-09',null,1200,150,2)
+

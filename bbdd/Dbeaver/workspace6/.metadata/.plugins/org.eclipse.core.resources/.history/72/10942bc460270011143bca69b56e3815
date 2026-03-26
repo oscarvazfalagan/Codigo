@@ -12,7 +12,7 @@ FROM xogador x
 LEFT JOIN equipo e  ON (x.codigo_equipo = e.codigo)
 LEFT JOIN nacionalidade n ON (x.nacionalidade = n.codigo)
 WHERE  (TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())>=37 AND TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())<=47) AND (e.capacidade_pavillon IS NULL  OR x.codigo_equipo IS NULL)
-ORDER BY x.numero_licencia ;
+ORDER BY x.numero_licencia 
 
 
 
@@ -62,7 +62,7 @@ SELECT x.nome,e.nome_club,e.nome_equipo
 FROM xogador x
 JOIN equipo e  ON (x.codigo_equipo = e.codigo)
 WHERE  TIMESTAMPDIFF(YEAR,x.data_nacemento,CURDATE())>=42 AND x.temporadas = 1 AND e.pavillon IS NULL
-ORDER BY x.nome,e.nome_equipo;
+ORDER BY x.nome,e.nome_equipo
 
 
 -- q8

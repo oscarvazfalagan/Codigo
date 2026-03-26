@@ -59,7 +59,7 @@ SELECT t.tda_id ,t.tda_poboacion,e.emp_apelidos,e.emp_nome
 FROM tendas t 
 JOIN vendas v ON (v.ven_tenda = t.tda_id )
 JOIN empregados e ON (e.emp_id = t.tda_xerente )
-WHERE COUNT(e.emp_id ) = 0;
+WHERE COUNT(e.emp_id ) = 0
 
 
 

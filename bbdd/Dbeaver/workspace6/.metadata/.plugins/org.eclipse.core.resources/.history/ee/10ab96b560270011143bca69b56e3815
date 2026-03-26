@@ -48,6 +48,7 @@ JOIN empregados e ON (e.emp_id = t.tda_xerente )
 JOIN detalle_vendas dv ON (v.ven_id = dv.dev_venda)
 JOIN clientes c ON(c.clt_id = v.ven_cliente )
 WHERE (dv.dev_cantidade * dv.dev_prezo_unitario * ((100-dv.dev_desconto)/100)) <= '15577'
+group by e.emp_id;
 ORDER BY importe desc,v.ven_data ;
 
 
