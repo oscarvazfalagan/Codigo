@@ -1,0 +1,7 @@
+CREATE TABLE  aux_rol (
+ id_rol INT unsigned auto_increment primary key,
+nombre_rol VARCHAR(50) NOT NULL
+);
+
+
+update 

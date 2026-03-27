@@ -23,7 +23,7 @@ empComision = empComision  + (empComision * 0.065);
 
 -- q4
 UPDATE empregado e 
-SET empDataIngreso = ADDDATE(LAST_DAY(NOW()),INTERVAL 1 DAY)
+SET empDataIngreso = e.empDataIngreso + INTERVAL 10 DAY
 WHERE e.empNumero = 752;
 
 -- q5
@@ -45,7 +45,7 @@ WHERE c.cenNome = 'SEDE CENTRAL'
 -- q7
 UPDATE departamento 
 SET depPresuposto = depPresuposto * 0.9
-ORDER BY depPresuposto ASC 
+ORDER BY depPresuposto DESC 
 LIMIT 1;
 
 
@@ -84,10 +84,10 @@ WHERE e.empDepartamento = (
 	SELECT d.depNumero 
 	FROM departamento d 
 	where d.depNumero = 121
-);
+)
 
 DELETE FROM departamento d
-WHERE d.depNumero = 121;
+WHERE d.depNumero = 121
 
 -- q12
 CREATE TEMPORARY TABLE empregado_120 LIKE empregado ;
@@ -96,7 +96,7 @@ INSERT  INTO empregado_120
 SELECT * FROM empregado WHERE empDepartamento = 120;
 
 SELECT *
-FROM empregado_120;
+FROM empregado_120
 
 
 

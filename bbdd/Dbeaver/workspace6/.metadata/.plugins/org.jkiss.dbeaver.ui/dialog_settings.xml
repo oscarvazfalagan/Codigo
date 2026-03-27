@@ -11,6 +11,27 @@
 	</section>
 	<section name="ResultSetViewer">
 		<section name="presentations">
+			<section name="spreadsheet">
+				<item key="enabledPanelIds" value="value-view"/>
+				<item key="activePanelId" value="value-view"/>
+				<item key="panelRatio" value="300"/>
+				<item key="panelsVisible" value="false"/>
+				<item key="verticalLayout" value="false"/>
+			</section>
 		</section>
+	</section>
+	<section name="DBeaver.ShowTipOfTheDayDialog">
+		<item key="DIALOG_X_ORIGIN" value="559"/>
+		<item key="DIALOG_Y_ORIGIN" value="78"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="491"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
+	<section name="DBeaver.StandardErrorDialog">
+		<item key="showDetails" value="false"/>
+		<item key="DIALOG_X_ORIGIN" value="777"/>
+		<item key="DIALOG_Y_ORIGIN" value="413"/>
+	</section>
+	<section name="CopyGridNamesOptionsDialog">
 	</section>
 </section>

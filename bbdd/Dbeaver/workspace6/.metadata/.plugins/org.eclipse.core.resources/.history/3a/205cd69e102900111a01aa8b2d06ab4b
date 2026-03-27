@@ -1,9 +1,7 @@
--- q13
+-- q1
 INSERT INTO facturas 
-SELECT 
-FROM clientes c
-WHERE
-	c.clt_id in (
+SELECT * FROM clientes c WHERE
+c.clt_id in (
 	SELECT v.ven_cliente
 	FROM vendas v
 	WHERE (ven_data > '2015-05-01' AND ven_data <'2015-06-01')AND ven_factura IS NULL
@@ -13,4 +11,4 @@ WHERE
 
 
 INSERT INTO facturas 
-SELECT * FROM 
+SELECT * 

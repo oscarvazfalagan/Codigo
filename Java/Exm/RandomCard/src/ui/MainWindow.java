@@ -31,7 +31,8 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
 
         initComponents();
-        botones
+        botonespro08oscar
+                
         
             = 
         {

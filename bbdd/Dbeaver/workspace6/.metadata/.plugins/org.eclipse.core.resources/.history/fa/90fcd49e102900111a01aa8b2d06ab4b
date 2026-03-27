@@ -45,7 +45,7 @@ WHERE c.cenNome = 'SEDE CENTRAL'
 -- q7
 UPDATE departamento 
 SET depPresuposto = depPresuposto * 0.9
-ORDER BY depPresuposto ASC 
+ORDER BY depPresuposto DESC 
 LIMIT 1;
 
 
