@@ -19,6 +19,19 @@
 		<column name="Node Group" visible="true" order="15" width="100"/>
 		<column name="Partitioned" visible="true" order="16" width="100"/>
 	</item>
+	<item id="NodeList/MySQLProcedure">
+		<column name="Procedure Name" visible="true" order="0" width="112"/>
+		<column name="Procedure Description" visible="true" order="1" width="151"/>
+	</item>
+	<item id="NodeList/MySQLProcedureParameter">
+		<column name="Column Type" visible="true" order="0" width="100"/>
+		<column name="Column Name" visible="true" order="1" width="100"/>
+		<column name="#" visible="true" order="2" width="100"/>
+		<column name="Data Type" visible="true" order="3" width="100"/>
+		<column name="Length" visible="true" order="4" width="100"/>
+		<column name="Not Null" visible="true" order="5" width="100"/>
+		<column name="Auto Generated" visible="true" order="6" width="110"/>
+	</item>
 	<item id="NodeList/MySQLTable">
 		<column name="Table Name" visible="true" order="0" width="100"/>
 		<column name="Engine" visible="true" order="1" width="100"/>

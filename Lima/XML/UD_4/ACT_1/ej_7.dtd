@@ -1,0 +1,10 @@
+<!ELEMENT 
+cv (presentacion, 
+(datos_academicos | experiencia_laboral)+, 
+(lectura|deportes|otros)*, referencias*)>
+
+
+<!--El elemento cv debe contener  una presentacion, 
+    al menos un bloque de datos academicos o de experiencia laboral, 
+    y puede incluir secciones de lectura, deportes u otros, 
+    así como referencias -->

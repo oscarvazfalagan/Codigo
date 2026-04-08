@@ -27,3 +27,5 @@ DROP rol;
 
 ALTER TABLE usuario
 ADD CONSTRAINT fk_usuario_rol FOREIGN KEY (id_rol) REFERENCES aux_rol(id_rol)ON UPDATE CASCADE ON DELETE RESTRICT;
+
+

@@ -1,0 +1,8 @@
+Si iniciamos una transacción y de repente terminamos la sesión, ¿qué operación hace el servidor: un COMMIT, un ROLLBACK o no se puede saber?
+
+Debera realizar un rollback ya quqe la transaccion no ha sido 100 % terminada
+
+
+¿Qué diferencia existe entre START TRANSACTION y BEGIN? 
+
+Begin se usa para delimitar bloques de tu codigo mientras que start transaccion se usa solo para iniciar una transaccion
