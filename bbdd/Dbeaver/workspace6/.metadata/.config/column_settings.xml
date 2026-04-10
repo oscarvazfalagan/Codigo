@@ -85,8 +85,8 @@
 		<column name="On Update" visible="true" order="7" width="100"/>
 	</item>
 	<item id="NodeList/MySQLTableIndex">
-		<column name="Index Name" visible="true" order="0" width="100"/>
 		<column name="Column" visible="true" order="1" width="100"/>
+		<column name="Index Name" visible="true" order="0" width="100"/>
 		<column name="Table" visible="true" order="2" width="100"/>
 		<column name="Index Type" visible="true" order="3" width="100"/>
 		<column name="Unique" visible="true" order="4" width="100"/>

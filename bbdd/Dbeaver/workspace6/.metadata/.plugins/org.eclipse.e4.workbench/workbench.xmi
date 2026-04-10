@@ -134,7 +134,7 @@
       <children xsi:type="basic:PartStack" xmi:id="_jjVF4ikEEfGpBfUbt7MOIA" elementId="stickyFolderRight" toBeRendered="false" containerData="2500"/>
     </children>
     <sharedElements xsi:type="advanced:Area" xmi:id="_jmRsMCkEEfGpBfUbt7MOIA" elementId="org.eclipse.ui.editorss" selectedElement="_jmRsMSkEEfGpBfUbt7MOIA">
-      <children xsi:type="basic:PartStack" xmi:id="_jmRsMSkEEfGpBfUbt7MOIA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_etxooDJ6EfGvwpol2kEIIQ">
+      <children xsi:type="basic:PartStack" xmi:id="_jmRsMSkEEfGpBfUbt7MOIA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_0Vt6MDNmEfGbsMSj_loVBQ">
         <tags>EditorStack</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>active</tags>
@@ -234,6 +234,12 @@
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.jkiss.dbeaver.ui.editors.sql.SQLEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_0Vt6MDNmEfGbsMSj_loVBQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="films" iconURI="platform:/plugin/org.jkiss.dbeaver.ui/icons/properties.svg" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.jkiss.dbeaver.ui.editors.entity.EntityEditor&quot; name=&quot;films&quot; partName=&quot;films&quot; title=&quot;films&quot; tooltip=&quot;Table: films &amp;#x0A;Database: peliculas &amp;#x0A;Connection: localhost &amp;#x0A;&quot;>&#xA;&lt;input class=&quot;org.jkiss.dbeaver.ui.editors.DatabaseNodeEditorInput&quot; data-source=&quot;mariaDB-19a5e1b9e97-38be1aa36ad15e9b&quot; factoryID=&quot;org.jkiss.dbeaver.ui.editors.DatabaseEditorInputFactory&quot; folder=&quot;Columns&quot; node=&quot;node://General/datasources/mariaDB-19a5e1b9e97-38be1aa36ad15e9b/database/peliculas/table/films&quot; node-name=&quot;films&quot; page=&quot;default.object.editor&quot; project=&quot;General&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.jkiss.dbeaver.ui.editors.entity.EntityEditor</tags>
           <tags>active</tags>
           <tags>activeOnClose</tags>
         </children>
