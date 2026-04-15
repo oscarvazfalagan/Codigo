@@ -4,21 +4,87 @@
  */
 package ejercicio_6.pkg4;
 
+import ejercicio_6.pkg4.Film;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.sql.PreparedStatement;
+
 /**
- *
+ *  Clase para ejecutar una base de datos sqLite y borrar cosas
  * @author daw1al13
  */
 public class MainGraphic extends javax.swing.JFrame {
-    
+    //Atributo conecsion y array de peliculas
+   private ArrayList<Film> peliculas = new ArrayList<>();
+   private Connection c;
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainGraphic.class.getName());
 
     /**
      * Creates new form MainGraphic
      */
-    public MainGraphic() {
+    public MainGraphic() throws SQLException {
+        //Inicia los componentes y rellena el combo box
         initComponents();
+        StartConection();
+        fillCBox();
+        
     }
+    /**
+     * //Comienza la conexion y crea una tabla por si esta vacia
+     * @throws SQLException 
+     */
+    public void StartConection() throws SQLException{
+  
+        c = DriverManager.getConnection("jdbc:sqlite:/home/daw1al13/peliculas.db");
+            String createTable = """
+                                 CREATE TABLE IF NOT EXISTS films (
+                                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                     title TEXT NOT NULL,
+                                     year INTEGER NOT NULL
+                                 );
+                                 """;
+            try (Statement stT = c.createStatement()) {
+                stT.executeUpdate(createTable);
+            }
 
+    }
+    /**
+     * Rellena el CBox y lo actualiza 
+     */
+    public void fillCBox(){
+        //Borramos las peliculas y objetos en el combo box para updatearlos
+        peliculas.clear();
+        jCBPeliculas.removeAllItems();
+                    //Añadimos las peliculas al array list atraves de una consulta
+                    String sql = "SELECT * FROM films";
+                    try (Statement st = c.createStatement()) {
+                        System.out.println("Peliculas :");
+                        try (ResultSet rst = st.executeQuery(sql)) {
+                            while (rst.next()) {
+                                Film film = new Film(rst.getInt("id"),rst.getString("title"),rst.getInt("year"));
+                                peliculas.add(film);
+                            }
+                        }
+                    } catch (SQLException ex) {
+                        System.out.println("no se relleno");;
+       }
+    //Añadimos las pelicuals al combox
+    for(int i=0;i<peliculas.size();i++){
+        jCBPeliculas.addItem(peliculas.get(i));
+    }
+}
+    /**
+     * Cierra la conexion con la base de datos
+     * @throws SQLException 
+     */
+    public void CloseConnection() throws SQLException{
+        c.close();
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,91 +94,91 @@ public class MainGraphic extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jPanel3 = new javax.swing.JPanel();
+        jCBPeliculas = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Borrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, java.awt.BorderLayout.WEST);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(161, 161, 161)
-                    .addComponent(jButton1)
-                    .addContainerGap(161, Short.MAX_VALUE)))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jCBPeliculas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(139, 139, 139)
-                    .addComponent(jButton1)
-                    .addContainerGap(139, Short.MAX_VALUE)))
-        );
-
-        getContentPane().add(jPanel1, java.awt.BorderLayout.EAST);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(282, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(155, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(129, Short.MAX_VALUE)
+                .addComponent(jCBPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
         );
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.WEST);
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    /**
+     * Mientras que se cierra la ventana llamamos al metodo @CloseConnection
+     * para cerrar la conexion con la base de datos
+     * @param evt 
+     */
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+       try {
+           CloseConnection();
+       } catch (SQLException ex) {
+           System.getLogger(MainGraphic.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+       }
+    }//GEN-LAST:event_formWindowClosing
+    /**
+     * Cuando le haces click ejecuta una query de borrado del item que
+     * esta selecionado en el combobox y hace un update en el CBox
+     * @param evt 
+     */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                      String sql = ("DELETE  FROM films where id=?");
+                    try (PreparedStatement pst = c.prepareStatement(sql)) {
+                        pst.setInt(1,((Film)jCBPeliculas.getSelectedItem()).getId());
+                        pst.executeUpdate();
+                        pst.close();
+                    } catch (SQLException ex) {
+                        System.out.println("No funciono el borrado"+ex.getMessage());
+       }
+                    fillCBox(); // Actualiza el combobox
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
+       
+       java.awt.EventQueue.invokeLater(() -> {
+           try {
+               new MainGraphic().setVisible(true);
+           } catch (SQLException ex) {
+               System.getLogger(MainGraphic.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+           }
+       });
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new MainGraphic().setVisible(true));
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<ejercicio_6.pkg4.Film> jCBPeliculas;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

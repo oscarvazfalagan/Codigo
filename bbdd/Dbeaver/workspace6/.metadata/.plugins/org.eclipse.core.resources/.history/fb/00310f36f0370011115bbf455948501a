@@ -1,0 +1,14 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS count_employes$$
+
+CREATE PROCEDURE count_employes()
+BEGIN
+    SELECT e.empDepartamento, COUNT(e.empNumero) AS total_empleados
+    FROM empregado e
+    GROUP BY e.empDepartamento;
+END$$
+
+DELIMITER ;
+
+CALL count_employes

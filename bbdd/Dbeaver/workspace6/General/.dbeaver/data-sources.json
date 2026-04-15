@@ -1,20 +1,6 @@
 {
 	"folders": {},
 	"connections": {
-		"dbeaver-sample-database-sqlite-1": {
-			"provider": "sqlite",
-			"driver": "sqlite_jdbc",
-			"name": "DBeaver Sample Database (SQLite)",
-			"save-password": true,
-			"show-system-objects": true,
-			"configuration": {
-				"database": "/home/daw1al13/.local/share/DBeaverData/workspace6/.metadata/sample-database-sqlite-1/Chinook.db",
-				"url": "jdbc:sqlite:/home/daw1al13/.local/share/DBeaverData/workspace6/.metadata/sample-database-sqlite-1/Chinook.db",
-				"configurationType": "MANUAL",
-				"type": "dev",
-				"closeIdleConnection": true
-			}
-		},
 		"mariaDB-19a5e1b9e97-38be1aa36ad15e9b": {
 			"provider": "mysql",
 			"driver": "mariaDB",
@@ -28,6 +14,31 @@
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-19d91949fed-348dff54a3181756": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "SQLite",
+			"save-password": true,
+			"configuration": {
+				"url": "jdbc:sqlite:peliculas.db",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true
+			}
+		},
+		"sqlite_jdbc-19d91955848-3913916be4fdb838": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "peliculas.db",
+			"save-password": true,
+			"configuration": {
+				"database": "/home/daw1al13/peliculas.db",
+				"url": "jdbc:sqlite:/home/daw1al13/peliculas.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
 			}
 		}
 	},

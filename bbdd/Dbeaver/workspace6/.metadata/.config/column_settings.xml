@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
+	<item id="NodeList/GenericUniqueKey/GenericTableConstraintColumn">
+		<column name="Name" visible="true" order="0" width="104"/>
+		<column name="Owner" visible="true" order="1" width="100"/>
+		<column name="Type" visible="true" order="2" width="100"/>
+	</item>
 	<item id="NodeList/MySQLPartition">
 		<column name="Partition Name" visible="true" order="0" width="104"/>
 		<column name="Position" visible="true" order="1" width="100"/>
@@ -157,10 +162,10 @@
 		<column name="DataSource" visible="true" order="1" width="171"/>
 	</item>
 	<item id="scriptSelectorViewer">
-		<column name="Script" visible="true" order="0" width="200"/>
-		<column name="Time" visible="true" order="1" width="182"/>
-		<column name="Info" visible="true" order="2" width="53"/>
-		<column name="Folder" visible="true" order="3" width="68"/>
+		<column name="Script" visible="true" order="0" width="152"/>
+		<column name="Time" visible="true" order="1" width="197"/>
+		<column name="Info" visible="true" order="2" width="68"/>
+		<column name="Folder" visible="true" order="3" width="83"/>
 	</item>
 	<item id="tareas">
 		<column name="Nombre" visible="true" order="0" width="100"/>

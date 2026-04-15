@@ -1,0 +1,25 @@
+DELIMITER $$
+DROP PROCEDURE IF EXISTS pruebaTenda$$
+CREATE PROCEDURE pruebaTenda(in cantidad int)
+BEGIN
+	SET @number=0;	
+	REPEAT
+
+	BEGIN
+		INSERT INTO vendas (ven_tenda, ven_empregado, ven_cliente, ven_data)
+		VALUES (
+			(SELECT t.tda_id FROM tendas t ORDER BY rand() LIMIT 1),
+			(SELECT e.emp_id FROM empregados e ORDER BY rand() LIMIT 1),
+			(SELECT c.clt_id FROM clientes c ORDER BY rand() LIMIT 1),
+			CURDATE()
+		);
+	END
+	SET @number = @number + 1;
+	UNTIL cantidad = @number;
+END
+
+	$$
+DElIMITER ;
+
+
+ 

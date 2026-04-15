@@ -28,9 +28,9 @@
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
 	</section>
 	<section name="DBeaver.StandardErrorDialog">
-		<item key="showDetails" value="false"/>
-		<item key="DIALOG_X_ORIGIN" value="778"/>
-		<item key="DIALOG_Y_ORIGIN" value="414"/>
+		<item key="showDetails" value="true"/>
+		<item key="DIALOG_X_ORIGIN" value="657"/>
+		<item key="DIALOG_Y_ORIGIN" value="319"/>
 	</section>
 	<section name="CopyGridNamesOptionsDialog">
 	</section>
@@ -39,6 +39,15 @@
 		<item key="DIALOG_Y_ORIGIN" value="168"/>
 		<item key="DIALOG_WIDTH" value="528"/>
 		<item key="DIALOG_HEIGHT" value="517"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
+	<section name="DBeaver.DriverTabbedViewer">
+	</section>
+	<section name="DBeaver.ActiveWizardDialog.NewConnectionWizard">
+		<item key="DIALOG_X_ORIGIN" value="657"/>
+		<item key="DIALOG_Y_ORIGIN" value="112"/>
+		<item key="DIALOG_WIDTH" value="613"/>
+		<item key="DIALOG_HEIGHT" value="635"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
 	</section>
 </section>

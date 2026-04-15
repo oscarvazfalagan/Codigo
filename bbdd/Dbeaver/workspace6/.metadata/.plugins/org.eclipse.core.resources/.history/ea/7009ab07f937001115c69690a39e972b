@@ -1,0 +1,17 @@
+DELIMITER $$
+DROP PROCEDURE IF EXISTS pruebaTenda$$
+CREATE PROCEDURE pruebaTenda()
+BEGIN
+	INSERT INTO vendas (ven_tenda,ven_empregado,ven_cliente,ven_data)
+	VALUES (
+	(SELECT c.clt_id  FROM clientes ORDER BY rand() limit 1),
+	(SELECT e.emp_id  FROM empregados e ORDER BY rand() limit 1),
+	(SELECT t.tda_id FROM tendas t ORDER BY rand() limit 1),
+	(CURDATE()));	
+END
+$$
+DElIMITER ;
+
+
+CALL pruebaTenda();
+ 

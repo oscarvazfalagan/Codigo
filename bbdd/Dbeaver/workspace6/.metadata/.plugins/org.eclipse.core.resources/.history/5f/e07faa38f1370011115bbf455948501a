@@ -1,0 +1,24 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS count_employes$$
+
+CREATE PROCEDURE count_employes()
+BEGIN
+	UPDATE departamento d
+	SET d.depEmpregados =
+	(
+	SELECT COUNT(*)
+	FROM empregado e
+	WHERE e.empDepartamento = d.depNumero
+	);
+END
+$$
+
+DELIMITER ;
+
+CALL count_employes
+
+
+
+
+
