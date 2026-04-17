@@ -38,6 +38,3 @@ BEGIN
 END$$
 DElIMITER ;
 
-
-SELECT DNI_cal('08120604')
-
