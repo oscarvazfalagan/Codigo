@@ -1,0 +1,12 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS DNI_cal$$
+
+CREATE FUNCTION DNI_cal(numeros CHAR(8))
+	RETURN CHAR(1)
+	DETERMINISTIC
+BEGIN
+	DECLARE resto as INT;
+	SET resto = numeros%23;
+	return resto;
+END

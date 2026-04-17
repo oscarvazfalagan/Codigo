@@ -1,0 +1,22 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS NIF_cal$$
+
+CREATE FUNCTION NIF_cal(caracteres VARCHAR(8))
+	RETURNS VARCHAR(9)
+	DETERMINISTIC
+BEGIN
+	DECLARE resto INT;
+	DECLARE letra CHAR(1);
+	DECLARE letras CHAR(23);
+	SET letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+	IF SUBSTRING(caracteres,1,1)='x'THEN SET resto = SUBSTRING(caracteres,2,7)%23;
+	ELSEIF(SUBSTRING(caracteres,1,1)='y') THEN SET resto = CONCAT(1+SUBSTRING(caracteres,2,7))%23;
+	ELSEIF(SUBSTRING(caracteres,1,1)='z') THEN SET resto = CONCAT(2+SUBSTRING(caracteres,2,7))%23;
+	END IF;
+	RETURN SUBSTRING(letras, resto, 1);
+END$$
+DElIMITER ;
+
+
+SELECT NIF_cal('z3550426')

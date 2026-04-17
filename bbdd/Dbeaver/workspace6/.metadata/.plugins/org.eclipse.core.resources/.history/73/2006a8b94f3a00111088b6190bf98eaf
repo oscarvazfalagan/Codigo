@@ -1,0 +1,37 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS DNI_cal$$
+
+CREATE FUNCTION DNI_cal(numeros CHAR(8))
+	RETURNS VARCHAR(9)
+	DETERMINISTIC
+BEGIN
+	DECLARE resto INT;
+	SET resto = numeros%23;
+	CASE resto
+		WHEN 0 THEN return numeros + "T";
+		WHEN 1 THEN return numeros + "R";
+		WHEN 2 THEN return numeros + "W";
+		WHEN 3 THEN return numeros + "A";
+		WHEN 4 THEN return numeros + "G";
+		WHEN 5 THEN return numeros + "M";
+		WHEN 6 THEN return numeros + "Y";
+		WHEN 7 THEN return numeros + "F";
+		WHEN 8 THEN return numeros + "P";
+		WHEN 9 THEN return numeros + "D";
+		WHEN 10 THEN return numeros + "X";
+		WHEN 11 THEN return numeros + "B";
+		WHEN 12 THEN return numeros + "N";
+		WHEN 13 THEN return numeros + "J";
+		WHEN 14 THEN return numeros + "Z";
+		WHEN 15 THEN return numeros + "S";
+		WHEN 16 THEN return numeros + "Q";
+		WHEN 17 THEN return numeros + "V";
+		WHEN 18 THEN return numeros + "H";
+		WHEN 19 THEN return numeros + "L";
+		WHEN 20 THEN return numeros + "C";
+		WHEN 21 THEN return numeros + "K";
+		WHEN 22 THEN return numeros + "E";
+END$$
+DElIMITER ;
+

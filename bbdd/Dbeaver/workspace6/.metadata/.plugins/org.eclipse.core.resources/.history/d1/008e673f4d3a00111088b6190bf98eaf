@@ -1,0 +1,13 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS DNI_cal$$
+
+CREATE FUNCTION DNI_cal(numeros CHAR(8))
+	RETURN CHAR(1)
+	DETERMINISTIC
+BEGIN
+	DECLARE DNIdecimales AS INT;
+	DECLARE DNIndecimales AS INT;
+	SET DNIdecimales = numeros/23;
+	SET DNIndecimales = DNIdecimales*23;
+END

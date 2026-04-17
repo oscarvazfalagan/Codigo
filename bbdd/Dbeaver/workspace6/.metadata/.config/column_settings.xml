@@ -162,10 +162,10 @@
 		<column name="DataSource" visible="true" order="1" width="171"/>
 	</item>
 	<item id="scriptSelectorViewer">
-		<column name="Script" visible="true" order="0" width="152"/>
-		<column name="Time" visible="true" order="1" width="197"/>
-		<column name="Info" visible="true" order="2" width="68"/>
-		<column name="Folder" visible="true" order="3" width="83"/>
+		<column name="Script" visible="true" order="0" width="200"/>
+		<column name="Time" visible="true" order="1" width="182"/>
+		<column name="Info" visible="true" order="2" width="53"/>
+		<column name="Folder" visible="true" order="3" width="68"/>
 	</item>
 	<item id="tareas">
 		<column name="Nombre" visible="true" order="0" width="100"/>
