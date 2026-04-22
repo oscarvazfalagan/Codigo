@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="viaje">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="kilometraje" type="xs:int"/>
+            <xs:element ref="transporte"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="transporte" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="coche"/>
+                <xs:enumeration value="moto"/>
+                <xs:enumeration value="avion"/>
+                <xs:enumeration value="tren"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+    </xs:element>
+
+
+  <xs:element name="viajes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="viaxe" type="viaje" maxOccurs="unbounded">
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
