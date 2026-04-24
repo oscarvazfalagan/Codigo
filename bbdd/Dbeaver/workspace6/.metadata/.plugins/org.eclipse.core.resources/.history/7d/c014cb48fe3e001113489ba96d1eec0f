@@ -1,0 +1,13 @@
+-- Si intentamos insertar un valor menor que 100, insertamos el valor pasado como parámetro multiplicado por 100
+DELIMITER //
+
+CREATE TRIGGER clt_vendasBU
+AFTER INSERT ON vendas
+FOR EACH ROW 
+BEGIN 
+	UPDATE cliente
+	clt_vendas = clt_vendas +1
+	clt_ultima_venta = new.clt_ultima_venta
+	WHERE clt_id = new.clt_id
+END//
+DELIMITER;

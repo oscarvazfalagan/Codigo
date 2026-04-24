@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS bd_equipos.traspasos
+(
+	idTraspaso integer UNSIGNED NOT NULL AUTO_INCREMENT,
+	num_licencia_xogador smallint(6) NOT NULL ,
+	# usuario que fai oa modificación
+	codigo_equipo_orixe char(4),
+	# data e hora na que se fai a modificación
+	codigo_equipo_destino char(4),
+	# táboa na que se fai a modificación
+	data_traspaso date NOT NULL,
+	# operación de modificación: INSERT, UPDATE, DELETE
+	PRIMARY KEY (idTraspaso)
+)ENGINE = MYISAM;
+
+
+ALTER TABLE traspasos CONSTRAINT num_licencia_xogador_FK FOREIGN KEY (num_licencia_xogador) REFERENCES xogador(numero_licencia)ON DELETE RESTRICT ON UPDATE CASCADE;

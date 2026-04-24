@@ -1,4 +1,0 @@
-INSERT INTO films (title,year) 
-VALUES("DiegoDieguillo",1965)
-VALUES("RafaNoVino",1930)
-VALUES("Dopamina 4",2500)

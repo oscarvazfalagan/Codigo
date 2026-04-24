@@ -1,0 +1,91 @@
+DROP TRIGGER IF EXISTS centroAU;
+DROP TRIGGER IF EXISTS centroAI;
+DROP TRIGGER IF EXISTS centroAD;
+DROP TRIGGER IF EXISTS departamentoAU;
+DROP TRIGGER IF EXISTS departamentoAI;
+DROP TRIGGER IF EXISTS departamentoAD;
+DROP TRIGGER IF EXISTS empregadoAU;
+DROP TRIGGER IF EXISTS empregadoAI;
+DROP TRIGGER IF EXISTS empregadoAD;
+
+DROP PROCEDURE IF EXISTS llenarRexistro;
+
+DELIMITER //
+CREATE PROCEDURE llenarRexistro(taboaR varchar(50),operacionR varchar(6))
+BEGIN
+	INSERT INTO rexistroOperacions(usuario,dataHora,taboa,operacion)
+	VALUES (
+		CURRENT_USER(),NOW(),taboaR,operacionR);
+END //
+
+
+
+CREATE TRIGGER centroAI
+AFTER INSERT ON centro
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('centro','insert');
+END //
+
+CREATE TRIGGER centroAU
+AFTER UPDATE ON centro
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('centro','update');
+END //
+
+CREATE TRIGGER centroAD
+AFTER DELETE ON centro
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('centro','delete');
+END //
+
+CREATE TRIGGER departamentoAD
+AFTER DELETE ON departamento
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('departamento','delete');
+END //
+
+CREATE TRIGGER departamentoAU
+AFTER UPDATE ON departamento
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('departamento','update');
+END //
+
+CREATE TRIGGER departamentoAI
+AFTER INSERT ON departamento
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('departamento','insert');
+END //
+
+CREATE TRIGGER empregadoAU
+AFTER UPDATE ON empregado
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('empregado','update');
+END //
+
+CREATE TRIGGER empregadoAD
+AFTER DELETE ON empregado
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('empregado','delete');
+END //
+
+CREATE TRIGGER empregadoAI
+AFTER INSERT ON empregado
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('empregado','insert');
+END //
+
+DELIMITER ;
+
+
+DELETE FROM centro 
+	WHERE cenNumero=60;
+

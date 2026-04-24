@@ -1,0 +1,17 @@
+DROP PROCEDURE IF EXISTS llenarRexistro;
+
+DELIMITER //
+CREATE PROCEDURE llenarRexistro(num_licencia_xogador smallint(6),codigo_equipo_orixe char(4),codigo_equipo_destino char(4))
+BEGIN
+	INSERT INTO traspasos(num_licencia_xogador,codigo_equipo_orixe,codigo_equipo_destino,data_traspaso)
+	VALUES (num_licencia_xogador,codigo_equipo_orixe,codigo_equipo_destino,now());
+END //
+
+CREATE TRIGGER af_xogador
+AFTER INSERT ON	equipo
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('centro','insert');
+END //
+
+DELIMITER ;

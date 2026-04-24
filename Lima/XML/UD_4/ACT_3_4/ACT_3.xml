@@ -2,7 +2,7 @@
 <viajes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ACT_3.xsd">
     <viaxe>
         <date>2000-02-19</date>
-        <kilometraje>88</kilometraje>
+        <kilometraje>99</kilometraje>
         <transporte>coche</transporte>
     </viaxe>
 </viajes>

@@ -1,0 +1,9 @@
+DROP PROCEDURE IF EXISTS llenarRexistro;
+
+DELIMITER //
+CREATE PROCEDURE llenarRexistro(num_licencia_xogador smallint(6),operacionR varchar(6))
+BEGIN
+	INSERT INTO rexistroOperacions(usuario,dataHora,taboa,operacion)
+	VALUES (
+		CURRENT_USER(),NOW(),taboaR,operacionR);
+END //

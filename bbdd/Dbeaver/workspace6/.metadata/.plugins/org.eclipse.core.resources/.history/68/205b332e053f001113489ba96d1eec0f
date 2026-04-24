@@ -1,0 +1,15 @@
+DROP TRIGGER IF EXISTS clt_vendasBU;
+DELIMITER //
+
+CREATE TRIGGER centroAI
+AFTER INSERT ON centro
+FOR EACH ROW 
+BEGIN 
+	UPDATE rexistroOperaciones
+	SET
+		usuario = CURRENT_USER(),
+		dataHora = NOW(),
+		taboa = 'centro',
+		operacion = 'INSERT';
+END //
+DELIMITER ;

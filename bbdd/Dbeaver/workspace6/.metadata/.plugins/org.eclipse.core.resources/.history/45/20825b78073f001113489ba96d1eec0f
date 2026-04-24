@@ -1,0 +1,38 @@
+DROP TRIGGER IF EXISTS centroAU;
+DROP TRIGGER IF EXISTS centroAI;
+
+DROP PROCEDURE IF EXISTS llenarRexistro;
+
+DELIMITER //
+CREATE PROCEDURE llenarRexistro(taboaR varchar(50),operacionR varchar(6))
+BEGIN
+	UPDATE rexistroOperaciones
+	SET
+		usuario = CURRENT_USER(),
+		dataHora = NOW(),
+		taboa = taboaR,
+		operacion = operacionR;
+END //
+
+
+
+CREATE TRIGGER centroAI
+AFTER INSERT ON centro
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('centro','insert');
+END //
+
+CREATE TRIGGER centroAU
+AFTER INSERT ON centro
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro('centro','update');
+END //
+
+
+DELIMITER ;
+
+
+
+

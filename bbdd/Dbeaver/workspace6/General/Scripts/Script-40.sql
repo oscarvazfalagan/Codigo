@@ -1,0 +1,20 @@
+-- Si intentamos insertar un valor menor que 100, insertamos el valor pasado como parámetro multiplicado por 100
+DROP TRIGGER IF EXISTS clt_vendasBU;
+DELIMITER //
+
+CREATE TRIGGER clt_vendasBU
+AFTER INSERT ON vendas
+FOR EACH ROW 
+BEGIN 
+	UPDATE clientes
+	SET
+		clt_vendas = clt_vendas +1,
+		clt_ultima_venda = new.ven_data
+	WHERE clt_id = new.ven_cliente;
+END //
+DELIMITER ;
+
+INSERT INTO vendas (ven_cliente ,ven_data ,ven_empregado ,ven_factura ,ven_tenda )
+VALUES (
+	('95'),(CURDATE()),('40'),(NULL),('5')
+)

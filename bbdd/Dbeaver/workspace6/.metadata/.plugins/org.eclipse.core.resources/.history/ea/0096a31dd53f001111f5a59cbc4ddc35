@@ -1,0 +1,9 @@
+DROP PROCEDURE IF EXISTS llenarRexistro;
+
+DELIMITER //
+CREATE PROCEDURE llenarRexistro(num_licencia_xogador smallint(6),codigo_equipo_orixe char(4),codigo_equipo_destino char(4))
+BEGIN
+	INSERT INTO traspasos(num_licencia_xogador,codigo_equipo_orixe,codigo_equipo_destino)
+	VALUES (
+		CURRENT_USER(),NOW(),taboaR,operacionR);
+END //
