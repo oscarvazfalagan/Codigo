@@ -174,8 +174,14 @@
 		<column name="Tipo" visible="true" order="3" width="100"/>
 	</item>
 	<item id="taskruns">
-		<column name="Hora Del Sistema" visible="true" order="0" width="116"/>
-		<column name="Duración" visible="true" order="1" width="100"/>
-		<column name="Resultado" visible="true" order="2" width="100"/>
+		<column name="System time" visible="true" order="0" width="100"/>
+		<column name="Duration" visible="true" order="1" width="100"/>
+		<column name="Result" visible="true" order="2" width="100"/>
+	</item>
+	<item id="tasks">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Last Run (System time)" visible="true" order="1" width="154"/>
+		<column name="Last Result" visible="true" order="2" width="100"/>
+		<column name="Type" visible="true" order="3" width="100"/>
 	</item>
 </items>

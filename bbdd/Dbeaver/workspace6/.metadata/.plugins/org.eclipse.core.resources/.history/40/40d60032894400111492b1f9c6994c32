@@ -1,0 +1,4 @@
+	SELECT SUM(d.depPresuposto) 
+	FROM departamento d 
+	JOIN empregado e ON d.depNumero = e.empDepartamento 
+	END //

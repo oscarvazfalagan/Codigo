@@ -29,8 +29,8 @@
 	</section>
 	<section name="DBeaver.StandardErrorDialog">
 		<item key="showDetails" value="true"/>
-		<item key="DIALOG_X_ORIGIN" value="407"/>
-		<item key="DIALOG_Y_ORIGIN" value="397"/>
+		<item key="DIALOG_X_ORIGIN" value="28"/>
+		<item key="DIALOG_Y_ORIGIN" value="28"/>
 	</section>
 	<section name="CopyGridNamesOptionsDialog">
 	</section>
@@ -48,6 +48,15 @@
 		<item key="DIALOG_Y_ORIGIN" value="112"/>
 		<item key="DIALOG_WIDTH" value="613"/>
 		<item key="DIALOG_HEIGHT" value="635"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
+	<section name="AdvancedPasteOptions">
+	</section>
+	<section name="DBeaver.SQLTargetFormatDialog">
+		<item key="DIALOG_X_ORIGIN" value="784"/>
+		<item key="DIALOG_Y_ORIGIN" value="226"/>
+		<item key="DIALOG_WIDTH" value="358"/>
+		<item key="DIALOG_HEIGHT" value="429"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
 	</section>
 </section>

@@ -1,0 +1,31 @@
+DROP PROCEDURE IF EXISTS calcularPago;
+DROP TRIGGER IF EXISTS af_xogador;
+DROP TRIGGER IF EXISTS ad_xogador;
+
+DELIMITER //
+CREATE PROCEDURE calcularPago(in empSalario decimal(6,2),empComision decimal(6,2),out total DECIMAL(9,2)
+BEGIN
+	IF empComision = NULL THEN
+		SET	empComision = 0;
+	END IF
+	SET total = empComision + empSalario;
+	END //
+
+CREATE TRIGGER 
+BEFORE INSERT ON empregado
+FOR EACH ROW 
+BEGIN 
+	DECLARE TOTAL DECIMAL(9,2)
+	SET TOTAL = CALL calcularPago();
+END //
+
+
+CREATE TRIGGER ad_xogador
+AFTER UPDATE  ON xogador
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro(new.numero_licencia,old.codigo_equipo,new.codigo_equipo);
+END //
+
+DELIMITER ;
+

@@ -1,0 +1,33 @@
+DROP PROCEDURE IF EXISTS calcularPago;
+DROP TRIGGER IF EXISTS af_xogador;
+DROP TRIGGER IF EXISTS ad_xogador;
+
+DELIMITER //
+	
+CREATE TRIGGER 
+BEFORE INSERT ON empregado
+FOR EACH ROW 
+BEGIN 
+	DECLARE salario_total DECIMAL(9,2);
+	DECLARE presupuesto DECIMAL(9,2);
+	
+	SELECT IFNULL(SUM(empSalario + IFNULL(empComision,0)),0)
+	INTO salario_total
+	FROM empregado e
+	where e.empDepartamento = new.empDepartamento;
+	
+	SELECT 
+	END //
+	
+END //
+
+
+CREATE TRIGGER ad_xogador
+AFTER UPDATE  ON xogador
+FOR EACH ROW 
+BEGIN 
+	CALL llenarRexistro(new.numero_licencia,old.codigo_equipo,new.codigo_equipo);
+END //
+
+DELIMITER ;
+

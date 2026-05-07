@@ -1,0 +1,34 @@
+DROP PROCEDURE IF EXISTS calcularPago;
+DROP TRIGGER IF EXISTS af_xogador;
+DROP TRIGGER IF EXISTS ad_xogador;
+
+DELIMITER //
+	
+CREATE TRIGGER 
+BEFORE INSERT ON empregado
+FOR EACH ROW 
+BEGIN 
+	DECLARE salario_total DECIMAL(9,2);
+	DECLARE salario_emp DECIMAL(9,2)
+	DECLARE presupuesto DECIMAL(9,2);
+	
+	SELECT IFNULL(SUM(empSalario + IFNULL(empComision,0)),0)
+	INTO salario_total
+	FROM empregado e
+	where e.empDepartamento = new.empDepartamento;
+	
+	SELECT SUM(d.depPresuposto)
+	INTO presupuesto
+	FROM departamento d 
+	JOIN empregado e ON d.depNumero = e.empDepartamento ;
+	
+	SET salario_emp = new.empSalario + IFNULL(new.empComision,0)
+	IF salario_total
+END //
+
+
+
+
+
+
+
