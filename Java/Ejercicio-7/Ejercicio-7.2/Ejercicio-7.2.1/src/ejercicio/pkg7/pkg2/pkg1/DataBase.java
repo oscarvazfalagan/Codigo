@@ -35,7 +35,8 @@ public class DataBase implements Serializable{
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(destFilePath))) {
             // Escribimos na saída os clientes
             out.writeObject(clients);
-       }
+       }catch (IOException ex) {
+        }
     }
     /**
      * Metodo para añadir a los clientes automaticamente en el array guardados
