@@ -1,0 +1,50 @@
+db.viajes.insertMany(
+    [
+        {
+        codigo: "VIAJE001",
+        cliente_uuid: "CL001",
+        taxi_codigo: "TX001",
+        conductor_uuid: "COND001",
+        origen: "Centro",
+        destino: "Aeropuerto",
+        ciudad: "Vigo",
+        distancia_km: 12,
+        duracion_min: 22,
+        coste: 24.50,
+        estado: "finalizado",
+        metodo_pago: "tarjeta",
+        etiquetas: ["aeropuerto", "empresa"]
+        },
+        {
+        codigo: "VIAJE002",
+        cliente_uuid: "CL002",
+        taxi_codigo: "TX002",
+        conductor_uuid: "COND002",
+        origen: "Estación de tren",
+        destino: "Hospital Álvaro Cunqueiro",
+        ciudad: "Vigo",
+        distancia_km: 8,
+        duracion_min: 18,
+        coste: 15.20,
+        estado: "finalizado",
+        metodo_pago: "efectivo",
+        etiquetas: ["hospital", "normal"]
+        },
+        {
+        codigo: "VIAJE003",
+        cliente_uuid: "CL003",
+        taxi_codigo: "TX003",
+        conductor_uuid: "COND003",
+        origen: "Pontevedra centro",
+        destino: "Vigo centro",
+        ciudad: "Pontevedra",
+        distancia_km: 31,
+        duracion_min: 38,
+        coste: 48.00,
+        estado: "finalizado",
+        metodo_pago: "tarjeta",
+        etiquetas: ["interurbano", "premium"]
+
+        }
+    ]
+)

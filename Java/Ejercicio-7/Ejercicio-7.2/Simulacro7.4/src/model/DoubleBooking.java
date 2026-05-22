@@ -37,38 +37,39 @@ public class DoubleBooking extends Booking {
 
     @Override
     public boolean containsPlayer(String id) {
-        for (int i = 0; i < teams.length; i++) {
-            for (int j = 0; j < teams[i].length; j++) {
-                if (teams[i][j].getId() == id) {
+        for (Player[] team : teams) {
+            for (Player team1 : team) {
+                if (team1.getId() == id) {
                     return true;
                 }
             }
         }
         return false;
     }
-    
-    
-    
-    public void addPlayer(Player player,int teamNumber) {
-            for (int j = 0; j < teams[teamNumber].length; j++) {
-                if (teams[teamNumber][j] == null) {
-                    teams[teamNumber][j] = player;
-                }
+
+    public void addPlayer(Player player, int teamNumber) {
+        for (int j = 0; j < teams[teamNumber].length; j++) {
+            if (teams[teamNumber][j] == null) {
+                teams[teamNumber][j] = player;
             }
-       
+        }
+
     }
-    
-        @Override
+
+    @Override
     public String getDescription() {
-        
-        
-        for (int i = 0; i < teams.length; i++) {
-            for (int j = 0; j < teams[i].length; j++) {
-                if (teams[i][j].getName() == null) {
-                    teams[i][j].setName("PENDENTE");
+        for (Player[] team : teams) {
+            String description = super.getDescription() + "\n Xogadores : ";
+            for (Player[] : teams) {
+                if (team != null) {
+                    description += p.getName() + Double.toString(p.getScore()) + "\n";
+                } else {
+                    description += "- PENDENTE \n";
                 }
             }
         }
-        return super.getDescription() + "\nXogadores : Equipo 1 :"+teams[1][1].getName()+" "+teams[1][2].getName()+"Equipo 2 : "+teams[2][1].getName()+" "+teams[2][2].getName();
+
+        return description;
+        return super.getDescription() + "\nXogadores : Equipo 1 :" + teams[1][1].getName() + " " + teams[1][2].getName() + "Equipo 2 : " + teams[2][1].getName() + " " + teams[2][2].getName();
     }
 }

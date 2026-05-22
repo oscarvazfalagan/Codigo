@@ -54,16 +54,15 @@ public class SingleBookin extends Booking {
 
     @Override
     public String getDescription() {
-        
-        
-        for (int i = 0; i < players.length; i++) {
-            if (players[i].getName()==null) {
-                players[i].setName("PENDENTE");
-            }
-        }
-        return super.getDescription() + "\nXogadores : "+players[1].getName()+" "+players[2].getName();
+       String description = super.getDescription()+"\n Xogadores : ";
+       for(Player p : players){
+           if (p != null){
+               description += p.getName()+Double.toString(p.getScore())+"\n";
+           }else{
+               description += "- PENDENTE \n";
+           }
+       }
+        return description;
     }
 
-    
-    
 }
