@@ -16,15 +16,15 @@ import model.Booking;
  */
 public class PadelManagerDB {
     private static HashMap<String,Player> players = new HashMap<String,Player>();
-    private static ArrayList<PadelCourt> court = new ArrayList<PadelCourt>();
+    private static ArrayList<PadelCourt> courts = new ArrayList<PadelCourt>();
      private static ArrayList<Booking> bookings = new ArrayList<Booking>();
 
     public static HashMap<String, Player> getPlayers() {
         return players;
     }
 
-    public static ArrayList<PadelCourt> getCourt() {
-        return court;
+    public static ArrayList<PadelCourt> getCourts() {
+        return courts;
     }
 
     public static ArrayList<Booking> getBookings() {

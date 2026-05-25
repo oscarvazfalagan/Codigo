@@ -1,19 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package model;
+package padelmanager.model;
 
 /**
- * Clase player implementa un xogador
- * @author daw1al13
+ * Implementa un xogador de pádel
+ *
+ * @author Profe de programación
  */
 public class Player {
+
+    // Atributos privados
     private String id;
     private String password;
     private String name;
     private double score;
 
+    // Métodos de acceso aos atributos. Omítese o Javadoc
     public String getId() {
         return id;
     }
@@ -46,13 +46,18 @@ public class Player {
         this.score = score;
     }
 
-    public Player(String id,String password,String name,double score) {
+    /**
+     * Crea un novo xogador
+     *
+     * @param id Identificador do xogador, que non se pode repetir
+     * @param password Contrasinal do xogador
+     * @param name Nome real do xogador
+     * @param score Puntuación que indica o nivel do xogador
+     */
+    public Player(String id, String password, String name, double score) {
         this.id = id;
         this.password = password;
         this.name = name;
         this.score = score;
     }
-    
-    
-    
 }

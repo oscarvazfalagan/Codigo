@@ -58,18 +58,21 @@ public class DoubleBooking extends Booking {
 
     @Override
     public String getDescription() {
-        for (Player[] team : teams) {
-            String description = super.getDescription() + "\n Xogadores : ";
-            for (Player[] : teams) {
-                if (team != null) {
-                    description += p.getName() + Double.toString(p.getScore()) + "\n";
+        String description = super.getDescription() + "\n Xogadores : ";
+        for (int i = 0; i < teams.length; i++) {
+            description += "Equipo " + i + ": \n";
+            for (int j = 0; j < teams[i].length; j++) {
+                if (teams[i][j] != null) {
+                    description += teams[i][j].getName() + Double.toString(teams[i][j].getScore()) + "\n";
                 } else {
                     description += "- PENDENTE \n";
                 }
             }
         }
-
         return description;
-        return super.getDescription() + "\nXogadores : Equipo 1 :" + teams[1][1].getName() + " " + teams[1][2].getName() + "Equipo 2 : " + teams[2][1].getName() + " " + teams[2][2].getName();
     }
 }
+
+
+            
+   

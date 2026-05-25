@@ -14,6 +14,6 @@ import model.PadelCourt;
 public class PadelCourtDB {
 
     public static ArrayList<PadelCourt> getAllcourts() {
-        return PadelManagerDB.getCourt();
+        return PadelManagerDB.getCourts();
     }
 }

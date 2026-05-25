@@ -7,34 +7,36 @@ package db;
 import java.util.ArrayList;
 import java.util.Date;
 import model.Booking;
+
 /**
  *
  * @author daw1al13
  */
 public class BookingDB {
-    public static ArrayList<Date> findByDate(Date data){
-        ArrayList<Date> fechasReservas= new ArrayList<Date>();
-        for(int i=0;i<PadelManagerDB.getBookings().size();i++){
-            if(PadelManagerDB.getBookings().get(i).getDate()==data){
+
+    public static ArrayList<Date> findByDate(Date data) {
+        ArrayList<Date> fechasReservas = new ArrayList<Date>();
+        for (int i = 0; i < PadelManagerDB.getBookings().size(); i++) {
+            if (PadelManagerDB.getBookings().get(i).getDate() == data) {
                 fechasReservas.add(data);
             }
         }
-        return fechasReservas;        
+        return fechasReservas;
     }
-    
-    public static ArrayList<Date> findByUserAndDate(String id,Date data){
-        ArrayList<Date> fechasReservas= new ArrayList<Date>();
-       for(int i=0;i<PadelManagerDB.getBookings().size();i++){
-            if(PadelManagerDB.getBookings().get(i).containsPlayer(id)){
-               if(PadelManagerDB.getBookings().get(i).getDate().after(data)||PadelManagerDB.getBookings().get(i).getDate().equals(data)){
-                   fechasReservas.add(data);
-               }
+
+    public static ArrayList<Booking> findByUserAndDate(String id, Date data) {
+        ArrayList<Booking> reservas = new ArrayList<Booking>();
+        for (int i = 0; i < PadelManagerDB.getBookings().size(); i++) {
+            if (PadelManagerDB.getBookings().get(i).containsPlayer(id)) {
+                if (PadelManagerDB.getBookings().get(i).getDate().after(data) || PadelManagerDB.getBookings().get(i).getDate().equals(data)) {
+                    reservas.add(PadelManagerDB.getBookings().get(i));
+                }
             }
         }
-       return fechasReservas;
+        return reservas;
     }
-    
-    public static void save(Booking reserva){
+
+    public static void save(Booking reserva) {
         PadelManagerDB.getBookings().add(reserva);
     }
 }
