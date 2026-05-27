@@ -1,0 +1,10 @@
+CREATE TEMPORARY TABLE directores LIKE empregado ;
+
+UPDATE directores 
+SET directores = SELECT * 
+FROM empregado e 
+WHERE e.empNumero IN(
+SELECT d.depDirector 
+FROM departamento d 
+);
+

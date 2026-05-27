@@ -1,0 +1,44 @@
+DELIMITER $$
+
+DROP TRIGGER IF EXISTS bd_tenda_BI $$
+DROP TRIGGER IF EXISTS bd_tenda_AD $$
+
+CREATE TRIGGER bd_tenda_BI
+BEFORE INSERT
+ON clientes FOR EACH ROW
+BEGIN
+	UPDATE clientes SET clt_vendas = clt_ventas+1;
+	UPDATE clientes SET clt_ultima_venda = NOW();
+END
+
+DELIMITER $$
+
+CREATE TRIGGER bd_tenda_AD
+AFTER DELETE
+ON clientes FOR EACH ROW
+BEGIN
+	UPDATE clientes SET clt_vendas = clt_ventas-1;
+	UPDATE clientes SET clt_ultima_venda = clt_ultima_venda.OLD;
+END
+
+
+CREATE TRIGGER bd_tenda_AU
+BEFORE UPDATE 
+ON clientes FOR EACH ROW
+BEGIN
+	UPDATE clientes SET clt_vendas = clt_ventas-1;
+	UPDATE clientes SET clt_ultima_venda = clt_ultima_venda.OLD;
+END
+
+
+DELIMITER ;
+
+
+
+
+
+
+
+
+
+

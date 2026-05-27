@@ -1,0 +1,8 @@
+
+
+UPDATE directores 
+SET ALL = SELECT * FROM empregado e WHERE e.empNumero IN(SELECT d.depDirector FROM departamento d );
+
+SELECT *
+FROM directores;
+

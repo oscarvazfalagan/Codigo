@@ -59,4 +59,25 @@
 		<item key="DIALOG_HEIGHT" value="429"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
 	</section>
+	<section name="ConfirmationDialog.close_resultset_edit">
+		<item key="DIALOG_X_ORIGIN" value="719"/>
+		<item key="DIALOG_Y_ORIGIN" value="408"/>
+		<item key="DIALOG_WIDTH" value="489"/>
+		<item key="DIALOG_HEIGHT" value="157"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
+	<section name="ConfirmationDialog.exit">
+		<item key="DIALOG_X_ORIGIN" value="719"/>
+		<item key="DIALOG_Y_ORIGIN" value="408"/>
+		<item key="DIALOG_WIDTH" value="489"/>
+		<item key="DIALOG_HEIGHT" value="157"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
+	<section name="ConfirmationDialog.close_entity_edit">
+		<item key="DIALOG_X_ORIGIN" value="719"/>
+		<item key="DIALOG_Y_ORIGIN" value="397"/>
+		<item key="DIALOG_WIDTH" value="489"/>
+		<item key="DIALOG_HEIGHT" value="173"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
 </section>

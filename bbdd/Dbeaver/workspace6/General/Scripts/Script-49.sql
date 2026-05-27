@@ -1,0 +1,5 @@
+
+
+INSERT INTO directores VALUES(SELECT * FROM empregado e WHERE e.empNumero IN(SELECT d.depDirector FROM departamento d ));
+
+
